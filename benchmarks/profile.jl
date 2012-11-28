@@ -11,9 +11,9 @@ datasets = RDatasets.datasets()
 
 # Keep track of the performance of read_table as TableTime and
 #  of csvDataFrame as CSVTime
-performance = DataFrame(length(datasets),
+performance = DataFrame({ASCIIString, Float64, Float64},
                         ["Filename", "TableTime", "CSVTime"],
-                        {ASCIIString, Float64, Float64})
+                        length(datasets))
 
 # Compute R's performance on the same data sets
 run(`Rscript read_datasets.R`)
