@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Radioimmunoassay Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for ria"><tr><td>ria</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Radioimmunoassay Data</h2>
+
+<h3>Description</h3>
+
+
+<p>The <code>ria</code> data frame has 16 rows and 2 columns.
+</p>
+<p>Run of a radioimmunoassay (<acronym><span class="acronym">RIA</span></acronym>) to estimate the 
+concentrations of a drug in samples of porcine serum.  The 
+experiment consists of 16 observations made at 8 different drug 
+levels with two replications at each level.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ria)</pre>
+
+
+<h3>Format</h3>
+
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>conc</code></dt><dd>
+<p>the drug concentration (ng/ml);
+</p>
+</dd>
+<dt><code>count</code></dt><dd>
+<p>the observed percentage of radioactive gamma counts.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+
+<p>The data were obtained from
+</p>
+<p>Belanger, B. A., Davidian, M. and Giltinan, D. M. (1996) The effect
+of variance function estimation on nonlinear calibration inference 
+in immunoassay data.  <EM>Biometrics</EM>, <B>52</B>, 158&ndash;175.  
+Table 1, first two columns.
+</p>
+
+
+<h3>References</h3>
+
+
+<p>Brazzale, A. R. (2000) <EM>Practical Small-Sample Parametric 
+Inference</EM>.  Ph.D. Thesis N. 2230, Department of Mathematics, Swiss 
+Federal Institute of Technology Lausanne.  Section 5.3, Example 6.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ria)
+attach(ria)
+plot(conc, count, xlab="drug concentration (ng/ml)", ylab="gamma counts (%)")
+detach()
+</pre>
+
+
+</body></html>

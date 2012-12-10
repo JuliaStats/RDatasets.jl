@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Six Herbicide Data Sets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for C1"><tr><td>C1</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Six Herbicide Data Sets</h2>
+
+<h3>Description</h3>
+
+
+<p>The <code>C1</code>&ndash;<code>C4</code>, <code>M2</code> and <code>M4</code> data frames have
+40 to 72 rows and three columns.
+</p>
+<p>Six bioassay on the action of the herbicides chlorsulfuron and metsulfuron
+methyl on the callus area of colonies of <EM>Brassica napus L</EM>.  The 
+experiments consist of measurements for different dose levels and can be
+balanced (<code>C4</code>, <code>M2</code>) or unbalanced (<code>C1</code>, <code>C2</code>, <code>C3</code>,
+<code>M4</code>).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  data(C1)
+  data(C2)
+  data(C3)
+  data(C4)
+  data(M2)
+  data(M4)
+</pre>
+
+
+<h3>Format</h3>
+
+
+<p>These data frame contain the following columns:
+</p>
+
+<dl>
+<dt><code>group</code></dt><dd>
+<p>indicator variable for each tested dose;
+</p>
+</dd>    
+<dt><code>dose</code></dt><dd>
+<p>the tested dose (nmol/l);
+</p>
+</dd>
+<dt><code>area</code></dt><dd>
+<p>the callus area (<i>mm^2</i>).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+
+<p>Data sets <code>C3</code> and <code>chlorsulfuron</code> are the same.
+Data sets <code>M2</code> and <code>metsulfuron</code> are the same.
+</p>
+
+
+<h3>Source</h3>
+
+
+<p>The data were obtained from
+</p>
+<p>Seiden, P., Kappel, D. and Streibig, J. C. (1998) Response of
+<EM>Brassica napus L.</EM> tissue culture to metsulfuron methyl and
+chlorsulfuron.  <EM>Weed Research</EM>, <B>38</B>, 221&ndash;228.  
+</p>
+
+
+<h3>References</h3>
+
+
+<p>Bellio, R., Jensen, J.E. and Seiden, P. (2000).  Applications of 
+likelihood asymptotics for nonlinear regression in herbicide bioassays.
+<EM>Biometrics</EM>, <B>56</B>, 1204&ndash;1212.
+</p>
+<p>Brazzale, A. R. (2000) <EM>Practical Small-Sample Parametric 
+Inference</EM>.  Ph.D. Thesis N. 2230, Department of Mathematics, Swiss 
+Federal Institute of Technology Lausanne.  Section 5.3, Example 8.
+</p>
+
+
+<h3>See Also</h3>
+
+
+<p><code>chlorsulfuron</code>, <code>metsulfuron</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(C3)
+attach(C3)
+plot(dose, area, xlab = "tested dose (nmol/l)", 
+     ylab = "log callus area (mm^2)", log = "y")
+detach()
+</pre>
+
+
+</body></html>
