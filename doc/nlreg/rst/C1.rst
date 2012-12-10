@@ -1,0 +1,87 @@
++------+-------------------+
+| C1   | R Documentation   |
++------+-------------------+
+
+Six Herbicide Data Sets
+-----------------------
+
+Description
+~~~~~~~~~~~
+
+The ``C1``–``C4``, ``M2`` and ``M4`` data frames have 40 to 72 rows and
+three columns.
+
+Six bioassay on the action of the herbicides chlorsulfuron and
+metsulfuron methyl on the callus area of colonies of *Brassica napus L*.
+The experiments consist of measurements for different dose levels and
+can be balanced (``C4``, ``M2``) or unbalanced (``C1``, ``C2``, ``C3``,
+``M4``).
+
+Usage
+~~~~~
+
+::
+
+      data(C1)
+      data(C2)
+      data(C3)
+      data(C4)
+      data(M2)
+      data(M4)
+
+Format
+~~~~~~
+
+These data frame contain the following columns:
+
+``group``
+    indicator variable for each tested dose;
+
+``dose``
+    the tested dose (nmol/l);
+
+``area``
+    the callus area (*mm^2*).
+
+Note
+~~~~
+
+Data sets ``C3`` and ``chlorsulfuron`` are the same. Data sets ``M2``
+and ``metsulfuron`` are the same.
+
+Source
+~~~~~~
+
+The data were obtained from
+
+Seiden, P., Kappel, D. and Streibig, J. C. (1998) Response of *Brassica
+napus L.* tissue culture to metsulfuron methyl and chlorsulfuron. *Weed
+Research*, **38**, 221–228.
+
+References
+~~~~~~~~~~
+
+Bellio, R., Jensen, J.E. and Seiden, P. (2000). Applications of
+likelihood asymptotics for nonlinear regression in herbicide bioassays.
+*Biometrics*, **56**, 1204–1212.
+
+Brazzale, A. R. (2000) *Practical Small-Sample Parametric Inference*.
+Ph.D. Thesis N. 2230, Department of Mathematics, Swiss Federal Institute
+of Technology Lausanne. Section 5.3, Example 8.
+
+See Also
+~~~~~~~~
+
+``chlorsulfuron``, ``metsulfuron``
+
+Examples
+~~~~~~~~
+
+::
+
+    data(C3)
+    attach(C3)
+    plot(dose, area, xlab = "tested dose (nmol/l)", 
+         ylab = "log callus area (mm^2)", log = "y")
+    detach()
+

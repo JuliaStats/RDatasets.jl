@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Helicopter Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for helicopter"><tr><td>helicopter</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Helicopter Data</h2>
+
+<h3>Description</h3>
+
+
+<p>The <code>helicopter</code> data frame has 9 rows and 6 columns.
+</p>
+<p>Experimental design for studying the influences of the factors wing 
+length and wing width on a paper helicopter's flight time.  The goal is 
+to find the factor setting that maximizes flight time when the paper 
+helicopter is dropped from a fixed height of 15.5 feet
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(helicopter)</pre>
+
+
+<h3>Format</h3>
+
+
+<p>A data frame with 9 observations on the following 6 variables:
+</p>
+
+<dl>
+<dt><code>L</code></dt><dd>
+<p>wing length in inches;
+</p>
+</dd> 
+<dt><code>W</code></dt><dd>
+<p>wing width in inches;
+</p>
+</dd>
+<dt><code>B</code></dt><dd>
+<p>base length (always set to 3in);
+</p>
+</dd>
+<dt><code>H</code></dt><dd>
+<p>base height (always set to 2in);
+</p>
+</dd>
+<dt><code>Order</code></dt><dd>
+<p>run order;
+</p>
+</dd>
+<dt><code>Time</code></dt><dd>
+<p>flight time in seconds.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+
+<p>The data were obtained from
+</p>
+<p>Annis, D. H. (2006)  Rethinking the paper helicopter: Combining 
+statistical and engineering knowledge.  <EM>The American 
+Statistician</EM>, <B>59</B>, 320&ndash;326. 
+</p>
+
+
+<h3>References</h3>
+
+
+<p>Box, G. E. P. (1992)  Teaching engineers experimental design with a
+paper helicopter.  <EM>Quality Engineering</EM>, <B>4</B>, 453&ndash;459.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(helicopter)
+##
+## fit model (5) of Annis (2005)
+## -----------------------------
+heli &lt;- helicopter
+##
+heli$LW &lt;- heli$L * heli$W
+heli$S &lt;- heli$B * heli$H + ( 2 * heli$L + 1 ) * heli$W
+heli$logTime &lt;- log( heli$Time )
+heli$Y &lt;- heli$logTime + log( heli$S ) / 2
+#
+heli.nlreg &lt;- nlreg( Y ~ b0 + b1 * log( b2^2 / LW + LW ), data = heli, 
+                    start = c( b0 = 6, b1 = -1, b2 = 20 ) )
+</pre>
+
+
+</body></html>
