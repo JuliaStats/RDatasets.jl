@@ -1,6 +1,4 @@
 # Load packages
-using Base
-
 load("DataFrames")
 using DataFrames
 
@@ -12,7 +10,7 @@ datasets = RDatasets.datasets()
 # Keep track of the performance of read_table as TableTime and
 #  of csvDataFrame as CSVTime
 performance = DataFrame({ASCIIString, Float64, Float64},
-                        ["Filename", "TableTime", "CSVTime"],
+                        ["Filename", "FirstTableTime", "TableTime"],
                         length(datasets))
 
 # Compute R's performance on the same data sets
@@ -21,7 +19,6 @@ run(`Rscript read_datasets.R`)
 # Force compilation of both reader functions while pulling
 #  in R performance data
 r_performance = read_table(file_path("results", "R_performance.csv"))
-r_performance = csvDataFrame(file_path("results", "R_performance.csv"))
 
 # Keep a record of the location of all data sets
 require("pkg")
@@ -38,20 +35,20 @@ for dataset in datasets
 
   # Try out the different readers
   try
+    performance[i, "FirstTableTime"] = @elapsed read_table(filename)
     performance[i, "TableTime"] = @elapsed read_table(filename)
-  end
-  try
-    performance[i, "CSVTime"] = @elapsed csvDataFrame(filename)
   end
 end
 
 # Merge in R's performance information
-performance["RCSVTime"] = r_performance["RCSVTime"]
+performance = merge(performance, r_performance)
 
 # Write statistics to disk for visualization in R
-DataFrames.write_table(performance, file_path("results", "performance.tsv"))
+write_table(performance, file_path("results", "performance.tsv"))
 
 # How often do the readers fail to read a dataset?
 length(find(isna(performance["TableTime"])))
-length(find(isna(performance["CSVTime"])))
 length(find(isna(performance["RCSVTime"])))
+
+# Identify any problem cases if they exist
+performance[isna(performance["TableTime"]), :]
