@@ -5,7 +5,6 @@ module RDatasets
 
   using Base
 
-  load("DataFrames")
   using DataFrames
 
   load("RDatasets/src/data.jl")
