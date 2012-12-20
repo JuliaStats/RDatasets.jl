@@ -1,4 +1,5 @@
-load("DataFrames")
+require("DataFrames")
+using DataFrames
 
 module RDatasets
   export data
@@ -7,7 +8,7 @@ module RDatasets
 
   using DataFrames
 
-  load("RDatasets/src/data.jl")
-  load("RDatasets/src/datasets.jl")
-  load("RDatasets/src/available_datasets.jl")
+  require("RDatasets/src/data.jl")
+  require("RDatasets/src/datasets.jl")
+  require("RDatasets/src/available_datasets.jl")
 end
