@@ -18,11 +18,11 @@ run(`Rscript read_datasets.R`)
 
 # Force compilation of both reader functions while pulling
 #  in R performance data
-r_performance = read_table(file_path("results", "R_performance.csv"))
+r_performance = read_table(joinpath("results", "R_performance.csv"))
 
 # Keep a record of the location of all data sets
 require("pkg")
-package_directory = file_path(Pkg.package_directory("RDatasets"), "data")
+package_directory = joinpath(Pkg.package_directory("RDatasets"), "data")
 
 # Loop over datasets and store performance in a Julian DataFrame
 i = 0
@@ -30,7 +30,7 @@ for dataset in datasets
   i += 1
 
   directory, dataname = dataset[1], dataset[2]
-  filename = file_path(package_directory, directory, strcat(dataname, ".csv"))
+  filename = joinpath(package_directory, directory, strcat(dataname, ".csv"))
   performance[i, "Filename"] = filename
 
   # Try out the different readers
@@ -44,7 +44,7 @@ end
 performance = merge(performance, r_performance)
 
 # Write statistics to disk for visualization in R
-write_table(performance, file_path("results", "performance.tsv"))
+write_table(performance, joinpath("results", "performance.tsv"))
 
 # How often do the readers fail to read a dataset?
 length(find(isna(performance["TableTime"])))
