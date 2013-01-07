@@ -2,13 +2,11 @@ require("DataFrames")
 using DataFrames
 
 module RDatasets
-  export data
-
-  using Base
-
   using DataFrames
 
-  require("RDatasets/src/data.jl")
-  require("RDatasets/src/datasets.jl")
-  require("RDatasets/src/available_datasets.jl")
+  export data
+
+  include(joinpath(julia_pkgdir(), "RDatasets", "src", "data.jl"))
+  include(joinpath(julia_pkgdir(), "RDatasets", "src", "datasets.jl"))
+  include(joinpath(julia_pkgdir(), "RDatasets", "src", "available_datasets.jl"))
 end

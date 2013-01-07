@@ -9,7 +9,7 @@ In order to load one of the data sets included in the RDatasets package, you wil
 
 After installing the RDatasets package, you can then load data sets using the `data()` function, which takes the name of a package and a data set as arguments:
 
-    load("RDatasets")
+    require("RDatasets")
     using RDatasets
     iris = data("datasets", "iris")
     neuro = data("boot", "neuro")
