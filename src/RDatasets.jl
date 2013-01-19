@@ -1,4 +1,3 @@
-require("DataFrames")
 using DataFrames
 
 module RDatasets
@@ -6,7 +5,7 @@ module RDatasets
 
   export data
 
-  include(joinpath(julia_pkgdir(), "RDatasets", "src", "data.jl"))
-  include(joinpath(julia_pkgdir(), "RDatasets", "src", "datasets.jl"))
-  include(joinpath(julia_pkgdir(), "RDatasets", "src", "available_datasets.jl"))
+  include("data.jl")
+  include("datasets.jl")
+  include("available_datasets.jl")
 end

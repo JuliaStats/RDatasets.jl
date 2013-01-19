@@ -1,9 +1,5 @@
 function data{S <: String, T <: String}(package_name::S, dataset_name::T)
-  if has(ENV, "JULIA_PKGDIR")
-    package_directory = joinpath(ENV["JULIA_PKGDIR"], "RDatasets")
-  else
-    package_directory = expanduser(joinpath("~/.julia", "RDatasets"))
-  end
+  package_directory = Pkg.dir("RDatasets")
   filename = joinpath(package_directory,
                        "data",
                        package_name,

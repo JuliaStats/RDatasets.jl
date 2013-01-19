@@ -3,7 +3,7 @@ using DataFrames
 
 function make_help_index(datasets_csv_name::String, output_file_dir::String)
 
-    output_file_dir = joinpath(julia_pkgdir(), "RDatasets", "doc")
+    output_file_dir = Pkg.dir("RDatasets", "doc")
     # 
     output_file_name = joinpath(output_file_dir, "_JL_INDEX_")
     d = read_table(datasets_csv_name)
@@ -18,5 +18,5 @@ function make_help_index(datasets_csv_name::String, output_file_dir::String)
 
 end
 
-make_help_index(name::String) = make_help_index(name, joinpath(julia_pkgdir(), "RDatasets", "doc"))
-make_help_index() = make_help_index(joinpath(julia_pkgdir(), "RDatasets", "doc", "datasets.csv"), joinpath(julia_pkgdir(), "RDatasets", "doc"))
+make_help_index(name::String) = make_help_index(name, Pkg.dir("RDatasets", "doc"))
+make_help_index() = make_help_index(Pkg.dir("RDatasets", "doc", "datasets.csv"), Pkg.dir("RDatasets", "doc"))

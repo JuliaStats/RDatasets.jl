@@ -1,9 +1,5 @@
 function available_datasets()
-  if has(ENV, "JULIA_PKGDIR")
-    package_directory = joinpath(ENV["JULIA_PKGDIR"], "RDatasets", "data")
-  else
-    package_directory = expanduser(joinpath("~/.julia", "RDatasets", "data"))
-  end
+  package_directory = Pkg.dir("RDatasets", "data")
   for directory in readdir(package_directory)
     println("* Package: $directory")
     for file in readdir(joinpath(package_directory, directory))
