@@ -7,7 +7,7 @@ function data{S <: String, T <: String}(package_name::S, dataset_name::T)
   if isfile(rdaname)
     return DataFrame(read_rda(rdaname)[dataset_name])
   end
-  filename = joinpath(basename, string(dataset_name, ".txt"))
+  filename = joinpath(basename, string(dataset_name, ".csv"))
   if !isfile(filename)
     error("Unable to locate file $rdaname or $filename")
   end
