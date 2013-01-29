@@ -4,6 +4,7 @@ function available_datasets()
     println("* Package: $directory")
     for file in readdir(joinpath(package_directory, directory))
       dataname = replace(file, ".csv", "")
+      dataname = replace(dataname, ".rda", "")
       println("    * Data Set: $dataname")
     end
   end
