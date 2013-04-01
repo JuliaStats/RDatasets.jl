@@ -346,6 +346,18 @@ A full list of available data sets can be accessed using the `RDatasets.availabl
     * Data Set: ethanol
     * Data Set: melanoma
     * Data Set: singer
+* Package: lme4
+    * Data Set: cake
+    * Data Set: cbpp
+    * Data Set: Dyestuff2
+    * Data Set: Dyestuff
+    * Data Set: grouseticks
+    * Data Set: grouseticks_agg
+    * Data Set: InstEval
+    * Data Set: Pastes
+    * Data Set: Penicillin
+    * Data Set: sleepstudy
+    * Data Set: VerbAgg
 * Package: MASS
     * Data Set: abbey
     * Data Set: Aids2
@@ -429,6 +441,20 @@ A full list of available data sets can be accessed using the `RDatasets.availabl
     * Data Set: waders
     * Data Set: whiteside
     * Data Set: wtloss
+* Package: mlmRev
+    * Data Set: bdf
+    * Data Set: Chem97
+    * Data Set: Contraception
+    * Data Set: Early
+    * Data Set: egsingle
+    * Data Set: Exam
+    * Data Set: Gcsemv
+    * Data Set: guImmun
+    * Data Set: guPrenat
+    * Data Set: Mmmec
+    * Data Set: Oxboys
+    * Data Set: ScotsSec
+    * Data Set: star
 * Package: nlreg
     * Data Set: C1
     * Data Set: C2
