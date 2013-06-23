@@ -1,11 +1,11 @@
 using DataFrames
 
 module RDatasets
-  using DataFrames
+    using DataFrames
 
-  export data
+    export data
 
-  include("data.jl")
-  include("datasets.jl")
-  include("available_datasets.jl")
+    include("data.jl")
+    include("datasets.jl")
+    include("available_datasets.jl")
 end
