@@ -1,6 +1,6 @@
 function datasets(package_name::String)
 	df = datasets()
-	return df[df["Package"] .== package_name]
+	return df[df["Package"] .== package_name, :]
 end
 
 function datasets()
