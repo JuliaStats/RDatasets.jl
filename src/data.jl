@@ -9,8 +9,6 @@ function data(package_name::String, dataset_name::String)
     if !isfile(filename)
         error(@sprintf "Unable to locate file %s or %s\n" rdaname filename)
     else
-        dataset = readtable(filename)
-        clean_colnames!(dataset)
-        return dataset
+        return readtable(filename)
     end
 end
