@@ -1,4 +1,7 @@
 function available_datasets()
+	depmsg = "available_datasets() is deprecated, use datasets() instead."
+	Base.depwarn(depmsg, :available_datasets)
+
     package_directory = Pkg.dir("RDatasets", "data")
     for directory in readdir(package_directory)
         @printf "* Package: %s\n" directory

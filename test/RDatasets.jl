@@ -1,6 +1,9 @@
 using RDatasets
 
 iris = data("datasets", "iris")
-RDatasets.available_datasets()
+packages = RDatasets.packages()
 datasets = RDatasets.datasets()
-@assert isa(datasets, Array{Any})
+countdatasets = RDatasets.datasets("COUNT")
+@assert isa(packages, DataFrame)
+@assert isa(datasets, DataFrame)
+@assert isa(countdatasets, DataFrame)
