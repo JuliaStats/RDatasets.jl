@@ -41,20 +41,20 @@ A data frame with 136 observations on the following 31 variables.
     < ``3`` < ``4`` < ``5`` < ``6`` < ``7`` < ``8`` < ``9``
 
 ``mycor``
-    Mycorrhizas, an ordered factor with levels ``0``never < ``1``
-    sometimes< ``2``always
+    Mycorrhizas, an ordered factor with levels ``0``\ never < ``1``
+    sometimes< ``2``\ always
 
 ``vegaer``
     aerial vegetative propagation, an ordered factor with levels
-    ``0``never < ``1`` present but limited< ``2``important.
+    ``0``\ never < ``1`` present but limited< ``2``\ important.
 
 ``vegsout``
     underground vegetative propagation, an ordered factor with 3 levels
     identical to ``vegaer`` above.
 
 ``autopoll``
-    selfing pollination, an ordered factor with levels ``0``never <
-    ``1``rare < ``2`` often< the rule``3``
+    selfing pollination, an ordered factor with levels ``0``\ never <
+    ``1``\ rare < ``2`` often< the rule\ ``3``
 
 ``insects``
     insect pollination, an ordered factor with 5 levels ``0`` < ... <

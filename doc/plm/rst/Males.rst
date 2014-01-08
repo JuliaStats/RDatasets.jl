@@ -77,7 +77,7 @@ References
 
 Vella, F. and M. Verbeek (1998) “Whose Wages Do Unions Raise? A Dynamic
 Model of Unionism and Wage Rate Determination for Young Men”, *Journal
-of Applied Econometrics*, **13**(2), 163–183.
+of Applied Econometrics*, **13**\ (2), 163–183.
 
 Verbeek, M. (2004) *A Guide to Modern Econometrics*, John Wiley and
 Sons,

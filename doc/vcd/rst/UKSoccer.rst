@@ -42,7 +42,7 @@ References
 ~~~~~~~~~~
 
 A. J. Lee (1997), Modelling scores in the Premier League: Is Manchester
-United really the best?, *Chance*, **10**(1), 15–19.
+United really the best?, *Chance*, **10**\ (1), 15–19.
 
 M. Friendly (2000), *Visualizing Categorical Data*. SAS Institute, Cary,
 NC.

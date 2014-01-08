@@ -43,7 +43,7 @@ Source
 ~~~~~~
 
 most of the above data are from Kenneth French's data library
-at`http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data\\\_Library <%20http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data\_Library>`_.
+at\ `http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data\\\_Library <%20http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data\_Library>`_.
 
 References
 ~~~~~~~~~~

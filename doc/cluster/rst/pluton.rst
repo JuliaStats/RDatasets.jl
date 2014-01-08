@@ -56,7 +56,7 @@ References
 
 Rousseeuw, P.J. and Kaufman, L and Trauwaert, E. (1996) Fuzzy clustering
 using scatter matrices, *Computational Statistics and Data Analysis*
-**23**(1), 135–151.
+**23**\ (1), 135–151.
 
 Examples
 ~~~~~~~~

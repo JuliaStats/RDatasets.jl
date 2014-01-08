@@ -30,8 +30,8 @@ This data frame contains the following columns:
     model
 
 ``Country``
-    of origin, a factor with levels ``France`` ``Germany`` ``Japan``
-    ``Japan/USA`` ``Korea`` ``Mexico`` ``Sweden`` ``USA``
+    of origin, a factor with levels France, Germany, Japan , Japan/USA,
+    Korea, Mexico, Sweden and USA
 
 ``Reliability``
     a numeric vector coded ``1`` to ``5``.
@@ -58,12 +58,12 @@ Source
 *Consumer Reports*, April, 1990, pp. 235–288 quoted in
 
 John M. Chambers and Trevor J. Hastie eds. (1992) *Statistical Models in
-S*, Wadsworth and Brooks/Cole, Pacific Grove, CA 1992, pp. 46–47.
+S*, Wadsworth and Brooks/Cole, Pacific Grove, CA, pp. 46–47.
 
 See Also
 ~~~~~~~~
 
-``cu.summary``
+``car90``, ``cu.summary``
 
 Examples
 ~~~~~~~~

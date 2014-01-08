@@ -9,10 +9,10 @@ Description
 ~~~~~~~~~~~
 
 Wagner (1994) investigates the rate of employment growth (``y``) as
-function of percentage of people engaged in **p**roducation
-**a**ctivities (``PA``) and **h**igher **s**ervices (``HS``) and of the
-**g**rowth of these percentages (``GPA``, ``GHS``) during three time
-periods in 21 geographical regions of the greater Hannover area.
+function of percentage of people engaged in **p**\ roducation
+**a**\ ctivities (``PA``) and **h**\ igher **s**\ ervices (``HS``) and
+of the **g**\ rowth of these percentages (``GPA``, ``GHS``) during three
+time periods in 21 geographical regions of the greater Hannover area.
 
 Usage
 ~~~~~
@@ -35,7 +35,7 @@ A data frame with *21 \* 3 = 63* observations (one per
     numeric: percent of people involved in production activities.
 
 ``GPA``
-    **g**rowth of ``PA``.
+    **g**\ rowth of ``PA``.
 
 ``HS``
     a numeric vector
