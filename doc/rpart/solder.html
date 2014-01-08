@@ -33,40 +33,25 @@ solder
 <dl>
 <dt><code>Opening</code></dt><dd>
 <p>a factor with levels
-<code>L</code> 
-<code>M</code> 
-<code>S</code>
+<span class="samp">L</span>, <span class="samp">M</span> and <span class="samp">S</span>
 indicating the amount of clearance around the mounting pad.
 </p>
 </dd>
 <dt><code>Solder</code></dt><dd>
 <p>a factor with levels
-<code>Thick</code> 
-<code>Thin</code>
+<span class="samp">Thick</span> and <span class="samp">Thin</span>
 giving the thickness of the solder used.
 </p>
 </dd>
 <dt><code>Mask</code></dt><dd>
 <p>a factor with levels
-<code>A1.5</code> 
-<code>A3</code> 
-<code>B3</code> 
-<code>B6</code>
+<span class="samp">A1.5</span>, <span class="samp">A3</span>, <span class="samp">B3</span> and <span class="samp">B6</span>
 indicating the type and thickness of mask used.
 </p>
 </dd>
 <dt><code>PadType</code></dt><dd>
-<p>a factor with levels
-<code>D4</code> 
-<code>D6</code> 
-<code>D7</code> 
-<code>L4</code> 
-<code>L6</code> 
-<code>L7</code> 
-<code>L8</code> 
-<code>L9</code> 
-<code>W4</code> 
-<code>W9</code>
+<p>a factor with levels <span class="samp">D4</span>, <span class="samp">D6</span>, <span class="samp">D7</span>, <span class="samp">L4</span>,
+<span class="samp">L6</span>, <span class="samp">L7</span>, <span class="samp">L8</span>, <span class="samp">L9</span>, <span class="samp">W4</span> and <span class="samp">W9</span>
 giving the size and geometry of the mounting pad.
 </p>
 </dd>
@@ -86,7 +71,7 @@ giving the size and geometry of the mounting pad.
 
 <p>John M. Chambers and Trevor J. Hastie eds. (1992)
 <EM>Statistical Models in S</EM>, Wadsworth and Brooks/Cole,
-Pacific Grove, CA 1992.
+Pacific Grove, CA.
 </p>
 
 
@@ -94,9 +79,9 @@ Pacific Grove, CA 1992.
 
 <pre>
 fit &lt;- rpart(skips ~ Opening + Solder + Mask + PadType + Panel,
-       data=solder, method='anova')
+             data = solder, method = "anova")
 summary(residuals(fit))
-plot(predict(fit),residuals(fit))
+plot(predict(fit), residuals(fit))
 </pre>
 
 

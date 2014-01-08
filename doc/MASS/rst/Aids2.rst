@@ -23,7 +23,7 @@ Format
 This data frame contains 2843 rows and the following columns:
 
 ``state``
-    Grouped state of origin: ``"NSW "``includes ACT and ``"other"`` is
+    Grouped state of origin: ``"NSW "``\ includes ACT and ``"other"`` is
     WA, SA, NT and TAS.
 
 ``sex``

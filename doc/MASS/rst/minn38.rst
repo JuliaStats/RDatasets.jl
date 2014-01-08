@@ -38,7 +38,7 @@ This data frame contains the following columns:
     ``"F7"``).
 
 ``sex``
-    sex: factor with levels``"F"`` or ``"M"``.
+    sex: factor with levels\ ``"F"`` or ``"M"``.
 
 ``f``
     frequency.

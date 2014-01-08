@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Rat data from Gail et al.</title>
+<html><head><title>R: Rat treatment data from Mantel et al</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
 <table width="100%" summary="page for rats"><tr><td>rats</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Rat data from Gail et al.</h2>
+<h2>Rat treatment data from Mantel et al</h2>
 
 <h3>Description</h3>
 
-<p>48 rats were injected with a carcinogen, and then
-randomized to either drug or placebo.  The number of tumors ranges
-from 0 to 13; all rats were  censored at 6 months after randomization.
+<p>Rat treatment data from Mantel et al.
+Three rats were chosen from each of 100 litters, one of which was
+treated with a drug, and then all followed for tumor incidence.
 </p>
 
 
@@ -28,7 +28,7 @@ from 0 to 13; all rats were  censored at 6 months after randomization.
 <table summary="Rd table">
 <tr>
  <td align="left">
-    rat:</td><td align="left"> id</td>
+    litter:</td><td align="left"> litter number from 1 to 100</td>
 </tr>
 <tr>
  <td align="left">
@@ -36,22 +36,15 @@ from 0 to 13; all rats were  censored at 6 months after randomization.
 </tr>
 <tr>
  <td align="left">
-    observation:</td><td align="left"> within rat</td>
+    time:</td><td align="left"> time to tumor or last follow-up</td>
 </tr>
 <tr>
  <td align="left">
-    start:</td><td align="left"> entry time</td>
+    status:</td><td align="left"> event status, 1=tumor and 0=censored</td>
 </tr>
 <tr>
  <td align="left">
-    stop:</td><td align="left"> exit time</td>
-</tr>
-<tr>
- <td align="left">
-    status:</td><td align="left"> event status</td>
-</tr>
-<tr>
- <td align="left">
+    sex:</td><td align="left"> male or female
   </td>
 </tr>
 
@@ -59,13 +52,28 @@ from 0 to 13; all rats were  censored at 6 months after randomization.
 
 
 
+<h3>Note</h3>
+
+<p>The subset of females (odd numbered litters) was used Lee et al.</p>
+
+
 <h3>Source</h3>
 
 
-<p>MH Gail, TJ Santner, and CC Brown (1980),
-An analysis of comparative carcinogenesis experiments based on
-multiple times to tumor.
-<EM>Biometrics</EM> <B>36</B>, 255&ndash;266.
+<p>N. R. Bohidar and J. L. Ciminera.
+Mantel-Haenszel analyses of litter-matched time to response data,
+with modifications for recovery of interlitter information.
+Cancer Research, 37:3863-3868, 1977. 5 
+</p>
+
+
+<h3>References</h3>
+
+
+<p>E. W. Lee, L. J. Wei, and D. Amato,
+Cox-type regression analysis for large number of small groups of
+correlated failure time observations,
+in &quot;Survival Analysis, State of the Art&quot;, Kluwer, 1992.
 </p>
 
 

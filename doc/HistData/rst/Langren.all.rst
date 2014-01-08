@@ -2,7 +2,7 @@
 | Langren   | R Documentation   |
 +-----------+-------------------+
 
-van Langren's data on longitude distance between Toledo and Rome
+van Langren's Data on Longitude Distance between Toledo and Rome
 ----------------------------------------------------------------
 
 Description
@@ -20,7 +20,7 @@ In order to convince the Spanish court of the seriousness of the problem
 distance in longitude between Toledo and Rome, which showed large
 errors, for even this modest distance. This 1D line graph, from Langren
 (1644), is believed to be the first known graph of statistical data
-(Friendly etal., 2009). It provides a compelling example of the notions
+(Friendly etal., 2010). It provides a compelling example of the notions
 of statistical variability and bias.
 
 The data frame ``Langren1644`` gives the estimates and other information
@@ -117,16 +117,17 @@ etal. (2009).
 References
 ~~~~~~~~~~
 
-Friendly, M., Valero-Mora, P. and Ulargui, J. I. (2009). The First
+Friendly, M., Valero-Mora, P. and Ulargui, J. I. (2010). The First
 (Known) Statistical Graph: Michael Florent van Langren and the "Secret"
-of Longitude. Unpublished ms (submitted). Supplementary materials:
-`http://www.math.yorku.ca/SCS/Gallery/langren/ <http://www.math.yorku.ca/SCS/Gallery/langren/>`_.
+of Longitude. *The American Statistician*, **64** (2), 185-191.
+Supplementary materials:
+`http://datavis.ca/gallery/langren/ <http://datavis.ca/gallery/langren/>`_.
 
 Langren, M. F. van. (1644). *La Verdadera Longitud por Mar y Tierra*.
 Antwerp: (n.p.), 1644. English translation available at
 `http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf <http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf>`_.
 
-Lelewel, J. (1851). *Géographie du Moyen Âge*. Paris: Pilliet, 1851.
+Lelewel, J. (1851). *G?ographie du Moyen ?ge*. Paris: Pilliet, 1851.
 
 Examples
 ~~~~~~~~
@@ -135,11 +136,89 @@ Examples
 
     data(Langren1644)
 
+    ####################################################
+    # reproductions of Langren's graph overlaid on a map
+    ####################################################
+
+    if (require(jpeg, quietly=TRUE)) {
+
+      gimage <- readJPEG(system.file("images", "google-toledo-rome3.jpg", package="HistData"))
+      # NB: dimensions from readJPEG are y, x, colors
+
+      gdim <- dim(gimage)[1:2]
+      ylim <- c(1,gdim[1])
+      xlim <- c(1,gdim[2])
+      op <- par(bty="n", xaxt="n", yaxt="n", mar=c(2, 1, 1, 1) + 0.1)
+      # NB: necessary to scale the plot to the pixel coordinates, and use asp=1
+      plot(xlim, ylim, xlim=xlim, ylim=ylim, type="n", ann=FALSE, asp=1 )
+      rasterImage(gimage, 1, 1, gdim[2], gdim[1])
+
+      # pixel coordinates of Toledo and Rome in the image, measured from the bottom left corner
+      toledo.map <- c(131, 59)
+      rome.map <- c(506, 119)
+      
+      # confirm locations of Toledo and Rome
+      points(rbind(toledo.map, rome.map), cex=2)
+      text(131, 95, "Toledo", cex=1.5)
+      text(506, 104, "Roma", cex=1.5)
+
+      # set a scale for translation of lat,long to pixel x,y
+      scale <- data.frame(x=c(131, 856), y=c(52,52))
+      rownames(scale)=c(0,30)
+
+      # translate from degrees longitude to pixels
+      xlate <- function(x) {
+        131+x*726/30    
+      }
+
+      # draw an axis
+      lines(scale)
+      ticks <- xlate(seq(0,30,5))
+      segments(ticks, 52, ticks, 45)
+      text(ticks, 40, seq(0,30,5))
+      text(xlate(8), 17, "Grados de la Longitud", cex=1.7)
+
+      # label the observations with the names
+      points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), pch=25, col="blue", bg="blue")
+      text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), labels=Langren1644$Name, srt=90, adj=c(-.1, .5), cex=0.8)
+
+      par(op)
+    }
+
+    ### Original implementation using ReadImages, now deprecated & shortly to be removed
+    ## Not run: 
+    if (require(ReadImages)) {
+      gimage <- read.jpeg(system.file("images", "google-toledo-rome3.jpg", package="HistData"))
+      plot(gimage)
+      
+      # pixel coordinates of Toledo and Rome in the image, measured from the bottom left corner
+      toledo.map <- c(130, 59)
+      rome.map <- c(505, 119)
+      
+      # confirm locations of Toledo and Rome
+      points(rbind(toledo.map, rome.map), cex=2)
+      
+      # set a scale for translation of lat,long to pixel x,y
+      scale <- data.frame(x=c(130, 856), y=c(52,52))
+      rownames(scale)=c(0,30)
+      lines(scale)
+      
+      xlate <- function(x) {
+        130+x*726/30    
+      }
+      points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), pch=25, col="blue")
+      text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), labels=Langren1644$Name, srt=90, adj=c(0, 0.5), cex=0.8)
+    }
+
+    ## End(Not run)
+
+    ### First attempt using ggplot2; temporarily abandonned.
     ## Not run: 
     require(maps)
     require(ggplot2)
     require(reshape)
     require(plyr)
+    require(scales)
 
     # set latitude to that of Toledo
     Langren1644$Latitude <- 39.68
@@ -177,30 +256,11 @@ Examples
 
     ## End(Not run)
 
-    if (require(ReadImages)) {
-      gimage <- read.jpeg(system.file("images", "google-toledo-rome3.jpg", package="HistData"))
-      plot(gimage)
-      
-      # pixel coordinates of Toledo and Rome in the image, measured from the bottom left corner
-      toledo.map <- c(130, 59)
-      rome.map <- c(505, 119)
-      
-      # confirm locations of Toledo and Rome
-      points(rbind(toledo.map, rome.map), cex=2)
-      
-      # set a scale for translation of lat,long to pixel x,y
-      scale <- data.frame(x=c(130, 856), y=c(52,52))
-      rownames(scale)=c(0,30)
-      lines(scale)
-      
-      xlate <- function(x) {
-        130+x*726/30    
-      }
-      points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), pch=25, col="blue")
-      text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), labels=Langren1644$Name, srt=90, adj=c(0, 0.5), cex=0.8)
-    }
 
+    ###########################################
     # show variation in estimates across graphs
+    ###########################################
+
     library(lattice)
     graph <- paste(Langren.all$Author, Langren.all$Year)
     dotplot(Name ~ Longitude, data=Langren.all)

@@ -23,23 +23,24 @@ Usage
 Format
 ~~~~~~
 
--  ``union``numeric, percentage of the total number of wage and salary
+-  ``union``\ numeric, percentage of the total number of wage and salary
    earners plus the unemployed who are union members, measured between
    1975 and 1980, with most of the data drawn from 1979
 
--  ``left``numeric, an index tapping the extent to which parties of the
-   left have controlled governments since 1919, due to Wilensky (1981).
+-  ``left``\ numeric, an index tapping the extent to which parties of
+   the left have controlled governments since 1919, due to Wilensky
+   (1981).
 
--  ``size``numeric, log of labor force size, defined as the number of
+-  ``size``\ numeric, log of labor force size, defined as the number of
    wage and salary earners, plus the unemployed
 
--  ``concen``numeric, percentage of employment, shipments, or production
-   accounted for by the four largest enterprises in a particular
-   industry, averaged over industries (with weights proportional to the
-   size of the industry) and the resulting measure is normalized such
-   that the United States scores a 1.0, and is due to Pryor (1973). Some
-   of the scores on this variable are imputed using procedures described
-   in Stephens and Wallerstein (1991, 945).
+-  ``concen``\ numeric, percentage of employment, shipments, or
+   production accounted for by the four largest enterprises in a
+   particular industry, averaged over industries (with weights
+   proportional to the size of the industry) and the resulting measure
+   is normalized such that the United States scores a 1.0, and is due to
+   Pryor (1973). Some of the scores on this variable are imputed using
+   procedures described in Stephens and Wallerstein (1991, 945).
 
 Source
 ~~~~~~

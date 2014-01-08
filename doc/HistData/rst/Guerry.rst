@@ -160,8 +160,11 @@ Paris*, 3rd ed, 1857, p. 32, 36
 References
 ~~~~~~~~~~
 
-Dray, S. and Jombart, T. (2009). A Revisit Of Guerry's Data: Introducing
-Spatial Constraints In Multivariate Analysis. Unpublished manuscript.
+Dray, S. and Jombart, T. (2011). A Revisit Of Guerry's Data: Introducing
+Spatial Constraints In Multivariate Analysis. *The Annals of Applied
+Statistics*, Vol. 5, No. 4, 2278-2299.
+`http://arxiv.org/pdf/1202.6485.pdf <http://arxiv.org/pdf/1202.6485.pdf>`_,
+DOI: 10.1214/10-AOAS356.
 
 Brunsdon, C. and Dykes, J. (2007). Geographically weighted
 visualization: interactive graphics for scale-varying exploratory
@@ -174,7 +177,7 @@ Challenges for Multivariable Spatial Analysis. *Statistical Science*,
 
 Friendly, M. (2007). Data from A.-M. Guerry, Essay on the Moral
 Statistics of France (1833),
-`http://www.math.yorku.ca/SCS/Gallery/guerry/guerrydat.html <http://www.math.yorku.ca/SCS/Gallery/guerry/guerrydat.html>`_.
+`http://datavis.ca/gallery/guerry/guerrydat.html <http://datavis.ca/gallery/guerry/guerrydat.html>`_.
 
 See Also
 ~~~~~~~~

@@ -37,14 +37,14 @@ are attributes for carboxylic acids:
     pKa: the dissociation constant
 
 ``ELUMO``
-    **E**nergy of the **l**owest **u**noccupied **m**olecular
-    **o**rbital
+    **E**\ nergy of the **l**\ owest **u**\ noccupied **m**\ olecular
+    **o**\ rbital
 
 ``Ecarb``
-    Electrotopological state of the **carb**oxylic group
+    Electrotopological state of the **carb**\ oxylic group
 
 ``Emet``
-    Electrotopological state of the **met**hyl group
+    Electrotopological state of the **met**\ hyl group
 
 ``RM``
     Molar refractivity

@@ -27,13 +27,13 @@ A data frame with 146 observations on the following 8 variables.
     Time to progression or last follow-up (years)
 
 ``pgstat``
-    1=progression observed, 0=censored
+    1 = progression observed, 0 = censored
 
 ``age``
     age in years
 
 ``eet``
-    early endocrine therapy, 1=no, 2=yes
+    early endocrine therapy, 1 = no, 2 = yes
 
 ``g2``
     percent of cells in G2 phase, as found by flow cytometry
@@ -46,7 +46,7 @@ A data frame with 146 observations on the following 8 variables.
 
 ``ploidy``
     the ploidy status of the tumor, from flow cytometry. Values are
-    ``diploid``, ``tetraploid``, and ``aneuploid``
+    diploid, tetraploid, and aneuploid
 
 Details
 ~~~~~~~
