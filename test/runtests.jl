@@ -3,6 +3,7 @@
 #
 
 using Base.Test
+using DataArrays
 using DataFrames
 
 my_tests = ["data.jl",

@@ -1,9 +1,9 @@
+using DataArrays
 using DataFrames
 
 module RDatasets
+	using DataArrays
     using DataFrames
-
-    export data
 
     include("data.jl")
     include("datasets.jl")

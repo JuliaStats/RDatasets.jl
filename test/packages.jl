@@ -1,5 +1,6 @@
 module TestPackages
     using Base.Test
+    using DataArrays
     using DataFrames
     using RDatasets
 

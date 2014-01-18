@@ -1,4 +1,4 @@
-function data(package_name::String, dataset_name::String)
+function DataArrays.data(package_name::String, dataset_name::String)
     basename = joinpath(Pkg.dir("RDatasets", "data"), package_name)
     
     rdaname = joinpath(basename, string(dataset_name, ".rda"))
