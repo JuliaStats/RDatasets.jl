@@ -13,5 +13,4 @@ module RDatasets
     include("available_datasets.jl")
 
     Base.@deprecate available_datasets datasets
-    Base.@deprecate DataArrays.data(s::String, d::String) dataset
 end
