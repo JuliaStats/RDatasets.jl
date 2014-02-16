@@ -6,11 +6,11 @@ In order to load one of the data sets included in the RDatasets package, you wil
 
     Pkg.add("RDatasets")
 
-After installing the RDatasets package, you can then load data sets using the `data()` function, which takes the name of a package and a data set as arguments:
+After installing the RDatasets package, you can then load data sets using the `dataset()` function, which takes the name of a package and a data set as arguments:
 
     using RDatasets
-    iris = data("datasets", "iris")
-    neuro = data("boot", "neuro")
+    iris = dataset("datasets", "iris")
+    neuro = dataset("boot", "neuro")
 
 # Data Sets
 
