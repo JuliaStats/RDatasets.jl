@@ -7,5 +7,5 @@ module TestPackages
     ds = RDatasets.datasets()
     dp = RDatasets.packages()
 
-    @assert dp["Package"] == sort(unique(ds["Package"]))
+    @assert dp[:Package] == sort(unique(ds[:Package]))
 end

@@ -13,11 +13,11 @@ module TestDatasets
     for directory in readdir(package_directory)
         for file in readdir(joinpath(package_directory, directory))
             dataset = replace(file, r"(\.(rda|csv|gz))+$", "")
-            df[i, "Package"] = directory
-            df[i, "Dataset"] = dataset
+            df[i, :Package] = directory
+            df[i, :Dataset] = dataset
             i += 1
         end
     end
     
-    @assert sort(ds[["Package", "Dataset"]]) == sort(df)
+    @assert sort(ds[[:Package, :Dataset]]) == sort(df)
 end
