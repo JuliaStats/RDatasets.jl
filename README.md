@@ -26,6 +26,7 @@ KMsurv|Data sets from Klein and Moeschberger (1997), Survival Analysis
 MASS|Support Functions and Datasets for Venables and Ripley's MASS
 SASmixed|Data sets from SAS System for Mixed Models
 Zelig|Everyone's Statistical Software
+adehabitatLT|Analysis of animal movements
 boot|Bootstrap Functions (originally by Angelo Canty for S)
 car|Companion to Applied Regression
 cluster|Cluster Analysis Extended Rousseeuw et al.

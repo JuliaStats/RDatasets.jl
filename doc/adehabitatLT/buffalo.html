@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: GPS monitoring of a buffalo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for buffalo"><tr><td>buffalo</td><td align="right">R Documentation</td></tr></table>
+
+<h2>
+GPS monitoring of a buffalo
+</h2>
+
+<h3>Description</h3>
+
+<p>This data set contains the relocations of an African buffalo (Syncerus
+caffer) monitored in the W National Park (Niger) by D. Cornelis, as
+well as the habitat map of the study area.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(buffalo)</pre>
+
+
+<h3>Format</h3>
+
+<p>This dataset is a list containing an object of class <code>ltraj</code> and
+a SpatialPixelsDataFrame.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The &quot;infolocs&quot; component of the ltraj stores the proportion of the
+time duration between relocation i-1 and relocation i during which the
+animal was active.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Cornelis D., Benhamou S., Janeau G., Morellet N., Ouedraogo M. &amp; de Vissher
+M.-N. (submitted). The spatiotemporal segregation of limiting resources
+shapes space use patterns of West African savanna buffalo. Journal of
+Mammalogy.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(buffalo)
+plot(buffalo$traj, spixdf=buffalo$habitat)
+
+</pre>
+
+
+</body></html>

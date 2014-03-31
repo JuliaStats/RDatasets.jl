@@ -596,3 +596,17 @@ swiss  Zelig/swiss  Swiss Fertility and Socioeconomic Indicators (1888) Data
 tobin  Zelig/tobin  Tobin's Tobit Data
 turnout  Zelig/turnout  Turnout Data Set from the National Election Survey
 voteincome  Zelig/voteincome  Sample Turnout and Demographic Data from the 2000 Current Population Survey
+albatross  adehabitatLT/albatross  Argos Monitoring of Adult Albatross Movement
+bear  adehabitatLT/bear  GPS monitoring of one brown bear
+buffalo  adehabitatLT/buffalo  GPS monitoring of a buffalo
+capreochiz  adehabitatLT/capreochiz  GPS Monitoring of one Roe Deer in Chize (France)
+capreotf  adehabitatLT/capreotf  GPS Monitoring of one Roe Deer in Trois-Fontaines (France)
+hseal  adehabitatLT/hseal  Argos Monitoring of Hooded Seal
+ibex  adehabitatLT/ibex  GPS Monitoring of Four Ibex in the Belledonne Mountain
+ibexraw  adehabitatLT/ibexraw  GPS Monitoring of Four Ibex in the Belledonne Mountain (irregular data)
+mouflon  adehabitatLT/mouflon  GPS Monitoring of One Mouﬂon in the Caroux Mountain
+porpoise  adehabitatLT/porpoise  Argos monitoring of Porpoise Movements
+puechcirc  adehabitatLT/puechcirc  Movements of wild boars tracked at Puechabon
+rupicabau  adehabitatLT/rupicabau  GPS Monitoring of One Chamois in the Bauges Mountains
+teal  adehabitatLT/teal  Teal (Anas crecca) Ring Recovery Dataset
+whale  adehabitatLT/whale  Argos Monitoring of Whale Movement
