@@ -328,6 +328,20 @@
 "Zelig","tobin","Tobin's Tobit Data",20,3
 "Zelig","turnout","Turnout Data Set from the National Election Survey",2000,5
 "Zelig","voteincome","Sample Turnout and Demographic Data from the 2000 Current Population Survey",1500,7
+"adehabitatLT","albatross","Argos Monitoring of Adult Albatross Movement",4400,12
+"adehabitatLT","bear","GPS monitoring of one brown bear",1157,12
+"adehabitatLT","buffalo","GPS monitoring of a buffalo",1309,13
+"adehabitatLT","capreochiz","GPS Monitoring of one Roe Deer in Chize (France)",2355,8
+"adehabitatLT","capreotf","GPS Monitoring of one Roe Deer in Trois-Fontaines (France)",576,12
+"adehabitatLT","hseal","Argos Monitoring of Hooded Seal",103,12
+"adehabitatLT","ibex","GPS Monitoring of Four Ibex in the Belledonne Mountain",332,12
+"adehabitatLT","ibexraw","GPS Monitoring of Four Ibex in the Belledonne Mountain (irregular data)",256,12
+"adehabitatLT","mouflon","GPS Monitoring of One Mouﬂon in the Caroux Mountain",278,12
+"adehabitatLT","porpoise","Argos monitoring of Porpoise Movements",358,12
+"adehabitatLT","puechcirc","Movements of wild boars tracked at Puechabon",215,12
+"adehabitatLT","rupicabau","GPS Monitoring of One Chamois in the Bauges Mountains",144,12
+"adehabitatLT","teal","Teal (Anas crecca) Ring Recovery Dataset",800,3
+"adehabitatLT","whale","Argos Monitoring of Whale Movement",181,12
 "boot","acme","Monthly Excess Returns",60,3
 "boot","aids","Delay in AIDS Reporting in England and Wales",570,6
 "boot","aircondit","Failures of Air-conditioning Equipment",12,1
