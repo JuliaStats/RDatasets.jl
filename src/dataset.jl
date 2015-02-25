@@ -1,5 +1,5 @@
 function dataset(package_name::String, dataset_name::String)
-    basename = joinpath(Pkg.dir("RDatasets", "data"), package_name)
+    basename = joinpath(dirname(@__FILE__), "..", "data", package_name)
     
     rdaname = joinpath(basename, string(dataset_name, ".rda"))
     if isfile(rdaname)

@@ -4,6 +4,6 @@ function datasets(package_name::String)
 end
 
 function datasets()
-	path = joinpath(Pkg.dir("RDatasets"), "doc", "datasets.csv")
+	path = joinpath(dirname(@__FILE__), "..", "doc", "datasets.csv")
 	readtable(path)
 end
