@@ -1,5 +1,5 @@
 function available_datasets()
-    package_directory = Pkg.dir("RDatasets", "data")
+    package_directory = joinpath(dirname(@__FILE__), "..", "data")
     for directory in readdir(package_directory)
         @printf "* Package: %s\n" directory
         for file in readdir(joinpath(package_directory, directory))

@@ -9,7 +9,7 @@ module TestDatasets
 
     df = DataFrame(Package = fill("", n), Dataset = fill("", n))
     i = 1
-    package_directory = Pkg.dir("RDatasets", "data")
+    package_directory = joinpath(dirname(@__FILE__), "..", "data")
     for directory in readdir(package_directory)
         for file in readdir(joinpath(package_directory, directory))
             dataset = replace(file, r"(\.(rda|csv|gz))+$", "")

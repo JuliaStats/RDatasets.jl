@@ -1,4 +1,4 @@
 function packages()
-	path = joinpath(Pkg.dir("RDatasets"), "doc", "packages.csv")
+	path = joinpath(dirname(@__FILE__), "..", "doc", "packages.csv")
 	readtable(path)
 end
