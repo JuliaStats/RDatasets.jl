@@ -1,23 +1,19 @@
 module TestDatasets
     using Base.Test
-    using DataArrays
-    using DataFrames
     using RDatasets
 
-    ds = RDatasets.datasets()
-    n = size(ds, 1)
-
-    df = DataFrame(Package = fill("", n), Dataset = fill("", n))
-    i = 1
     package_directory = joinpath(dirname(@__FILE__), "..", "data")
-    for directory in readdir(package_directory)
-        for file in readdir(joinpath(package_directory, directory))
-            dataset = replace(file, r"(\.(rda|csv|gz))+$", "")
-            df[i, :Package] = directory
-            df[i, :Dataset] = dataset
-            i += 1
-        end
-    end
-    
-    @assert sort(ds[[:Package, :Dataset]]) == sort(df)
+
+    dfs_found = vcat(map(readdir(package_directory)) do directory
+        fns = readdir(joinpath(package_directory, directory))
+        pkgs = fill(directory, length(fns))
+        sets = map(fn -> replace(fn, r"(\.(rda|csv|gz))+$", ""), fns)
+        DataFrame(Package = pkgs, Dataset = sets)
+    end)
+
+    dfs_documented = RDatasets.datasets()
+
+    @test size(dfs_found, 1) == size(dfs_documented, 1)
+
+    @test sort(dfs_documented[[:Package, :Dataset]]) == sort(dfs_found)
 end

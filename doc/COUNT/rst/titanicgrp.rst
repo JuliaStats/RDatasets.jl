@@ -1,8 +1,8 @@
-+----------+-------------------+
-| titgrp   | R Documentation   |
-+----------+-------------------+
++--------------+-------------------+
+| titanicgrp   | R Documentation   |
++--------------+-------------------+
 
-titgrp
+titanicgrp
 ------
 
 Description
@@ -16,7 +16,7 @@ Usage
 
 ::
 
-    data(titgrp)
+    data(titanicgrp)
 
 Format
 ~~~~~~
@@ -41,7 +41,7 @@ A data frame with 12 observations on the following 5 variables.
 Details
 ~~~~~~~
 
-titgrp is saved as a data frame. count response=survive;
+titanicgrp is saved as a data frame. count response=survive;
 offset=log(cases); can be used as a binomial model as well.
 
 Source
@@ -61,12 +61,12 @@ Examples
 
 ::
 
-    data(titgrp)
-    glmtgp <- glm(survive ~ age + sex + factor(class) + offset(log(cases)), family=poisson, data=titgrp)
+    data(titanicgrp)
+    glmtgp <- glm(survive ~ age + sex + factor(class) + offset(log(cases)), family=poisson, data=titanicgrp)
     summary(glmtgp)
     exp(coef(glmtgp))
     library(MASS)
-    glmtgnb <- glm.nb(survive ~ age + sex + factor(class) + offset(log(cases)), data=titgrp)
+    glmtgnb <- glm.nb(survive ~ age + sex + factor(class) + offset(log(cases)), data=titanicgrp)
     summary(glmtgnb)
     exp(coef(glmtgnb))
 
