@@ -13,7 +13,7 @@
 "COUNT","rwm5yr","rwm5yr",19609,17
 "COUNT","ships","ships",40,7
 "COUNT","titanic","titanic",1316,4
-"COUNT","titgrp","titgrp",12,5
+"COUNT","titanicgrp","titanicgrp",12,5
 "Ecdat","Accident","Ship Accidents",40,5
 "Ecdat","Airline","Cost for U.S. Airlines",90,6
 "Ecdat","Airq","Air Quality for Californian Metropolitan Areas",30,6
@@ -106,7 +106,7 @@
 "Ecdat","Workinghours","Wife Working Hours",3382,12
 "Ecdat","Yen","Yen-dollar Exchange Rate",778,4
 "Ecdat","Yogurt","Choice of Brand for Yogurts",2412,10
-"Ecdat","incomeInequality","Income Inequality in the US",65,24
+"Ecdat","incomeInequality","Income Inequality in the US",66,22
 "HSAUR","BCG","BCG Vaccine Data",13,7
 "HSAUR","BtheB","Beat the Blues Data",100,8
 "HSAUR","CYGOB1","CYG OB1 Star Cluster Data",47,2
@@ -152,12 +152,14 @@
 "HistData","Bowley","Bowley's data on values of British and Irish trade, 1855-1899",45,2
 "HistData","Cavendish","Cavendish's Determinations of the Density of the Earth",29,3
 "HistData","ChestSizes","Chest measurements of 5738 Scottish Militiamen",16,2
+"HistData","CushnyPeebles","Cushny-Peebles Data: Soporific Effects of Scopolamine Derivatives",11,4
+"HistData","CushnyPeeblesN","Cushny-Peebles Data: Soporific Effects of Scopolamine Derivatives",11,4
 "HistData","Dactyl","Edgeworth's counts of dactyls in Virgil's Aeneid",60,3
 "HistData","DrinksWages","Elderton and Pearson's (1910) data on drinking and wages",70,6
 "HistData","Fingerprints","Waite's data on Patterns in Fingerprints",36,3
 "HistData","Galton","Galton's data on the heights of parents and their children",928,2
 "HistData","GaltonFamilies","Galton's data on the heights of parents and their children, by child",934,8
-"HistData","Guerry","Data from A.-M. Guerry, Essay on the Moral Statistics of France",86,23
+"HistData","Guerry","Data from A.-M. Guerry, \"Essay on the Moral Statistics of France\"",86,23
 "HistData","Jevons","W. Stanley Jevons' data on numerical discrimination",50,4
 "HistData","Langren.all","van Langren's Data on Longitude Distance between Toledo and Rome",61,4
 "HistData","Langren1644","van Langren's Data on Longitude Distance between Toledo and Rome",12,9
@@ -183,8 +185,17 @@
 "HistData","Yeast","Student's (1906) Yeast Cell Counts",36,3
 "HistData","YeastD.mat","Student's (1906) Yeast Cell Counts",20,20
 "HistData","ZeaMays","Darwin's Heights of Cross- and Self-fertilized Zea May Pairs",15,5
-"HistData","CushnyPeebles","Cushny-Peebles Data: Soporific Effects of Scopolamine Derivatives",11,4
-"HistData","CushnyPeeblesN","Cushny-Peebles Data: Soporific Effects of Scopolamine Derivatives",11,4
+"ISLR","Auto","Auto Data Set",392,9
+"ISLR","Caravan","The Insurance Company (TIC) Benchmark",5822,86
+"ISLR","Carseats","Sales of Child Car Seats",400,11
+"ISLR","College","U.S. News and World Report's College Data",777,18
+"ISLR","Default","Credit Card Default Data",10000,4
+"ISLR","Hitters","Baseball Data",322,20
+"ISLR","OJ","Orange Juice Data",1070,18
+"ISLR","Portfolio","Portfolio Data",100,2
+"ISLR","Smarket","S&P Stock Market Data",1250,9
+"ISLR","Wage","Mid-Atlantic Wage Data",3000,12
+"ISLR","Weekly","Weekly S&P Stock Market Data",1089,9
 "KMsurv","aids","data from Section 1.19",295,3
 "KMsurv","alloauto","data from Section 1.9",101,3
 "KMsurv","allograft","data from Exercise 13.1, p418",34,4
@@ -282,6 +293,7 @@
 "MASS","road","Road Accident Deaths in US States",26,7
 "MASS","rotifer","Numbers of Rotifers by Fluid Density",20,5
 "MASS","ships","Ships Damage Data",40,5
+"MASS","shoes","Shoe wear data of Box, Hunter and Hunter",10,2
 "MASS","shrimp","Percentage of Shrimp in Shrimp Cocktail",18,1
 "MASS","shuttle","Space Shuttle Autolander Problem",256,7
 "MASS","snails","Snail Mortality Data",96,6
@@ -294,7 +306,6 @@
 "MASS","waders","Counts of Waders at 15 Sites in South Africa",15,20
 "MASS","whiteside","House Insulation: Whiteside's Data",56,3
 "MASS","wtloss","Weight Loss Data from an Obese Patient",52,2
-"MASS","shoes","Shoe wear data of Box, Hunter and Hunter",10,2
 "SASmixed","AvgDailyGain","Average daily weight gain of steers on different diets",32,6
 "SASmixed","Multilocation","A multilocation trial",108,7
 "SASmixed","SIMS","Second International Mathematics Study data",3691,3
@@ -336,7 +347,7 @@
 "adehabitatLT","hseal","Argos Monitoring of Hooded Seal",103,12
 "adehabitatLT","ibex","GPS Monitoring of Four Ibex in the Belledonne Mountain",332,12
 "adehabitatLT","ibexraw","GPS Monitoring of Four Ibex in the Belledonne Mountain (irregular data)",256,12
-"adehabitatLT","mouflon","GPS Monitoring of One Mouﬂon in the Caroux Mountain",278,12
+"adehabitatLT","mouflon","GPS Monitoring of One Mouflon in the Caroux Mountain",278,12
 "adehabitatLT","porpoise","Argos monitoring of Porpoise Movements",358,12
 "adehabitatLT","puechcirc","Movements of wild boars tracked at Puechabon",215,12
 "adehabitatLT","rupicabau","GPS Monitoring of One Chamois in the Bauges Mountains",144,12
@@ -394,7 +405,7 @@
 "car","Anscombe","U. S. State Public-School Expenditures",51,5
 "car","Baumann","Methods of Teaching Reading Comprehension",66,6
 "car","Bfox","Canadian Women's Labour-Force Participation",30,7
-"car","Blackmoor","Exercise Histories of Eating-Disordered and Control Subjects",945,4
+"car","Blackmore","Exercise Histories of Eating-Disordered and Control Subjects",945,4
 "car","Burt","Fraudulent Data on IQs of Twins Raised Apart",27,3
 "car","CanPop","Canadian Population Data",16,2
 "car","Chile","Voting Intentions in the 1988 Chilean Plebiscite",2700,8
@@ -446,13 +457,16 @@
 "cluster","votes.repub","Votes for Republican Candidate in Presidential Elections",50,32
 "cluster","xclara","Bivariate Data Set with 3 Clusters",3000,2
 "datasets","BOD","Biochemical Oxygen Demand",6,2
+"datasets","CO2","Carbon Dioxide Uptake in Grass Plants",84,5
 "datasets","Formaldehyde","Determination of Formaldehyde",6,2
 "datasets","HairEyeColor","Hair and Eye Color of Statistics Students",32,4
 "datasets","InsectSprays","Effectiveness of Insect Sprays",72,2
 "datasets","LifeCycleSavings","Intercountry Life-Cycle Savings Data",50,6
+"datasets","Loblolly","Growth of Loblolly pine trees",84,4
 "datasets","OrchardSprays","Potency of Orchard Sprays",64,4
 "datasets","PlantGrowth","Results from an Experiment on Plant Growth",30,2
 "datasets","Puromycin","Reaction Velocity of an Enzymatic Reaction",23,3
+"datasets","Theoph","Pharmacokinetics of Theophylline",132,5
 "datasets","Titanic","Survival of passengers on the Titanic",32,5
 "datasets","ToothGrowth","The Effect of Vitamin C on Tooth Growth in Guinea Pigs",60,3
 "datasets","UCBAdmissions","Student Admissions at UC Berkeley",24,4
@@ -492,9 +506,6 @@
 "datasets","volcano","Topographic Information on Auckland's Maunga Whau Volcano",87,61
 "datasets","warpbreaks","The Number of Breaks in Yarn during Weaving",54,3
 "datasets","women","Average Heights and Weights for American Women",15,2
-"datasets","CO2","Carbon Dioxide Uptake in Grass Plants",84,5
-"datasets","Loblolly","Growth of Loblolly pine trees",84,4
-"datasets","Theoph","Pharmacokinetics of Theophylline",132,5
 "gap","PD","A study of Parkinson's disease and APOE, LRRK2, SNCA makers",825,22
 "gap","aldh2","ALDH2 markers and Alcoholism",263,18
 "gap","apoeapoc","APOE/APOC1 markers and Alzheimer's",353,8
@@ -526,7 +537,7 @@
 "lme4","Pastes","Paste strength by batch and cask",60,4
 "lme4","Penicillin","Variation in penicillin testing",144,3
 "lme4","VerbAgg","Verbal Aggression item responses",7584,9
-"lme4","cake","Breakage angle of chocolate cakes",270,5
+"lme4","cake","Breakage Angle of Chocolate Cakes",270,5
 "lme4","cbpp","Contagious bovine pleuropneumonia",56,4
 "lme4","grouseticks","Data on red grouse ticks from Elston et al. 2001",403,7
 "lme4","sleepstudy","Reaction times in a sleep deprivation study",180,3
@@ -580,7 +591,7 @@
 "pscl","ca2006","California Congressional Districts in 2006",53,13
 "pscl","iraqVote","U.S. Senate vote on the use of force against Iraq, 2002.",100,6
 "pscl","politicalInformation","Interviewer ratings of respondent levels of political information",1807,8
-"pscl","presidentialElections","elections for U.S. President, 1932-2008, by state",996,4
+"pscl","presidentialElections","elections for U.S. President, 1932-2012, by state",1047,4
 "pscl","prussian","Prussian army horse kick data",280,3
 "pscl","unionDensity","cross national rates of trade union density",20,5
 "pscl","vote92","Reports of voting in the 1992 U.S. Presidential election.",909,9
@@ -686,7 +697,7 @@
 "survival","nwtco","Data from the National Wilm's Tumor Study",4028,9
 "survival","ovarian","Ovarian Cancer Survival Data",26,6
 "survival","pbc","Mayo Clinic Primary Biliary Cirrhosis Data",418,20
-"survival","rats","Rat treatment data from Mantel et al",150,4
+"survival","rats","Rat treatment data from Mantel et al",300,5
 "survival","stanford2","More Stanford Heart Transplant data",184,5
 "survival","tobin","Tobin's Tobit data",20,3
 "survival","veteran","Veterans' Administration Lung Cancer study",137,8

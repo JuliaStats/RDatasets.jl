@@ -2,13 +2,11 @@
 # Correctness Tests
 #
 
-using Base.Test
-using DataArrays
-using DataFrames
+using RDatasets
 
-my_tests = ["dataset.jl",
+my_tests = ["packages.jl",
             "datasets.jl",
-            "packages.jl"]
+            "dataset.jl"]
 
 println("Running tests:")
 
