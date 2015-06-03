@@ -8,5 +8,5 @@ module RDatasets
     include("datasets.jl")
     include("packages.jl")
 
-    Base.@deprecate available_datasets datasets
+    Base.@deprecate available_datasets RDatasets.datasets
 end
