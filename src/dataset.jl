@@ -1,4 +1,4 @@
-function dataset(package_name::String, dataset_name::String)
+function dataset(package_name::AbstractString, dataset_name::AbstractString)
     basename = joinpath(dirname(@__FILE__), "..", "data", package_name)
     
     rdaname = joinpath(basename, string(dataset_name, ".rda"))

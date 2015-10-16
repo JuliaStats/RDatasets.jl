@@ -1,4 +1,4 @@
-function datasets(package_name::String)
+function datasets(package_name::AbstractString)
 	d = datasets()
 	d[d[:Package] .== package_name, :]
 end

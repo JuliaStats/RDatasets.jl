@@ -1,5 +1,6 @@
 module RDatasets
     using Reexport
+    using Compat
     @reexport using DataFrames
 
     export dataset
