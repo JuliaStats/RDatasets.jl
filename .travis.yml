@@ -1,7 +1,9 @@
 language: julia
 os:
-  - linux
+    - linux
+    - osx
 julia:
+  - 0.3
   - release
   - nightly
 notifications:
