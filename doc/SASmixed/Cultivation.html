@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bacterial innoculation applied to grass cultivars</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Cultivation"><tr><td>Cultivation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bacterial innoculation applied to grass cultivars</h2>
+
+<h3>Description</h3>
+
+<p>The <code>Cultivation</code> data frame has 24 rows and 4 columns of data
+from an experiment on the effect on dry weight yield of three
+bacterial inoculation treatments applied to two grass cultivars.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>Block</dt><dd>
+<p>a factor with levels <code>1</code> to <code>4</code>
+</p>
+</dd>
+<dt>Cult</dt><dd>
+<p>the cultivar factor with levels <code>a</code> and <code>b</code>
+</p>
+</dd>
+<dt>Inoc</dt><dd>
+<p>the innoculant factor with levels <code>con</code>, <code>dea</code> and
+<code>liv</code>
+</p>
+</dd>
+<dt>drywt</dt><dd>
+<p>a numeric vector of dry weight yields
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Littell, R. C., Milliken, G. A., Stroup, W. W., and Wolfinger,
+R. D. (1996), <em>SAS System for Mixed Models</em>, SAS Institute
+(Data Set 2.2(a)).
+</p>
+<p>Littel, R. C., Freund, R. J., and Spector, P. C. (1991), <em>SAS
+System for Linear Models, Third Ed.</em>, SAS Institute.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Cultivation)
+xtabs(~Block+Cult, Cultivation)
+if (require("lme4", quietly = TRUE, character = TRUE)) {
+  options(contrasts = c(unordered = "contr.SAS", ordered = "contr.poly"))
+  ## compare with Output 2.10, page 58
+  print(fm1Cult &lt;- lmer(drywt ~ Inoc * Cult + (1|Block) + (1|Cult),
+                          Cultivation))
+  print(anova(fm1Cult))
+  print(fm2Cult &lt;- lmer(drywt ~ Inoc + Cult + (1|Block) + (1|Cult),
+                          Cultivation))
+  print(anova(fm2Cult))
+  print(fm3Cult &lt;- lmer(drywt ~ Inoc + (1|Block) + (1|Cult), Cultivation))
+  print(anova(fm3Cult))
+}
+</pre>
+
+
+</body></html>
