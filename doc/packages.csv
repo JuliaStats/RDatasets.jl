@@ -32,3 +32,7 @@
 "sem","Structural Equation Models"
 "survival","Survival Analysis"
 "vcd","Visualizing Categorical Data"
+"evir","Extreme Values in R"
+"geepack", "Generalize Estimating Equation Package"
+"multgee", "GEE Solver for Correlated Nominal or Ordinal Multinomial Responses"
+"texmex", "Statistical modelling of extreme values"

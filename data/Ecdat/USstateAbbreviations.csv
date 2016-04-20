@@ -1,77 +1,0 @@
-Name,Status,ISO,ANSI.letters,ANSI.digits,USPS,USCG,Old.GPO,AP,Other
-United States,Federal state,"USUSA",US,0,,,U.S.,U.S.,U.S.A.
-Alabama,State,US-AL,AL,1,AL,AL,Ala.,Ala.,
-Alaska,State,US-AK,AK,2,AK,AK,Alaska,Alaska,Alas.
-Arizona,State,US-AZ,AZ,4,AZ,AZ,Ariz.,Ariz.,Az.
-Arkansas,State,US-AR,AR,5,AR,AR,Ark.,Ark.,
-California,State,US-CA,CA,6,CA,CF,Calif.,Calif.,"Ca., Cal., Cali."
-Colorado,State,US-CO,CO,8,CO,CL,Colo.,Colo.,Col.
-Connecticut,State,US-CT,CT,9,CT,CT,Conn.,Conn.,Ct.
-Delaware,State,US-DE,DE,10,DE,DL,Del.,Del.,De.
-District of Columbia,Federal district,US-DC,DC,11,DC,DC,D.C.,D.C.,Wash._D.C.
-Florida,State,US-FL,FL,12,FL,FL,Fla.,Fla.,"Fl., Flor."
-Georgia,State,US-GA,GA,13,GA,GA,Ga.,Ga.,
-Hawaii,State,US-HI,HI,15,HI,HA,Hawaii,Hawaii,H.I.
-Idaho,State,US-ID,ID,16,ID,ID,Idaho,Idaho,"Id., Ida."
-Illinois,State,US-IL,IL,17,IL,IL,Ill.,Ill.,"Il., Ills., Ill's"
-Indiana,State,US-IN,IN,18,IN,IN,Ind.,Ind.,In.
-Iowa,State,US-IA,IA,19,IA,IA,Iowa,Iowa,"Ia., Ioa."
-Kansas,State,US-KS,KS,20,KS,KA,Kans.,Kan.,"Ks., Ka."
-Kentucky,State (Commonwealth),US-KY,KY,21,KY,KY,Ky.,Ky.,"Ken., Kent."
-Louisiana,State,US-LA,LA,22,LA,LA,La.,La.,
-Maine,State,US-ME,ME,23,ME,ME,Maine,Maine,Me.
-Maryland,State,US-MD,MD,24,MD,MD,Md.,Md.,
-Massachusetts,State (Commonwealth),US-MA,MA,25,MA,MS,Mass.,Mass.,
-Michigan,State,US-MI,MI,26,MI,MC,Mich.,Mich.,
-Minnesota,State,US-MN,MN,27,MN,MN,Minn.,Minn.,Mn.
-Mississippi,State,US-MS,MS,28,MS,MI,Miss.,Miss.,
-Missouri,State,US-MO,MO,29,MO,MO,Mo.,Mo.,
-Montana,State,US-MT,MT,30,MT,MT,Mont.,Mont.,
-Nebraska,State,US-NE,NE,31,NE,NB,Nebr.,Neb.,
-Nevada,State,US-NV,NV,32,NV,NV,Nev.,Nev.,Nv.
-New Hampshire,State,US-NH,NH,33,NH,NH,N.H.,N.H.,
-New Jersey,State,US-NJ,NJ,34,NJ,NJ,N.J.,N.J.,
-New Mexico,State,US-NM,NM,35,NM,NM,N._Mex.,N.M.,New_M.
-New York,State,US-NY,NY,36,NY,NY,N.Y.,N.Y.,N._York
-North Carolina,State,US-NC,NC,37,NC,NC,N.C.,N.C.,N._Car.
-North Dakota,State,US-ND,ND,38,ND,ND,N._Dak.,N.D.,NoDak
-Ohio,State,US-OH,OH,39,OH,OH,Ohio,Ohio,"O., Oh."
-Oklahoma,State,US-OK,OK,40,OK,OK,Okla.,Okla.,Ok.
-Oregon,State,US-OR,OR,41,OR,OR,Oreg.,Ore.,Or.
-Pennsylvania,State (Commonwealth),US-PA,PA,42,PA,PA,Pa.,Pa.,"Penn., Penna."
-Rhode Island,State,US-RI,RI,44,RI,RI,R.I.,R.I.,R.I._P.P.
-South Carolina,State,US-SC,SC,45,SC,SC,S.C.,S.C.,S._Car.
-South Dakota,State,US-SD,SD,46,SD,SD,S._Dak.,S.D.,SoDak
-Tennessee,State,US-TN,TN,47,TN,TN,Tenn.,Tenn.,Tn.
-Texas,State,US-TX,TX,48,TX,TX,Tex.,Texas,Tx.
-Utah,State,US-UT,UT,49,UT,UT,Utah,Utah,Ut.
-Vermont,State,US-VT,VT,50,VT,VT,Vt.,Vt.,
-Virginia,State (Commonwealth),US-VA,VA,51,VA,VA,Va.,Va.,Virg.
-Washington,State,US-WA,WA,53,WA,WN,Wash.,Wash.,"Wa., Wn."
-West Virginia,State,US-WV,WV,54,WV,WV,W._Va.,W.Va.,"W.V., W._Virg."
-Wisconsin,State,US-WI,WI,55,WI,WS,Wis.,Wis.,"Wi., Wisc."
-Wyoming,State,US-WY,WY,56,WY,WY,Wyo.,Wyo.,Wy.
-American Samoa,Insular area (Territory),"ASASMUS-AS",AS,60,AS,AS,A.S.,,
-Guam,Insular area (Territory),"GUGUMUS-GU",GU,66,GU,GU,Guam,,
-Northern Mariana Islands,Insular area (Commonwealth),"MPMNPUS-MP",MP,69,MP,CM,M.P.,,
-Puerto Rico,Insular area (Commonwealth),"PRPRIUS-PR",PR,72,PR,PR,P.R.,,
-Virgin Islands,Insular area (Territory),"VIVIRUS-VI",VI,78,VI,VI,V.I.,,U.S.V.I.
-U.S. Minor Outlying Islands,Insular areas,"UMUMIUS-UM",UM,74,,,,,
-Baker Island,island,UM-81,,81,,,,,
-Howland Island,island,UM-84,,84,,,,,
-Jarvis Island,island,UM-86,,86,,,,,
-Johnston Atoll,atoll,UM-67,,67,,,,,
-Kingman Reef,atoll,UM-89,,89,,,,,
-Midway Islands,atoll,UM-71,,71,,,,,
-Navassa Island,island,UM-76,,76,,,,,
-Palmyra Atoll,atoll,UM-95,,95,,,,,
-Wake Island,atoll,UM-79,,79,,,,,
-Federated States of Micronesia,Freely associated state,"FMFSM",FM,64,FM,,,,
-Marshall Islands,Freely associated state,"MHMHL",MH,68,MH,,,,
-Palau,Freely associated state,"PWPLW",PW,70,PW,,,,
-U.S. Armed Forces _ Americas,US military mail code,,,,AA,,,,
-U.S. Armed Forces _ Europe,US military mail code,,,,AE,,,,
-U.S. Armed Forces _ Pacific,US military mail code,,,,AP,,,,
-Panama Canal Zone,Obsolete postal code,,,,CZ,,,,
-Philippine Islands,Obsolete postal code,"PHPHL",,,PI,,,,
-Trust Territory of the Pacific Islands,Obsolete postal code,,,,TT,,,,
