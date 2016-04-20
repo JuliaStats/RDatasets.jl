@@ -732,93 +732,92 @@ vcd,VisualAcuity,Visual Acuity in Left and Right Eyes,32,4
 vcd,VonBort,Von Bortkiewicz Horse Kicks Data,280,4
 vcd,WeldonDice,Weldon's Dice Data,11,2
 vcd,WomenQueue,Women in Queues,11,2
-boot,manaus,,,
-boot,wool,,,
-car,KosteckiDillon,,,
-car,Wong,,,
-COUNT,azcabgptca,,,
-COUNT,azprocedure,,,
-COUNT,fishing,,,
-COUNT,nuts,,,
-COUNT,rwm1984,,,
-COUNT,smoking,,,
-datasets,airmiles,,,
-datasets,AirPassengers,,,
-datasets,austres,,,
-datasets,BJsales,,,
-datasets,discoveries,,,
-datasets,JohnsonJohnson,,,
-datasets,LakeHuron,,,
-datasets,lh,,,
-datasets,lynx,,,
-datasets,nhtemp,,,
-datasets,Nile,,,
-datasets,nottem,,,
-datasets,npk,,,
-datasets,presidents,,,
-datasets,sunspot.month,,,
-datasets,sunspot.year,,,
-datasets,sunspots,,,
-datasets,treering,,,
-datasets,UKDriverDeaths,,,
-datasets,UKgas,,,
-datasets,USAccDeaths,,,
-datasets,uspop,,,
-datasets,WWWusage,,,
-Ecdat,bankingCrises,,,
-Ecdat,breaches,,,
-Ecdat,CRANpackages,,,
-Ecdat,HHSCyberSecurityBreaches,,,
-Ecdat,nonEnglishNames,,,
-Ecdat,politicalKnowledge,,,
-Ecdat,USclassifiedDocuments,,,
-Ecdat,USFinanceIndustry,,,
-Ecdat,USstateAbbreviations,,,
-Ecdat,UStaxWords,,,
-Ecdat,VietNamH,,,
-evir,bmw,,,
-evir,danish,,,
-evir,nidd.annual,,,
-evir,nidd.thresh,,,
-evir,siemens,,,
-evir,sp.raw,,,
-evir,spto87,,,
-gap,hr1420,,,
-gap,l51,,,
-gap,meyer,,,
-gap,mfblong,,,
-geepack,dietox,,,
-geepack,koch,,,
-geepack,ohio,,,
-geepack,respdis,,,
-geepack,respiratory,,,
-geepack,seizure,,,
-geepack,sitka89,,,
-geepack,spruce,,,
-HistData,Snow.deaths2,,,
-HistData,Wheat,,,
-lme4,Arabidopsis,,,
-MASS,accdeaths,,,
-MASS,drivers,,,
-multgee,arthritis,,,
-multgee,housing,,,
-plm,Parity,,,
-plm,RiceFarms,,,
-psych,ability,,,
-psych,bfi.dictionary,,,
-psych,epi,,,
-psych,epi.dictionary,,,
-psych,Gleser,,,
-quantreg,gasprice,,,
-robustbase,biomassTill,,,
-robustbase,foodstamp,,,
-survival,flchain,,,
-survival,mgus2,,,
-survival,transplant,,,
-texmex,liver,,,
-texmex,portpirie,,,
-texmex,rain,,,
-texmex,summer,,,
-texmex,wavesurge,,,
-texmex,winter,,,
-Zelig,seatshare,,,
+boot,manaus,Average Heights of the Rio Negro river at Manaus,1080,2
+boot,wool,Australian Relative Wool Prices,309,2
+car,KosteckiDillon,Treatment of Migraine Headaches,4152,9
+car,Wong,Post-Coma Recovery of IQ,331,7
+COUNT,azcabgptca,azcabgptca,1959,6
+COUNT,azprocedure,azprocedure,3589,6
+COUNT,fishing,fishing,147,7
+COUNT,nuts,nuts,52,8
+COUNT,rwm1984,rwm1984,3874,15
+COUNT,smoking,smoking,26,5
+datasets,airmiles,"Passenger Miles on Commercial US Airlines, 1937-1960",24,2
+datasets,AirPassengers,Monthly Airline Passenger Numbers 1949-1960,144,2
+datasets,austres,Quarterly Time Series of the Number of Australian Residents,89,2
+datasets,BJsales,Sales Data with Leading Indicator,150,2
+datasets,discoveries,Yearly Numbers of Important Discoveries,100,2
+datasets,JohnsonJohnson,Quarterly Earnings per Johnson & Johnson Share,84,2
+datasets,LakeHuron,Level of Lake Huron 1875-1972,98,2
+datasets,lh,Luteinizing Hormone in Blood Samples,48,2
+datasets,lynx,Annual Canadian Lynx trappings 1821-1934,114,2
+datasets,nhtemp,Average Yearly Temperatures in New Haven,60,2
+datasets,Nile,Flow of the River Nile,100,2
+datasets,nottem,"Average Monthly Temperatures at Nottingham, 1920-1939",240,2
+datasets,npk,"Classical N, P, K Factorial Experiment",24,5
+datasets,presidents,Quarterly Approval Ratings of US Presidents,120,2
+datasets,sunspot.month,"Monthly Sunspot Data, from 1749 to ""Present""",3177,2
+datasets,sunspot.year,"Yearly Sunspot Data, 1700-1988",289,2
+datasets,sunspots,"Monthly Sunspot Numbers, 1749-1983",2820,2
+datasets,treering,"Yearly Treering Data, -6000-1979",7980,2
+datasets,UKDriverDeaths,Road Casualties in Great Britain 1969-84,192,2
+datasets,UKgas,UK Quarterly Gas Consumption,108,2
+datasets,USAccDeaths,Accidental Deaths in the US 1973-1978,72,2
+datasets,uspop,Populations Recorded by the US Census,19,2
+datasets,WWWusage,Internet Usage per Minute,100,2
+Ecdat,bankingCrises,Countries in Banking Crises,211,71
+Ecdat,breaches,Cyber Security Breaches,1055,13
+Ecdat,CRANpackages,Growth of CRAN,29,4
+Ecdat,nonEnglishNames,Names with Character Set Problems,11,2
+Ecdat,politicalKnowledge,Political knowledge in the US and Europe,4,12
+Ecdat,USclassifiedDocuments,Official Secrecy of the United States Government,29,5
+Ecdat,USFinanceIndustry,US Finance Industry Profits,84,7
+Ecdat,USstateAbbreviations,Standard abbreviations for states of the United States,76,10
+Ecdat,UStaxWords,Number of Words in US Tax Law,6,10
+Ecdat,VietNamH,Medical Expenses in Viet-nam (household Level),5999,11
+evir,bmw,Daily Log Returns on BMW Share Price,6146,1
+evir,danish,Danish Fire Insurance Claims,2167,1
+evir,nidd.annual,The River Nidd Data,35,1
+evir,nidd.thresh,The River Nidd Data,154,1
+evir,siemens,Daily Log Returns on Siemens Share Price,6146,1
+evir,sp.raw,SP Data to June 1993,8415,1
+evir,spto87,SP Return Data to October 1987,6985,1
+gap,hr1420,An example data for Manhattan plot with annotation,147849,6
+gap,l51,An example pedigree data,51,6
+gap,meyer,A pedigree data on 282 animals deriving from two generations,306,5
+gap,mfblong,Example data for ACEnucfam,3000,11
+geepack,dietox,Growth curves of pigs in a 3x3 factorial experiment,861,7
+geepack,koch,Ordinal Data from Koch,288,5
+geepack,ohio,Ohio Children Wheeze Status,2148,4
+geepack,respdis,Clustered Ordinal Respiratory Disorder,111,5
+geepack,respiratory,Data from a clinical trial comparing two treatments for a respiratory illness,444,8
+geepack,seizure,Epiliptic Seizures,59,7
+geepack,sitka89,Growth of Sitka Spruce Trees,632,4
+geepack,spruce,Log-size of 79 Sitka spruce trees,1027,7
+HistData,Snow.deaths2,John Snow's map and data on the 1854 London Cholera outbreak,578,3
+HistData,Wheat,Playfair's Data on Wages and the Price of Wheat,53,3
+lme4,Arabidopsis,Arabidopsis clipping/fertilization data,625,8
+MASS,accdeaths,Accidental Deaths in the US 1973-1978,72,2
+MASS,drivers,Deaths of Car Drivers in Great Britain 1969-84,192,2
+multgee,arthritis,Rheumatoid Arthritis Clinical Trial,906,7
+multgee,housing,Homeless Data,1448,4
+plm,Parity,Purchasing Power Parity and other parity relationships,1768,9
+plm,RiceFarms,Production of Rice in India,1026,20
+psych,ability,16 ability items scored as correct or incorrect.,1525,16
+psych,bfi.dictionary,25 Personality items representing 5 factors,28,8
+psych,epi,Eysenck Personality Inventory (EPI) data for 3570 participants,3570,57
+psych,epi.dictionary,13 personality scales from the Eysenck Personality Inventory and Big 5 inventory,57,2
+psych,Gleser,"Example data from Gleser, Cronbach and Rajaratnam (1965) to show basic principles of generalizability theory.",12,12
+quantreg,gasprice,Time Series of US Gasoline Prices,695,2
+robustbase,biomassTill,Biomass Tillage Data,58,4
+robustbase,foodstamp,Food Stamp Program Participation,150,4
+survival,flchain,Assay of serum free light chain for 7874 subjects.,7874,11
+survival,mgus2,Monoclonal gammapothy data,1384,10
+survival,transplant,Liver transplant waiting list,815,6
+texmex,liver,Liver related laboratory data,606,9
+texmex,portpirie,"Rain, wavesurge and portpirie datasets.",65,2
+texmex,rain,"Rain, wavesurge and portpirie datasets.",17531,1
+texmex,summer,"Air pollution data, separately for summer and winter months",578,5
+texmex,wavesurge,"Rain, wavesurge and portpirie datasets.",2894,2
+texmex,winter,"Air pollution data, separately for summer and winter months",532,5
+Zelig,seatshare,Left Party Seat Share in 11 OECD Countries,384,4

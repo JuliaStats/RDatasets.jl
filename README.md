@@ -59,7 +59,7 @@ geepack      | Generalize Estimating Equation Package
 multgee      | GEE Solver for Correlated Nominal or Ordinal Multinomial Responses
 texmex       | Statistical modelling of extreme values
 
-The `RDatasets.datasets()` function returns a table describing the 700+ included datasets. Or pass in a package name (e.g. `RDatasets.datasets("mlmRev")`) for a targeted table:
+The `RDatasets.datasets()` function returns a table describing the 823 included datasets. Or pass in a package name (e.g. `RDatasets.datasets("mlmRev")`) for a targeted table:
 
 Package|Dataset|Title|Rows|Columns
 ---|---|---|---:|---:
