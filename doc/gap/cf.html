@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cystic fibrosis data</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Cystic fibrosis data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for cf"><tr><td>cf</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cf"><tr><td>cf</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Cystic fibrosis data</h2>
 
@@ -31,9 +32,10 @@
 
 <h3>Note</h3>
 
+
 <p>This can be used as an example of converting PL-EM to matrix format,
 </p>
-<pre>
+<PRE>
 cfdata &lt;- vector("numeric")
 cfname &lt;- vector("character")
 for (i in 2:dim(cf)[2])
@@ -48,7 +50,7 @@ for (i in 2:dim(cf)[2])
 }
 cfdata &lt;- as.data.frame(cfdata)
 names(cfdata) &lt;- cfname
-</pre>
+</PRE>
 
 
 <h3>Source</h3>

@@ -1,23 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Income Inequality in the US</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Income Inequality in the US</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for incomeInequality"><tr><td>incomeInequality</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for incomeInequality"><tr><td>incomeInequality</td><td align="right">R Documentation</td></tr></table>
 
 <h2> Income Inequality in the US  </h2>
 
 <h3>Description</h3>
 
+
 <p>Data on quantiles of the distributions of family incomes in the United
 States. This combines three data sources:
 </p>
-<p>(1) US Census Table F-1 for the central quantiles
+<p>(1) US Census Table F-1 for the central qualitiles
 </p>
 <p>(2) Piketty and Saez for the 95th and higher quantiles
 </p>
 <p>(3) Gross Domestic Product and implicit price deflators from
-<a href="http://MeasuringWorth.com">MeasuringWorth.com</a>
+<a href="MeasuringWorth.com">MeasuringWorth.com</a>.
 </p>
 
 
@@ -28,11 +30,11 @@ States. This combines three data sources:
 
 <h3>Format</h3>
 
-<p>A <code>data.frame</code> containing:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>Year</dt><dd><p> numeric year 1947:2012 </p>
+<dt>Year</dt><dd><p> numeric year 1947:2011 </p>
 </dd>
 <dt>Number.thousands</dt><dd><p> number of families in the US </p>
 </dd>
@@ -53,7 +55,7 @@ practical purposes.
 <dt>realGDP.M, GDP.Deflator, PopulationK, realGDPperCap </dt><dd>
 <p>real GDP in millions, GDP implicit price deflators, US population
 in thousands, and real GDP per capita, according to
-<a href="http://MeasuringWorth.com">MeasuringWorth.com</a>.
+<a href="MeasuringWorth.com">MeasuringWorth.com</a>.
 </p>
 </dd>
 <dt>P95IRSvsCensus</dt><dd>
@@ -71,7 +73,7 @@ the different quantiles of interest in this combined dataset.
 <dt>personsPerFamily</dt><dd>
 <p>average number of persons per family using the number of families
 from US Census Table F-1 and the population from
-<a href="http://MeasuringWorth.com">MeasuringWorth.com</a>.
+<a href="MeasuringWorth.com">MeasuringWorth.com</a>.
 </p>
 </dd>
 <dt>realGDPperFamily</dt><dd>
@@ -89,36 +91,31 @@ skewness and income inequality.
 
 <h3>Details</h3>
 
+
 <p>For details on how this <code>data.frame</code> was created, see
 &quot;F1.PikettySaez.R&quot; in <code>system.file('scripts', package='fda')</code>.
 This provides links for files to download and R commands to read those
 files and convert them into an updated version of
 <code>incomeInequality</code>.  This is a reasonable thing to do if it is
-more  than 2 years since <code>max(incomeInequality$year)</code>.  All data
-are in constant 2012 dollars.
+more  than 2 years since <code>max(incomeInequality$year)</code>.
 </p>
-
-
-<h3>Author(s)</h3>
-
-<p>Spencer Graves</p>
 
 
 <h3>Source</h3>
 
+
 <p>United States Census Bureau, Table F-1. Income Limits for Each Fifth
 and Top 5 Percent of Families, All Races,
 <a href="http://www.census.gov/hhes/www/income/data/historical/families">http://www.census.gov/hhes/www/income/data/historical/families</a>,
-accessed March 25, 2014.
+accessed January 9, 2013.
 </p>
 <p>Thomas Piketty and Emmanuel Saez (2003) &quot;Income Inequality in the
 United States, 1913-1998&quot;, Quarterly Journal of Economics, 118(1)
-1-39, <a href="http://elsa.berkeley.edu/~saez">http://elsa.berkeley.edu/~saez</a>, update accessed February
-28, 2014.
+1-39, <a href="http://elsa.berkeley.edu/~saez">http://elsa.berkeley.edu/~saez</a>, accessed January 9, 2013.
 </p>
 <p>Louis Johnston and Samuel H. Williamson (2011) &quot;What Was the U.S. GDP
 Then?&quot; MeasuringWorth, <a href="http://www.measuringworth.org/usgdp">http://www.measuringworth.org/usgdp</a>,
-accessed February 28, 2014.
+accessed January 9, 2013.
 </p>
 
 

@@ -1,13 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Votes in German Bundestag Election 2005</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Votes in German Bundestag Election 2005</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for Bundestag2005"><tr><td>Bundestag2005</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Bundestag2005"><tr><td>Bundestag2005</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Votes in German Bundestag Election 2005</h2>
 
 <h3>Description</h3>
+
 
 <p>Number of votes by province in the German Bundestag election
 2005 (for the parties that eventually entered the parliament).
@@ -23,6 +25,7 @@ data("Bundestag2005")
 
 <h3>Format</h3>
 
+
 <p>A 2-way <code>"table"</code> giving the number of votes for each
 party (<code>Fraktion</code>) in each of the 16 German provinces
 (<code>Bundesland</code>):
@@ -30,16 +33,16 @@ party (<code>Fraktion</code>) in each of the 16 German provinces
 
 <table summary="Rd table">
 <tr>
- <td style="text-align: right;">
-    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+ <td align="right">
+    No </td><td align="left"> Name </td><td align="left"> Levels </td>
 </tr>
 <tr>
- <td style="text-align: right;">
-    1 </td><td style="text-align: left;"> Bundesland </td><td style="text-align: left;"> Schleswig-Holstein, Mecklenburg-Vorpommern, ... </td>
+ <td align="right">
+    1 </td><td align="left"> Bundesland </td><td align="left"> Schleswig-Holstein, Mecklenburg-Vorpommern, ... </td>
 </tr>
 <tr>
- <td style="text-align: right;">
-    2 </td><td style="text-align: left;"> Fraktion </td><td style="text-align: left;"> SPD, CDU/CSU, Gruene, FDP, Linke
+ <td align="right">
+    2 </td><td align="left"> Fraktion </td><td align="left"> SPD, CDU/CSU, Gruene, FDP, Linke
   </td>
 </tr>
 
@@ -48,6 +51,7 @@ party (<code>Fraktion</code>) in each of the 16 German provinces
 
 
 <h3>Details</h3>
+
 
 <p>In the election for the German parliament &ldquo;Bundestag&rdquo;, 
 five parties obtained enough votes to enter the parliament:
@@ -69,15 +73,15 @@ that resulted from the election.
 
 <h3>Source</h3>
 
+
 <p>Der Bundeswahlleiter, Statistisches Bundesamt.  
-<a href="http://www.bundeswahlleiter.de/de/bundestagswahlen/fruehere_bundestagswahlen/btw2005.html">http://www.bundeswahlleiter.de/de/bundestagswahlen/fruehere_bundestagswahlen/btw2005.html</a>
+<a href="http://www.bundeswahlleiter.de/bundestagswahl2005/">http://www.bundeswahlleiter.de/bundestagswahl2005/</a>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-library(colorspace)
 ## The outcome of the election in terms of seats in the
 ## parliament was:
 seats &lt;- structure(c(226, 61, 54, 51, 222),

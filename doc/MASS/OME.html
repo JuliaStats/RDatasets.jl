@@ -1,15 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tests of Auditory Perception in Children with OME</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Tests of Auditory Perception in Children with OME</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for OME"><tr><td>OME</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for OME"><tr><td>OME</td><td align="right">R Documentation</td></tr></table>
 
 <h2>
 Tests of Auditory Perception in Children with OME
 </h2>
 
 <h3>Description</h3>
+
 
 <p>Experiments were performed on children on their ability to
 differentiate a signal in broad-band noise. The noise was played from
@@ -33,6 +35,7 @@ OME
 
 
 <h3>Format</h3>
+
 
 <p>The <code>OME</code> data frame has 1129 rows and 7 columns:
 </p>
@@ -75,6 +78,7 @@ measured at different ages.
 
 <h3>Background</h3>
 
+
 <p>The experiment was to study otitis media with effusion (OME), a very
 common childhood condition where the middle ear space, which is
 normally air-filled, becomes congested by a fluid.  There is a
@@ -100,6 +104,7 @@ into one group of high OME prevalence and one of low prevalence.
 
 
 <h3>Source</h3>
+
 
 <p>Sarah Hogan, Dept of Physiology, University of Oxford, via
 Dept of Statistics Consulting Service
@@ -187,21 +192,23 @@ OMEf$Resp &lt;- with(OME, rep(rep(c(1,0), length(Trials)),
                           t(cbind(Correct, Trials-Correct))))
 OMEf &lt;- OMEf[, -match(c("Correct", "Trials"), names(OMEf))]
 
-## Not run: ## these fail in R on most platforms
+## Not run: ## this fails in R on some platforms
 fp2 &lt;- deriv(~ 0.5 + 0.5/(1 + exp(-(x-L75)/exp(lsc))),
              c("L75", "lsc"),
              function(x, L75, lsc) NULL)
-try(summary(nlme(Resp ~ fp2(Loud, L75, lsc),
+G1.nlme &lt;- nlme(Resp ~ fp2(Loud, L75, lsc),
      fixed = list(L75 ~ Age, lsc ~ 1),
      random = L75 + lsc ~ 1 | UID,
      data = OMEf[OMEf$Noise == "coherent",], method = "ML",
-     start = list(fixed=c(L75=c(48.7, -0.03), lsc=0.24)), verbose = TRUE)))
+     start = list(fixed=c(L75=c(48.7, -0.03), lsc=0.24)), verbose = TRUE)
+summary(G1.nlme)
 
-try(summary(nlme(Resp ~ fp2(Loud, L75, lsc),
+G2.nlme &lt;- nlme(Resp ~ fp2(Loud, L75, lsc),
      fixed = list(L75 ~ Age, lsc ~ 1),
      random = L75 + lsc ~ 1 | UID,
-     data = OMEf[OMEf$Noise == "incoherent",], method = "ML",
-     start = list(fixed=c(L75=c(41.5, -0.1), lsc=0)), verbose = TRUE)))
+     data = OMEf[OMEf$Noise == "incoherent",], method="ML",
+     start = list(fixed=c(L75=c(41.5, -0.1), lsc=0)), verbose = TRUE)
+summary(G2.nlme)
 
 ## End(Not run)</pre>
 

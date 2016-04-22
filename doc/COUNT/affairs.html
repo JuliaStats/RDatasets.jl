@@ -1,13 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: affairs</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: affairs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for affairs"><tr><td>affairs</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for affairs"><tr><td>affairs</td><td align="right">R Documentation</td></tr></table>
 
 <h2>affairs</h2>
 
 <h3>Description</h3>
+
 
 <p>Data from Fair (1978). Although Fair used a tobit model with the 
 data, the outcome measure can be modeled as a count. In fact, 
@@ -26,6 +28,7 @@ of affairs reported by the participant in the past year.
 
 
 <h3>Format</h3>
+
 
 <p>A data frame with 601 observations on the following 18 variables.
 </p>
@@ -73,6 +76,7 @@ of affairs reported by the participant in the past year.
 
 <h3>Details</h3>
 
+
 <p>rwm5yr is saved as a data frame.
 Count models use naffairs as response variable. 0 counts are included.
 </p>
@@ -80,12 +84,14 @@ Count models use naffairs as response variable. 0 counts are included.
 
 <h3>Source</h3>
 
+
 <p>Fair, R. (1978). A Theory of Extramarital Affairs, Journal of Political Economy, 86: 45-61.
 Greene, W.H. (2003). Econometric Analysis, Fifth Edition, New York: Macmillan.
 </p>
 
 
 <h3>References</h3>
+
 
 <p>Hilbe, Joseph M (2011), Negative Binomial Regression, Cambridge University Press
 Hilbe, Joseph M (2009), Logistic regression Models, Chapman &amp; Hall/CRC
@@ -96,14 +102,11 @@ Hilbe, Joseph M (2009), Logistic regression Models, Chapman &amp; Hall/CRC
 
 <pre>
 data(affairs)
-glmaffp &lt;- glm(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5,
-               family = poisson, data = affairs)
+glmaffp &lt;- glm(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5, family=poisson, data=affairs)
 summary(glmaffp)
 exp(coef(glmaffp))
-
 require(MASS)
-glmaffnb &lt;- glm.nb(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5,
-                   data=affairs)
+glmaffnb &lt;- glm.nb(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5, data=affairs)
 summary(glmaffnb)
 exp(coef(glmaffnb))
 </pre>

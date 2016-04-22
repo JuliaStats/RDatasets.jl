@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Body Temperature Series of Beaver 2</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Body Temperature Series of Beaver 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for beav2"><tr><td>beav2</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for beav2"><tr><td>beav2</td><td align="right">R Documentation</td></tr></table>
 
 <h2>
 Body Temperature Series of Beaver 2
@@ -11,8 +12,9 @@ Body Temperature Series of Beaver 2
 
 <h3>Description</h3>
 
+
 <p>Reynolds (1994) describes a small part of a study of the long-term
-temperature dynamics of beaver <em>Castor canadensis</em> in
+temperature dynamics of beaver <EM>Castor canadensis</EM> in
 north-central Wisconsin.  Body temperature was measured by telemetry
 every 10 minutes for four females, but data from a one period of less
 than a day for each of two animals is used there.
@@ -27,6 +29,7 @@ beav2
 
 
 <h3>Format</h3>
+
 
 <p>The <code>beav2</code> data frame has 100 rows and 4 columns.
 This data frame contains the following columns:
@@ -56,22 +59,25 @@ November 3&ndash;4.
 
 <h3>Source</h3>
 
+
 <p>P. S. Reynolds (1994) Time-series analyses of beaver body temperatures.
 Chapter 11 of
 Lange, N., Ryan, L., Billard, L., Brillinger, D., Conquest, L.
 and Greenhouse, J. eds (1994)
-<em>Case Studies in Biometry.</em> New York: John Wiley and Sons.
+<EM>Case Studies in Biometry.</EM> New York: John Wiley and Sons.
 </p>
 
 
 <h3>References</h3>
 
+
 <p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<EM>Modern Applied Statistics with S.</EM> Fourth edition.  Springer.
 </p>
 
 
 <h3>See Also</h3>
+
 
 <p><code>beav1</code>
 </p>
@@ -96,7 +102,7 @@ arima(temp, order = c(1,0,0), xreg = activ)
 dreg &lt;- cbind(sin = sin(2*pi*beav2$hours/24), cos = cos(2*pi*beav2$hours/24))
 arima(temp, order = c(1,0,0), xreg = cbind(active=activ, dreg))
 
-library(nlme) # for gls and corAR1
+library(nlme)
 beav2.gls &lt;- gls(temp ~ activ, data = beav2, corr = corAR1(0.8),
                  method = "ML")
 summary(beav2.gls)

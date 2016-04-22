@@ -1,13 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: rwm5yr</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: rwm5yr</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for rwm5yr"><tr><td>rwm5yr</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rwm5yr"><tr><td>rwm5yr</td><td align="right">R Documentation</td></tr></table>
 
-<h2>rwm5yr</h2>
+<h2>
+rwm5yr
+</h2>
 
 <h3>Description</h3>
+
+
 
 <p>German health registry for the years 1984-1988. Health 
 information for years immediately prior to health reform. 
@@ -20,6 +25,7 @@ information for years immediately prior to health reform.
 
 
 <h3>Format</h3>
+
 
 <p>A data frame with 19,609 observations on the following 17 variables.
 </p>
@@ -65,6 +71,8 @@ information for years immediately prior to health reform.
 
 <h3>Details</h3>
 
+
+
 <p>rwm5yr is saved as a data frame.
 Count models typically use docvis as response variable. 0 counts are included
 </p>
@@ -72,39 +80,37 @@ Count models typically use docvis as response variable. 0 counts are included
 
 <h3>Source</h3>
 
-<p>German Health Reform Registry, years pre-reform 1984-1988, in Hilbe and Greene (2007)
+
+
+<p>German Health Reform Registry, years pre-reform 1984-1988, 
 </p>
 
 
 <h3>References</h3>
 
-<p>Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Hilbe, Joseph M (2011), Negative Binomial Regression, Cambridge University Press
-Hilbe, J. and W. Greene (2008). Count Response Regression Models, in ed. 
-C.R. Rao, J.P Miller, and D.C. Rao, Epidemiology and Medical Statistics, 
-Elsevier Handbook of  Statistics Series. London, UK: Elsevier.
+
+
+<p>Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-library(MASS)
 data(rwm5yr)
-
 glmrp &lt;- glm(docvis ~ outwork + female + age + factor(edlevel), family=poisson, data=rwm5yr)
 summary(glmrp)
 exp(coef(glmrp))
-
-## Not run: 
-library(msme)
-nb2 &lt;- nbinomial(docvis ~ outwork + female + age + factor(edlevel), data=rwm5yr)
-summary(nb2)
-exp(coef(nb2)) 
-
+library(MASS)
 glmrnb &lt;- glm.nb(docvis ~ outwork + female + age + factor(edlevel), data=rwm5yr)
 summary(glmrnb)
 exp(coef(glmrnb))
+## Not run: 
+library(gee)
+mygee &lt;- gee(docvis ~ outwork + age + factor(edlevel), id=id, 
+  corstr = "exchangeable", family=poisson, data=rwm5yr)
+summary(mygee)
+exp(coef(mygee))
 
 ## End(Not run)
 </pre>

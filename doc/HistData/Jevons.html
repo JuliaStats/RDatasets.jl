@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: W. Stanley Jevons' data on numerical discrimination</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: W. Stanley Jevons' data on numerical discrimination</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for Jevons"><tr><td>Jevons</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Jevons"><tr><td>Jevons</td><td align="right">R Documentation</td></tr></table>
 
 <h2>
 W. Stanley Jevons' data on numerical discrimination
@@ -11,7 +12,8 @@ W. Stanley Jevons' data on numerical discrimination
 
 <h3>Description</h3>
 
-<p>In a remarkable brief note in <em>Nature</em>, 1871, W. Stanley Jevons described the results of
+
+<p>In a remarkable brief note in <EM>Nature</EM>, 1871, W. Stanley Jevons described the results of
 an experiment he had conducted on himself to determine the limits of the
 number of objects an observer could comprehend immediately without counting
 them.  This was an important philosophical question: How many objects can the mind embrace at once?
@@ -34,6 +36,7 @@ complete accuracy.
 
 <h3>Format</h3>
 
+
 <p>A frequency data frame with 50 observations on the following 4 variables.
 </p>
 
@@ -52,6 +55,7 @@ complete accuracy.
 
 <h3>Details</h3>
 
+
 <p>The original data were presented in a two-way, 13 x 13 frequency table,
 <code>estimated</code> (3:15) x <code>actual</code> (3:15).
 </p>
@@ -59,16 +63,18 @@ complete accuracy.
 
 <h3>Source</h3>
 
+
 <p>Jevons, W. S. (1871).
-The Power of Numerical Discrimination, <em>Nature</em>, 1871, III (281-282)
+The Power of Numerical Discrimination, <EM>Nature</EM>, 1871, III (281-282)
 </p>
 
 
 <h3>References</h3>
 
+
 <p>Miller, G. A. (1956).
 The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information,
-<em>Psychological Review</em>, 63, 81-97, <a href="http://www.musanim.com/miller1956/">http://www.musanim.com/miller1956/</a>
+<EM>Psychological Review</EM>, 63, 81-97, <a href="http://www.musanim.com/miller1956/">http://www.musanim.com/miller1956/</a>
 </p>
 
 
@@ -81,8 +87,7 @@ xtabs(frequency ~ estimated+actual, data=Jevons)
 xtabs(frequency ~ error+actual, data=Jevons)
 
 # show as sunflowerplot with regression line
-with(Jevons, sunflowerplot(actual, estimated, frequency, 
-  main="Jevons data on numerical estimation"))
+with(Jevons, sunflowerplot(actual, estimated, frequency, main="Jevons data on numerical estimation"))
 Jmod &lt;-lm(estimated ~ actual, data=Jevons, weights=frequency)
 abline(Jmod)
 
@@ -90,12 +95,10 @@ abline(Jmod)
 if (require(gplots)) {
 
 with(Jevons, balloonplot(actual, estimated, frequency, xlab="actual", ylab="estimated", 
-  main="Jevons data on numerical estimation\nBubble area proportional to frequency",
-  text.size=0.8))
+ main="Jevons data on numerical estimation\nBubble area proportional to frequency", text.size=0.8))
 
 with(Jevons, balloonplot(actual, error, frequency, xlab="actual", ylab="error", 
-  main="Jevons data on numerical estimation: Errors\nBubble area proportional to frequency", 
-  text.size=0.8))
+ main="Jevons data on numerical estimation: Errors\nBubble area proportional to frequency", text.size=0.8))
 }
 
 # plot average error
@@ -103,7 +106,6 @@ if(require(reshape)) {
 unJevons &lt;- untable(Jevons, Jevons$frequency)
 str(unJevons)
 
-require(plyr)
 mean_error &lt;- function(df) mean(df$error, na.rm=TRUE)
 Jmean &lt;- ddply(unJevons, .(actual), mean_error)
 with(Jmean, plot(actual, V1, ylab='Mean error', xlab='Actual number', type='b', main='Jevons data'))

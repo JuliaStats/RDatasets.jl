@@ -1,16 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: elections for U.S. President, 1932-2012, by state</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: elections for U.S. President, 1932-2008, by state</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for presidentialElections"><tr><td>presidentialElections</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for presidentialElections"><tr><td>presidentialElections</td><td align="right">R Documentation</td></tr></table>
 
-<h2>elections for U.S. President, 1932-2012, by state</h2>
+<h2>elections for U.S. President, 1932-2008, by state</h2>
 
 <h3>Description</h3>
 
-<p>Democratic share of the
-presidential vote, 1932-2012, in each state and the District of Columbia.</p>
+
+<p>Data from states and the District of Columbia, Democratic share of the
+presidential vote, 1932-2008.</p>
 
 
 <h3>Usage</h3>
@@ -21,11 +23,12 @@ presidential vote, 1932-2012, in each state and the District of Columbia.</p>
 <h3>Format</h3>
 
 
+
 <ul>
-<li><p>statecharacter, name of state
+<li><p>statename of state, character
 </p>
 </li>
-<li><p>demVotenumeric, percent of the vote for president won by the
+<li><p>demVotepercent of the vote for president won by the
 Democratic candidate
 </p>
 </li>
@@ -41,9 +44,9 @@ of the former Confederacy
 
 <h3>Note</h3>
 
-<p>1,047 observations, unbalanced panel data in long format. Hawaii and Alaska contribute data
-from 1960 onwards the District of Columbia contributes data
-from 1964 onward; Alabama has missing data for 1948 and
+<p>996 observations, unbalanced panel data: (a) Hawaii and Alaska contribute data
+from 1960 onwards; (b) the District of Columbia contributes data
+from 1964 onward; (c) Alabama has missing data for 1948 and
 1964.</p>
 
 
@@ -57,7 +60,8 @@ from 1964 onward; Alabama has missing data for 1948 and
 
 <pre>
 data(presidentialElections)
-lattice::xyplot(demVote ~ year | state,
+library(lattice)
+xyplot(demVote ~ year | state,
        panel=panel.lines,
        ylab="Democratic Vote for President (percent)",
        xlab="Year",

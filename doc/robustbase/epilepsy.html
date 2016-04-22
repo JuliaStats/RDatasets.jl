@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Epilepsy Attacks Data Set</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Epilepsy Attacks Data Set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for epilepsy"><tr><td>epilepsy</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for epilepsy"><tr><td>epilepsy</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Epilepsy Attacks Data Set</h2>
 
@@ -21,6 +22,7 @@ Poisson regression.
 
 
 <h3>Format</h3>
+
 
 <p>A data frame with 59 observations on the following 11 variables.
 </p>
@@ -74,21 +76,23 @@ follow-up periods of two weeks each.
 
 <h3>Source</h3>
 
+
 <p>Thall, P.F. and Vail S.C. (1990)
 Some covariance models for longitudinal count data with overdispersion.
-<em>Biometrics</em> <b>46</b>, 657&ndash;671.
+<EM>Biometrics</EM> <B>46</B>, 657&ndash;671.
 </p>
 
 
 <h3>References</h3>
 
+
 <p>Diggle, P.J., Liang, K.Y., and Zeger, S.L. (1994)
-<em>Analysis of Longitudinal Data</em>; Clarendon Press.
+<EM>Analysis of Longitudinal Data</EM>; Clarendon Press.
 </p>
 <p>Breslow N. E. (1996)
 Generalized linear models: Checking assumptions and strengthening
 conclusions.
-<em>Statistica Applicata</em> <b>8</b>, 23&ndash;41.
+<EM>Statistica Applicata</EM> <B>8</B>, 23&ndash;41.
 </p>
 
 
@@ -102,11 +106,10 @@ pairs(epilepsy[,c("Ysum","Base4","Trt","Age10")])
 Efit1 &lt;- glm(Ysum ~ Age10 + Base4*Trt, family=poisson, data=epilepsy)
 summary(Efit1)
 
-## Robust Fit :
-Efit2 &lt;- glmrob(Ysum ~ Age10 + Base4*Trt, family=poisson, data=epilepsy,
-                method = "Mqle",
-                tcc=1.2, maxit=100)
-summary(Efit2)
+## Robust Fit : %%&gt;&gt;&gt;&gt;&gt; FIXME &lt;&lt;&lt;&lt;
+
+
+
 </pre>
 
 
