@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 25 Personality items representing 5 factors</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: 25 Personality items representing 5 factors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for bfi"><tr><td>bfi</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for bfi"><tr><td>bfi</td><td align="right">R Documentation</td></tr></table>
 
 <h2>25 Personality items representing 5 factors</h2>
 
@@ -15,12 +16,11 @@
 
 <h3>Usage</h3>
 
-<pre>data(bfi)
-data(bfi.dictionary)
-</pre>
+<pre>data(bfi)</pre>
 
 
 <h3>Format</h3>
+
 
 <p>A data frame with 2800 observations on the following 28 variables. (The q numbers are the SAPA item numbers).
 </p>
@@ -100,13 +100,13 @@ data(bfi.dictionary)
 5 Moderately Accurate
 6 Very Accurate
 </p>
-<p>as part of the Synthetic Apeture Personality Assessment (SAPA <a href="http://sapa-project.org">http://sapa-project.org</a>) project.  To see an example of the data collection technique, visit <a href="http://SAPA-project.org">http://SAPA-project.org</a>.  The items given were sampled from the International Personality Item Pool of Lewis Goldberg using the sampling technique of SAPA.  This is a sample data set taken from the much larger SAPA data bank.
+<p>as part of the Synthetic Apeture Personality Assessment (SAPA) project.  To see an example of the data collection technique, visit <a href="http://test.personality-project.org">http://test.personality-project.org</a>.  The items given were sampled from the International Personality Item Pool of Lewis Goldberg using the sampling technique of SAPA.  This is a sample data set taken from the much larger SAPA data bank.
 </p>
 
 
 <h3>Source</h3>
 
-<p>The items are from the ipip (Goldberg, 1999).  The data are from the SAPA project (Revelle, Wilt and Rosenthal, 2010) , collected Spring, 2010 ( <a href="http://sapa-project.org">http://sapa-project.org</a>).
+<p>The items are from the ipip (Goldberg, 1999).  The data are from the SAPA project (Revelle, Wilt and Rosenthal, 2010) , collected Spring, 2010 ( <a href="http://test.personality-project.org">http://test.personality-project.org</a>).
 </p>
 
 
@@ -127,17 +127,11 @@ data(bfi.dictionary)
 <pre>
 data(bfi)
 describe(bfi)
- 
- keys.list &lt;-
-  list(agree=c("-A1","A2","A3","A4","A5"),conscientious=c("C1","C2","C3","-C4","-C5"),
-extraversion=c("-E1","-E2","E3","E4","E5"),neuroticism=c("N1","N2","N3","N4","N5"),
-openness = c("O1","-O2","O3","O4","-O5")) 
-  keys &lt;- make.keys(bfi,keys.list)
-  
- scores &lt;- scoreItems(keys[1:27,],bfi[1:27]) #don't score age 
+ keys.list &lt;- list(Agree=c(-1,2:5),Conscientious=c(6:8,-9,-10),Extraversion=c(-11,-12,13:15),Neuroticism=c(16:20),Openness = c(21,-22,23,24,-25))
+ keys &lt;- make.keys(28,keys.list,item.labels=colnames(bfi))
+ score.items(keys,bfi)
+ scores &lt;- score.items(keys[1:27,],bfi[1:27]) #don't score age 
  scores
- #show the use of the fa.lookup with a dictionary
- fa.lookup(keys,bfi.dictionary[,1:4])
  
 </pre>
 

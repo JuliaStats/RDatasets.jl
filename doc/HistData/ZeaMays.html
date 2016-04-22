@@ -1,15 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Darwin's Heights of Cross- and Self-fertilized Zea May Pairs</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Darwin's Heights of Cross- and Self-fertilized Zea May Pairs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for ZeaMays"><tr><td>ZeaMays</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ZeaMays"><tr><td>ZeaMays</td><td align="right">R Documentation</td></tr></table>
 
 <h2>
 Darwin's Heights of Cross- and Self-fertilized Zea May Pairs
 </h2>
 
 <h3>Description</h3>
+
 
 <p>Darwin (1876) studied the growth of pairs of zea may (aka corn)
 seedlings, one produced by cross-fertilization and the other
@@ -18,7 +20,7 @@ conditions.
 His goal was to demonstrate the greater vigour of the cross-fertilized plants.
 The data recorded are the final height (inches, to the nearest 1/8th)  of the plants in each pair.
 </p>
-<p>In the <em>Design of Experiments</em>, Fisher (1935) used these data to illustrate
+<p>In the <EM>Design of Experiments</EM>, Fisher (1935) used these data to illustrate
 a paired t-test (well, a one-sample test on the mean difference, <code>cross - self</code>).
 Later in the book (section 21), he used this data to illustrate an early example of a non-parametric permutation
 test, treating each paired difference as having (randomly) either a positive or negative sign. 
@@ -31,6 +33,7 @@ test, treating each paired difference as having (randomly) either a positive or 
 
 
 <h3>Format</h3>
+
 
 <p>A data frame with 15 observations on the following 4 variables.
 </p>
@@ -52,6 +55,7 @@ test, treating each paired difference as having (randomly) either a positive or 
 
 <h3>Details</h3>
 
+
 <p>In addition to the standard paired t-test,
 several types of non-parametric tests can be contemplated:
 </p>
@@ -72,22 +76,25 @@ or that the distribution of <code>diff</code> is symmetric about 0, vs. a locati
 
 <h3>Source</h3>
 
-<p>Darwin, C. (1876). <em>The Effect of Cross- and Self-fertilization in the Vegetable Kingdom</em>,
+
+<p>Darwin, C. (1876). <EM>The Effect of Cross- and Self-fertilization in the Vegetable Kingdom</EM>,
 2nd Ed. London: John Murray.
 </p>
-<p>Andrews, D. and Herzberg, A. (1985) <em>Data:
-a collection of problems from many fields for the student and research worker</em>.
-New York: Springer. Data retrieved from: <code>https://www.stat.cmu.edu/StatDat/</code>
+<p>Andrews, D. and Herzberg, A. (1985) <EM>Data:
+a collection of problems from many fields for the student and research worker</EM>.
+New York: Springer. Data retrieved from: <a href="http://lib.stat.cmu.edu/datasets/Andrews/">http://lib.stat.cmu.edu/datasets/Andrews/</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Fisher, R. A. (1935). <em>The Design of Experiments</em>. London: Oliver &amp; Boyd.
+
+<p>Fisher, R. A. (1935). <EM>The Design of Experiments</EM>. London: Oliver &amp; Boyd.
 </p>
 
 
 <h3>See Also</h3>
+
 
 <p><code>wilcox.test</code>
 </p>
@@ -133,8 +140,7 @@ mean(ZeaMays$diff)
 # complete permutation distribution of diff, for all 2^15 ways of assigning
 # one value to cross and the other to self (thx: Bert Gunter)
 N &lt;- nrow(ZeaMays)
-allmeans &lt;- as.matrix(expand.grid(as.data.frame(
-                         matrix(rep(c(-1,1),N), nr =2))))  %*% abs(ZeaMays$diff) / N
+allmeans &lt;- as.matrix(expand.grid(as.data.frame(matrix(rep(c(-1,1),N), nr =2)))) %*% abs(ZeaMays$diff) / N
 
 # upper-tail p-value
 sum(allmeans &gt; mean(ZeaMays$diff)) / 2^N

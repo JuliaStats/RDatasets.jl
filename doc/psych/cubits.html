@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Galton's example of the relationship between height and...</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Galton's example of the relationship between height and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for cubits"><tr><td>cubits</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cubits"><tr><td>cubits</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Galton's example of the relationship between height and 'cubit' or forearm length</h2>
 
@@ -22,25 +23,26 @@
 
 <h3>Format</h3>
 
+
 <p>A data frame with 9 observations on the following 8 variables.
 </p>
 
 <dl>
-<dt><code>16.5</code></dt><dd><p>Cubit length &lt; 16.5</p>
+<dt><code>16.5</code></dt><dd><p>Cubit length of lowest category</p>
 </dd>
-<dt><code>16.75</code></dt><dd><p>16.5 &lt;= Cubit length &lt; 17.0</p>
+<dt><code>16.75</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>17.25</code></dt><dd><p>17.0 &lt;= Cubit length &lt; 17.5</p>
+<dt><code>17.25</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>17.75</code></dt><dd><p>17.5 &lt;= Cubit length &lt; 18.0</p>
+<dt><code>17.75</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>18.25</code></dt><dd><p>18.0 &lt;= Cubit length &lt; 18.5</p>
+<dt><code>18.25</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>18.75</code></dt><dd><p>18.5 &lt;= Cubit length &lt; 19.0</p>
+<dt><code>18.75</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>19.25</code></dt><dd><p>19.0 &lt;= Cubit length &lt; 19.5</p>
+<dt><code>19.25</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>19.75</code></dt><dd><p>19.5 &lt;= Cubit length  </p>
+<dt><code>19.75</code></dt><dd><p>a numeric vector</p>
 </dd>
 </dl>
 
@@ -76,10 +78,8 @@ data(cubits)
 cubits
 heights &lt;- table2df(cubits,labs = c("height","cubit"))
 ellipses(heights,n=1,main="Galton's co-relation data set")
-ellipses(jitter(heights$height,3),jitter(heights$cubit,3),pch=".",
-     main="Galton's co-relation data set",xlab="height",
-     ylab="Forearm (cubit)") #add in some noise to see the points
-pairs.panels(heights,jiggle=TRUE,main="Galton's cubits data set")
+ellipses(jitter(heights$cubit,3),jitter(heights$height,3),pch=".",main="Galton's co-relation data set") #add in some noise to see the points
+
 </pre>
 
 

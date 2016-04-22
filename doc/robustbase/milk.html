@@ -1,13 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daudin's Milk Composition Data</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Daudin's Milk Composition Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for milk"><tr><td>milk</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for milk"><tr><td>milk</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Daudin's Milk Composition Data</h2>
 
 <h3>Description</h3>
+
 
 <p>Daudin et al.(1988) give 8 readings on the composition of 86
 containers of milk.  They speak about 85 observations, but this
@@ -17,7 +19,7 @@ identical (as noted by Rocke (1996)).
 <p>The data set was used for analysing the stability of principal
 component analysis by the bootstrap method.  In the same context, but
 using high breakdown point robust PCA, these data were analysed by
-Todorov et al. (1994).  Atkinson (1994) used these data for ilustration
+Todorov et al.(1994).  Atkinson (1994) used these data for ilustration
 of the forward search algorithm for identifying of multiple outliers.
 </p>
 
@@ -29,8 +31,9 @@ of the forward search algorithm for identifying of multiple outliers.
 
 <h3>Format</h3>
 
+
 <p>A data frame with 86 observations on the following 8 variables, all
-but the first measure units in <em>grams / liter</em>.
+but the first measure units in <EM>grams / liter</EM>.
 </p>
 
 <dl>
@@ -56,25 +59,27 @@ but the first measure units in <em>grams / liter</em>.
 
 <h3>Source</h3>
 
+
 <p>Daudin, J.J. Duby, C. and Trecourt, P. (1988)
 Stability of Principal Component Analysis Studied by the Bootstrap Method;
-<em>Statistics</em> <b>19</b>, 241&ndash;258.
+<EM>Statistics</EM> <B>19</B>, 241&ndash;258.
 </p>
 
 
 <h3>References</h3>
 
+
 <p>Todorov, V., Neyko, N., Neytchev, P. (1994)
 Stability of High Breakdown Point Robust PCA,
-in <em>Short Communications, COMPSTAT'94</em>; Physica Verlag, Heidelberg.
+in <EM>Short Communications, COMPSTAT'94</EM>; Physica Verlag, Heidelberg.
 </p>
 <p>Atkinson, A.C. (1994)
 Fast Very Robust Methods for the Detection of Multiple Outliers.
-<em>J. Amer. Statist. Assoc.</em> <b>89</b> 1329&ndash;1339.
+<EM>J. Amer. Statist. Assoc.</EM> <B>89</B> 1329&ndash;1339.
 </p>
 <p>Rocke, D. M. and Woodruff, D. L. (1996)
 Identification of Outliers in Multivariate Data;
-<em>J. Amer. Statist. Assoc.</em> <b>91</b> (435), 1047&ndash;1061.
+<EM>J. Amer. Statist. Assoc.</EM> <B>91</B> (435), 1047&ndash;1061.
 </p>
 
 
@@ -82,11 +87,7 @@ Identification of Outliers in Multivariate Data;
 
 <pre>
 data(milk)
-(c.milk &lt;- covMcd(milk))
-summarizeRobWeights(c.milk $ mcd.wt)# 19..20 outliers
-umilk &lt;- unique(milk) # dropping obs.64 (== obs.63)
-summary(cumilk &lt;- covMcd(umilk, nsamp = "deterministic")) # 20 outliers
-
+covMcd(milk)
 </pre>
 
 

@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Seven data sets showing a bifactor solution.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Seven data sets showing a bifactor solution.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for Bechtoldt"><tr><td>Bechtoldt</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Bechtoldt"><tr><td>Bechtoldt</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Seven data sets showing a bifactor solution.</h2>
 
@@ -77,8 +78,8 @@ data(Reise)
 
 <h3>Source</h3>
 
-<p>Holzinger:  Holzinger and Swineford (1937) <br />
-Reise: Steve Reise (personal communication) <br />
+<p>Holzinger:  Holzinger and Swineford (1937) <br>
+Reise: Steve Reise (personal communication) <br>
 sem help page (for Thurstone) 
 </p>
 
@@ -106,11 +107,10 @@ sem help page (for Thurstone)
 
 <pre>
 
-if(!require(GPArotation)) {message("I am sorry, to run omega requires GPArotation") 
-        } else {
-#holz &lt;- omega(Holzinger,4, title = "14 ability tests from Holzinger-Swineford")
-#bf &lt;- omega(Reise,5,title="16 health items from Reise") 
-#omega(Reise,5,labels=colnames(Reise),title="16 health items from Reise")
+if(!require(GPArotation)) {message("I am sorry, to run omega requires GPArotation") } else {
+holz &lt;- omega(Holzinger,4, title = "14 ability tests from Holzinger-Swineford")
+bf &lt;- omega(Reise,5,title="16 health items from Reise") 
+omega(Reise,5,labels=colnames(Reise),title="16 health items from Reise")
 thur.om &lt;- omega(Thurstone,title="9 variables from Thurstone") #compare with
 thur.bf   &lt;- fa(Thurstone,3,rotate="biquartimin")
 factor.congruence(thur.om,thur.bf)

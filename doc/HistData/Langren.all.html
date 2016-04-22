@@ -1,15 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: van Langren's Data on Longitude Distance between Toledo and...</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="R.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: van Langren's Data on Longitude Distance between Toledo and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for Langren"><tr><td>Langren</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Langren"><tr><td>Langren</td><td align="right">R Documentation</td></tr></table>
 
 <h2>
 van Langren's Data on Longitude Distance between Toledo and Rome
 </h2>
 
 <h3>Description</h3>
+
 
 <p>Michael Florent van Langren (1598-1675) was a Dutch mathematician and astronomer, who served
 as a royal mathematician to King Phillip IV of Spain, and who worked on one of the most significant
@@ -39,6 +41,7 @@ from all known versions of this graph.
 
 
 <h3>Format</h3>
+
 
 <p><code>Langren1644</code>: A data frame with 12 observations on the following 9 variables,
 giving determinations of the distance in longitude between Toledo and Rome, from the 1644 graph.
@@ -85,6 +88,7 @@ with levels  <code>Algunos1</code> <code>Algunos2</code>  <code>Apianus</code> .
 
 <h3>Details</h3>
 
+
 <p>In all the graphs, Toledo is implicitly at the origin and Rome is located relatively at the value of <code>Longitude</code>  
 To judge correspondence with an actual map, the positions in (lat, long) are
 </p>
@@ -97,6 +101,7 @@ To judge correspondence with an actual map, the positions in (lat, long) are
 
 <h3>Source</h3>
 
+
 <p>The longitude values were digitized from images of the various graphs, which may be
 found on the Supplementary materials page for Friendly etal. (2009).
 </p>
@@ -104,15 +109,16 @@ found on the Supplementary materials page for Friendly etal. (2009).
 
 <h3>References</h3>
 
+
 <p>Friendly, M., Valero-Mora, P. and Ulargui, J. I. (2010).
 The First (Known) Statistical Graph: Michael Florent van Langren and the &quot;Secret&quot; of Longitude.
-<em>The American Statistician</em>, <b>64</b> (2), 185-191. 
+<EM>The American Statistician</EM>, <B>64</B> (2), 185-191. 
 Supplementary materials: <a href="http://datavis.ca/gallery/langren/">http://datavis.ca/gallery/langren/</a>. 
 </p>
-<p>Langren, M. F. van. (1644).  <em>La Verdadera Longitud por Mar y Tierra</em>. Antwerp: (n.p.), 1644.
+<p>Langren, M. F. van. (1644).  <EM>La Verdadera Longitud por Mar y Tierra</EM>. Antwerp: (n.p.), 1644.
 English translation available at <a href="http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf">http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf</a>.
 </p>
-<p>Lelewel, J. (1851). <em>G?ographie du Moyen ?ge</em>. Paris: Pilliet, 1851.
+<p>Lelewel, J. (1851). <EM>G?ographie du Moyen ?ge</EM>. Paris: Pilliet, 1851.
 </p>
 
 
@@ -164,10 +170,9 @@ if (require(jpeg, quietly=TRUE)) {
   text(xlate(8), 17, "Grados de la Longitud", cex=1.7)
 
   # label the observations with the names
-  points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), 
-         pch=25, col="blue", bg="blue")
-  text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), 
-       labels=Langren1644$Name, srt=90, adj=c(-.1, .5), cex=0.8)
+  points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), pch=25, col="blue", bg="blue")
+  text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), labels=Langren1644$Name, srt=90, adj=c(-.1, .5), cex=0.8)
+
   par(op)
 }
 
@@ -192,10 +197,8 @@ if (require(ReadImages)) {
   xlate &lt;- function(x) {
     130+x*726/30	
   }
-  points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), 
-         pch=25, col="blue")
-  text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), 
-         labels=Langren1644$Name, srt=90, adj=c(0, 0.5), cex=0.8)
+  points(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), pch=25, col="blue")
+  text(x=xlate(Langren1644$Longitude), y=rep(57, nrow(Langren1644)), labels=Langren1644$Name, srt=90, adj=c(0, 0.5), cex=0.8)
 }
 
 ## End(Not run)

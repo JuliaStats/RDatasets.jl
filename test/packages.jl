@@ -5,5 +5,5 @@ module TestPackages
     ds = RDatasets.datasets()
     dp = RDatasets.packages()
 
-    @test sort(dp[:Package]) == sort(unique(ds[:Package]))
+    @test dp[:Package] == sort(unique(ds[:Package]))
 end
