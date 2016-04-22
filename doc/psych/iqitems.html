@@ -1,10 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: 16 multiple choice IQ items</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 16 multiple choice IQ items</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for iqitems"><tr><td>iqitems</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for iqitems"><tr><td>iqitems</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>16 multiple choice IQ items</h2>
 
@@ -20,7 +19,6 @@
 
 
 <h3>Format</h3>
-
 
 <p>A data frame with 1525 observations on the following 16 variables. The number following the name is the item number from SAPA.
 </p>
@@ -64,9 +62,9 @@
 
 <h3>Details</h3>
 
-<p>16 items were sampled from 80 items given as part of the SAPA project  (Revelle, Wilt and Rosenthal, 2009; Condon and Revelle, 2012) to develop online measures of ability. These 16 items reflect four lower order factors (verbal reasoning, letter series, matrix reasoning, and spatial rotations.  These lower level factors all share a higher level factor ('g').  
+<p>16 items were sampled from 80 items given as part of the SAPA (<a href="http://sapa-project.org">http://sapa-project.org</a>) project  (Revelle, Wilt and Rosenthal, 2009; Condon and Revelle, 2014) to develop online measures of ability. These 16 items reflect four lower order factors (verbal reasoning, letter series, matrix reasoning, and spatial rotations.  These lower level factors all share a higher level factor ('g').  
 </p>
-<p>This data set may be used to demonstrate item response functions, <code>tetrachoric</code> correlations, or <code>irt.fa</code> as well as <code>omega</code> estimates of of reliability and hierarchical structure.
+<p>This data set and the associated data set (<code>ability</code> based upon scoring these multiple choice items and converting them to correct/incorrect may be used to demonstrate item response functions, <code>tetrachoric</code> correlations, or <code>irt.fa</code> as well as <code>omega</code> estimates of of reliability and hierarchical structure.
 </p>
 <p>In addition, the data set is a good example of doing item analysis to examine the empirical response probabilities of each item alternative as a function of the underlying latent trait.  When doing this, it appears that two of the matrix reasoning problems do not have monotonically increasing trace lines for the probability correct.  At moderately high ability (theta = 1) there is a decrease in the probability correct from theta = 0 and theta = 2.
 </p>
@@ -74,7 +72,7 @@
 
 <h3>Source</h3>
 
-<p> The example data set is taken from the Synthetic Aperture Personality Assessment personality and ability test at <a href="http://test.personality-project.org">http://test.personality-project.org</a>.  The data were collected with David Condon from 8/08/12 to 8/31/12.
+<p> The example data set is taken from the Synthetic Aperture Personality Assessment personality and ability test at <a href="http://sapa-project.org">http://sapa-project.org</a>.  The data were collected with David Condon from 8/08/12 to 8/31/12.
 </p>
 
 
@@ -82,7 +80,7 @@
 
 <p>Revelle, William, Wilt, Joshua,  and Rosenthal, Allen (2010)  Personality and Cognition: The Personality-Cognition Link. In Gruszka, Alexandra  and Matthews, Gerald   and Szymura, Blazej (Eds.) Handbook of Individual Differences in Cognition: Attention, Memory and Executive Control, Springer. 
 </p>
-<p>Condon, David and Revelle, William, (2012) The development of an open source measure of cognitive ability. (in prep, Northwestern University).
+<p>Condon, David and Revelle, William, (2014) The International Cognitive Ability Resource:  Development and initial validation of a public-domain measure. Intelligence, 43, 52-64.
 </p>
 
 
@@ -95,14 +93,16 @@ iq.keys &lt;- c(4,4,4, 6,  6,3,4,4,   5,2,2,4,   3,2,6,7)
 score.multiple.choice(iq.keys,iqitems)   #this just gives summary statisics
 #convert them to true false 
 iq.scrub &lt;- scrub(iqitems,isvalue=0)  #first get rid of the zero responses
-iq.tf &lt;-  score.multiple.choice(iq.keys,iq.scrub,score=FALSE) #convert to wrong (0) and correct (1) for analysis
+iq.tf &lt;-  score.multiple.choice(iq.keys,iq.scrub,score=FALSE) 
+              #convert to wrong (0) and correct (1) for analysis
 describe(iq.tf) 
+#see the ability data set for these analyses
 #now, for some item analysis
-iq.irt &lt;- irt.fa(iq.tf)  #do a basic irt
-iq.sc &lt;-score.irt(iq.irt,iq.tf)  #find the scores
-op &lt;- par(mfrow=c(4,4))
-irt.responses(iq.sc[,1], iq.tf)  
-op &lt;- par(mfrow=c(1,1))
+#iq.irt &lt;- irt.fa(iq.tf)  #do a basic irt
+#iq.sc &lt;-score.irt(iq.irt,iq.tf)  #find the scores
+#op &lt;- par(mfrow=c(4,4))
+#irt.responses(iq.sc[,1], iq.tf)  
+#op &lt;- par(mfrow=c(1,1))
 
 ## End(Not run)
 </pre>

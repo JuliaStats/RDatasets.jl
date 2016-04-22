@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Exam scores from inner London</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Exam"><tr><td>Exam</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Exam scores from inner London</h2>
+
+<h3>Description</h3>
+
+<p>Exam scores of 4,059 students from 65 schools in Inner London.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Exam)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 4059 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt>school</dt><dd><p>School ID - a factor.</p>
+</dd>
+<dt>normexam</dt><dd><p>Normalized exam score.</p>
+</dd>
+<dt>schgend</dt><dd><p>School gender - a factor.  Levels are <code>mixed</code>,
+<code>boys</code>, and <code>girls</code>.</p>
+</dd>
+<dt>schavg</dt><dd><p>School average of intake score.</p>
+</dd>
+<dt>vr</dt><dd><p>Student level Verbal Reasoning (VR) score band at intake -
+a factor.  Levels are <code>bottom 25%</code>, <code>mid 50%</code>, and
+<code>top 25%</code>.</p>
+</dd>
+<dt>intake</dt><dd><p>Band of student's intake score - a factor.
+Levels are <code>bottom 25%</code>, <code>mid 50%</code> and <code>top
+	25%</code>./</p>
+</dd>
+<dt>standLRT</dt><dd><p>Standardised LR test score.</p>
+</dd>
+<dt>sex</dt><dd><p>Sex of the student - levels are <code>F</code> and <code>M</code>.</p>
+</dd>
+<dt>type</dt><dd><p>School type - levels are <code>Mxd</code> and <code>Sngl</code>.</p>
+</dd>
+<dt>student</dt><dd><p>Student id (within school) - a factor</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://multilevel.ioe.ac.uk/softrev/exam.html">http://multilevel.ioe.ac.uk/softrev/exam.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Goldstein, H., Rasbash, J., et al (1993). A multilevel analysis of
+school examination results. <em>Oxford Review of Education</em> 19: 425-433 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Exam)
+summary(Exam)
+(fm1 &lt;- lmer(normexam ~ standLRT + sex + schgend + (1|school), Exam))
+(fm2 &lt;- lmer(normexam ~ standLRT*sex + schgend + (1|school), Exam))
+(fm3 &lt;- lmer(normexam ~ standLRT*sex + schgend + (1|school), Exam))
+</pre>
+
+
+</body></html>
