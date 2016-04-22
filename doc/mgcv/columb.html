@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Reduced version of Columbus OH crime data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for columb"><tr><td>columb</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Reduced version of Columbus OH crime data</h2>
+
+<h3>Description</h3>
+
+<p>By district crime data from Columbus OH, together with polygons describing district shape. Useful for 
+illustrating use of simple Markov Random Field smoothers.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(columb)
+data(columb.polys)
+</pre>
+
+
+<h3>Format</h3>
+
+ <p><code>columb</code> is a 49 row data frame with the following columns 
+</p>
+
+<dl>
+<dt>area</dt><dd><p>land area of district</p>
+</dd>
+<dt>home.value</dt><dd><p>housing value in 1000USD.</p>
+</dd>
+<dt>income</dt><dd><p>household income in 1000USD.</p>
+</dd>
+<dt>crime</dt><dd><p>residential burglaries and auto thefts per 1000 households.</p>
+</dd>
+<dt>open.space</dt><dd><p>measure of open space in district.</p>
+</dd>
+<dt>district</dt><dd><p>code identifying district, and matching <code>names(columb.polys)</code>. </p>
+</dd>
+</dl>
+
+<p><code>columb.polys</code> contains the polygons defining the areas in the format described below.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The data frame <code>columb</code> relates to the districts whose boundaries are coded in <code>columb.polys</code>.
+<code>columb.polys[[i]]</code> is a 2 column matrix, containing the vertices of the polygons defining the boundary of the ith 
+district. <code>columb.polys[[2]]</code> has an artificial hole inserted to illustrate how holes in districts can be spefified. Different polygons defining the boundary of a district are separated by NA rows in <code>columb.polys[[1]]</code>, 
+and a polygon enclosed within another is treated as a hole in that region (a hole should never come first). 
+<code>names(columb.polys)</code> matches <code>columb$district</code> (order unimportant).
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data are adapted from the <code>columbus</code> example in the <code>spdep</code> package, where the original source is given as: 
+</p>
+<p>Anselin, Luc. 1988. Spatial econometrics: methods and models. Dordrecht: Kluwer Academic, Table 12.1 p. 189.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## see ?mrf help files
+</pre>
+
+
+</body></html>

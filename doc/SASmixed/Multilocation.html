@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A multilocation trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Multilocation"><tr><td>Multilocation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A multilocation trial</h2>
+
+<h3>Description</h3>
+
+<p>The <code>Multilocation</code> data frame has 108 rows and 7 columns.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>obs</dt><dd><p>a numeric vector </p>
+</dd>
+<dt>Location</dt><dd>
+<p>an ordered factor with levels
+<code>B</code> &lt; <code>D</code> &lt; <code>E</code> &lt; <code>I</code> &lt; <code>G</code> &lt;
+<code>A</code> &lt; <code>C</code> &lt; <code>F</code> &lt; <code>H</code>
+</p>
+</dd>
+<dt>Block</dt><dd><p>a <code>factor</code> with levels <code>1</code> to <code>3</code> </p>
+</dd>
+<dt>Trt</dt><dd><p>a factor with levels <code>1</code> to <code>4</code> </p>
+</dd>
+<dt>Adj</dt><dd><p> a numeric vector </p>
+</dd>
+<dt>Fe</dt><dd><p> a numeric vector </p>
+</dd>
+<dt>Grp</dt><dd><p> an <code>ordered</code> factor with levels
+<code>B/1</code> &lt; <code>B/2</code> &lt; <code>B/3</code> &lt; <code>D/1</code> &lt;
+<code>D/2</code> &lt; <code>D/3</code> &lt; <code>E/1</code> &lt; <code>E/2</code> &lt;
+<code>E/3</code> &lt; <code>I/1</code> &lt; <code>I/2</code> &lt; <code>I/3</code> &lt;
+<code>G/1</code> &lt; <code>G/2</code> &lt; <code>G/3</code> &lt; <code>A/1</code> &lt;
+<code>A/2</code> &lt; <code>A/3</code> &lt; <code>C/1</code> &lt; <code>C/2</code> &lt;
+<code>C/3</code> &lt; <code>F/1</code> &lt; <code>F/2</code> &lt; <code>F/3</code> &lt;
+<code>H/1</code> &lt; <code>H/2</code> &lt; <code>H/3</code>
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Littel, R. C., Milliken, G. A., Stroup, W. W., and Wolfinger,
+R. D. (1996), <em>SAS System for Mixed Models</em>, SAS Institute
+(Data Set 2.8.1).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Multilocation)
+if (require("lme4", quietly = TRUE, character = TRUE)) {
+  options(contrasts = c(unordered = "contr.SAS", ordered = "contr.poly"))
+  ### Create a Block %in% Location factor
+  Multilocation$Grp &lt;- with(Multilocation, Block:Location)
+  print(fm1Mult &lt;- lmer(Adj ~ Location * Trt + (1|Grp), Multilocation))
+  print(anova(fm1Mult))
+  print(fm2Mult &lt;- lmer(Adj ~ Location + Trt + (1|Grp), Multilocation), corr=FALSE)
+  print(fm3Mult &lt;- lmer(Adj ~ Location + (1|Grp), Multilocation), corr=FALSE)
+  print(fm4Mult &lt;- lmer(Adj ~ Trt + (1|Grp), Multilocation))
+  print(fm5Mult &lt;- lmer(Adj ~ 1 + (1|Grp), Multilocation))
+  print(anova(fm2Mult))
+  print(anova(fm1Mult, fm2Mult, fm3Mult, fm4Mult, fm5Mult))
+  ### Treating the location as a random effect
+  print(fm1MultR &lt;- lmer(Adj ~ Trt + (1|Location/Trt) + (1|Grp), Multilocation))
+  print(anova(fm1MultR))
+  fm2MultR &lt;- lmer(Adj ~ Trt + (Trt - 1|Location) + (1|Block), Multilocation)
+  ## Warning (not error ?!): Convergence failure in 10000 iter %% __FIXME__
+  print(fm2MultR)# does not mention previous conv.failure %% FIXME ??
+  print(anova(fm1MultR, fm2MultR))
+ ## Not run: 
+  confint(fm1MultR)
+ 
+## End(Not run)
+}
+</pre>
+
+
+</body></html>

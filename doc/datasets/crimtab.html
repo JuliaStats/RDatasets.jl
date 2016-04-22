@@ -1,15 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Student's 3000 Criminals Data</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Student's 3000 Criminals Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for crimtab"><tr><td>crimtab</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for crimtab"><tr><td>crimtab</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Student's 3000 Criminals Data</h2>
 
 <h3>Description</h3>
-
 
 <p>Data of 3000 male criminals over 20 years old undergoing their
 sentences in the chief prisons of England and Wales.
@@ -22,7 +20,6 @@ sentences in the chief prisons of England and Wales.
 
 
 <h3>Format</h3>
-
 
 <p>A <code>table</code> object of  <code>integer</code> counts, of dimension
 <i>42 * 22</i> with a total count, <code>sum(crimtab)</code> of
@@ -38,16 +35,16 @@ of 3000 criminals, see also below.
 
 <h3>Details</h3>
 
-
 <p>Student is the pseudonym of William Sealy Gosset.
 In his 1908 paper he wrote (on page 13) at the beginning of section VI
-entitled <EM>Practical Test of the forgoing Equations</EM>:
+entitled <em>Practical Test of the forgoing Equations</em>:
 </p>
 <p>&ldquo;Before I had succeeded in solving my problem analytically,
 I had endeavoured to do so empirically.  The material used was a
 correlation table containing the height and left middle finger
 measurements of 3000 criminals, from a paper by W. R. MacDonell
-(<EM>Biometrika</EM>, Vol. I., p. 219).  The measurements were written
+(<em>Biometrika</em>, Vol. I., p. 219).  The
+measurements were written 
 out on 3000 pieces of cardboard, which were then very thoroughly
 shuffled and drawn at random.  As each card was drawn its numbers
 were written down in a book, which thus contains the measurements of
@@ -56,7 +53,7 @@ were written down in a book, which thus contains the measurements of
 deviation, and correlation of each sample determined.  The
 difference between the mean of each sample and the mean of the
 population was then divided by the standard deviation of the sample,
-giving us the <EM>z</EM> of Section III.&rdquo;
+giving us the <em>z</em> of Section III.&rdquo;
 </p>
 <p>The table is in fact page 216 and not page 219 in MacDonell(1902).
 In the MacDonell table, the middle finger lengths were given in mm
@@ -66,16 +63,15 @@ has <i>4' 7''9/16 -- 8''9/16</i>, we have 142.24 which is 2.54*56 =
 2.54*(<i>4' 8''</i>).
 </p>
 <p>MacDonell credited the source of data (page 178) as follows:
-<EM>The data on which the memoir is based were obtained, through the
-kindness of Dr Garson, from the Central Metric Office, New Scotland Yard...</EM>
-He pointed out on page 179 that : <EM>The forms were drawn at random
+<em>The data on which the memoir is based were obtained, through the
+kindness of Dr Garson, from the Central Metric Office, New Scotland Yard...</em>
+He pointed out on page 179 that : <em>The forms were drawn at random
 from the mass on the office shelves; we are therefore dealing with a
-random sampling.</EM>
+random sampling.</em>
 </p>
 
 
 <h3>Source</h3>
-
 
 <p><a href="http://pbil.univ-lyon1.fr/R/donnees/criminals1902.txt">http://pbil.univ-lyon1.fr/R/donnees/criminals1902.txt</a>
 thanks to Jean R. Lobry and Anne-Béatrice Dufour.
@@ -84,19 +80,18 @@ thanks to Jean R. Lobry and Anne-Béatrice Dufour.
 
 <h3>References</h3>
 
-
 <p>Garson, J.G. (1900)
 The metric system of identification of criminals, as used in in Great
 Britain and Ireland.
-<EM>The Journal of the Anthropological Institute of Great Britain
-and Ireland</EM> <B>30</B>, 161&ndash;198.
+<em>The Journal of the Anthropological Institute of Great Britain
+and Ireland</em> <b>30</b>, 161&ndash;198.
 </p>
 <p>MacDonell, W.R. (1902)
 On criminal anthropometry and the identification of criminals.
-<EM>Biometrika</EM> <B>1</B>, 2, 177&ndash;227.
+<em>Biometrika</em> <b>1</b>, 2, 177&ndash;227.
 </p>
 <p>Student (1908) The probable error of a mean.
-<EM>Biometrika</EM> <B>6</B>, 1&ndash;25.
+<em>Biometrika</em> <b>6</b>, 1&ndash;25.
 </p>
 
 
@@ -108,7 +103,7 @@ dim(crimtab)
 utils::str(crimtab)
 ## for nicer printing:
 local({cT &lt;- crimtab
-       colnames(cT) &lt;- substring(colnames(cT), 2,3)
+       colnames(cT) &lt;- substring(colnames(cT), 2, 3)
        print(cT, zero.print = " ")
 })
 

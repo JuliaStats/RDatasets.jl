@@ -1,23 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Grunfeld's Investment Data</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Grunfeld's Investment Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Grunfeld"><tr><td>Grunfeld</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for Grunfeld"><tr><td>Grunfeld</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Grunfeld's Investment Data</h2>
 
 <h3>Description</h3>
 
-
-<p>A panel of 10 observations from 1935 to 1954
+<p>A balanced panel of 10 observational units (firms) from 1935 to 1954
 </p>
-<p><EM>total number of observations</EM> :  200
+<p><em>total number of observations</em> :  200
 </p>
-<p><EM>observation</EM> :  production units
+<p><em>observation</em> :  production units
 </p>
-<p><EM>country</EM> :  United States
+<p><em>country</em> :  United States
 </p>
 
 
@@ -46,19 +44,44 @@
 
 
 
+<h3>Note</h3>
+
+<p>The Grunfeld data as provided in package <code>plm</code> is the same data as used in Baltagi (2001), see <b>Examples</b> below.
+</p>
+<p>NB:<br />
+Various versions of the Grunfeld data circulate online. Also, various text books (and also varying among editions)
+and papers use different subsets of the original Grunfeld data, some of which contain errors in a few data points
+compared  to the original data used by Grunfeld (1958) in his PhD thesis. See Kleiber/Zeileis (2010) and its
+accompanying website for a comparision of various Grunfeld data sets in use.
+</p>
+
+
 <h3>Source</h3>
 
-
-<p>Online complements to Baltagi (2001).
+<p>Online complements to Baltagi (2001):
 </p>
-<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>.
+<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>
+<a href="http://www.wiley.com/legacy/wileychi/baltagi/supp/Grunfeld.fil">http://www.wiley.com/legacy/wileychi/baltagi/supp/Grunfeld.fil</a>
+</p>
+<p>Online complements to Baltagi (2013):
+</p>
+<p><a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>
 </p>
 
 
 <h3>References</h3>
 
-
-<p>Baltagi, Badi H. (2001) <EM>Econometric Analysis of Panel Data</EM>, 2nd ed., John Wiley and Sons.
+<p>Baltagi, Badi H. (2001) <em>Econometric Analysis of Panel Data</em>, 2nd ed., John Wiley and Sons;<br />
+accompanying website <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>.
+</p>
+<p>Baltagi, Badi H. (2013) <em>Econometric Analysis of Panel Data</em>, 5th ed., John Wiley and Sons;<br />
+accompanying website <a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>.
+</p>
+<p>Grunfeld, Yehuda (1958) <em>The Determinants of Corporate Investment</em>, Ph.D. thesis, Department of Economics, University of Chicago.
+</p>
+<p>Kleiber, C./Zeileis, A. (2010) &ldquo;The Grunfeld Data at 50&rdquo;, <em>German Economic Review</em>, <b>11</b>(4), pp. 404&ndash;417,
+<a href="http://dx.doi.org/10.1111/j.1468-0475.2010.00513.x">http://dx.doi.org/10.1111/j.1468-0475.2010.00513.x</a>;<br />
+website accompanying the paper with various variants of the Grunfeld data: <a href="http://statmath.wu-wien.ac.at/~zeileis/grunfeld/">http://statmath.wu-wien.ac.at/~zeileis/grunfeld/</a>.
 </p>
 
 
@@ -67,6 +90,21 @@
 <p>For the complete Grunfeld data (11 firms), see
 <code>Grunfeld</code>, in the <code>AER</code> package.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# Compare plm's Grunfeld data to Baltagi's (2001) Grunfeld data:
+  data(Grunfeld, package="plm")
+  Grunfeld_baltagi2001 &lt;- read.csv("http://www.wiley.com/legacy/wileychi/
+    baltagi/supp/Grunfeld.fil", sep="", header = FALSE)
+  library(compare)
+  compare::compare(Grunfeld, Grunfeld_baltagi2001, allowAll = T) # same data set
+  
+## End(Not run)
+</pre>
 
 
 </body></html>
