@@ -1,7 +1,7 @@
 module RDatasets
     using Reexport
     using Compat
-    import FileIO
+    using FileIO
     @reexport using DataFrames
 
     export dataset
