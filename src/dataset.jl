@@ -3,7 +3,7 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
     
     rdaname = joinpath(basename, string(dataset_name, ".rda"))
     if isfile(rdaname)
-        return DataFrame(FileIO.load(rdaname)[dataset_name])
+        return DataFrame(load(rdaname)[dataset_name])
     end
 
     filename = joinpath(basename, string(dataset_name, ".csv.gz"))
