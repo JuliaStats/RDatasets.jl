@@ -1,3 +1,5 @@
+__precompile__()
+
 module RDatasets
     using Reexport, FileIO, CSV, CodecZlib
     @reexport using DataFrames
