@@ -1,7 +1,5 @@
 module RDatasets
-    using Reexport
-    using Compat
-    using FileIO
+    using Reexport, FileIO, CSV, CodecZlib
     @reexport using DataFrames
 
     export dataset

@@ -9,7 +9,7 @@ module TestDatasets
         pkgs = fill(directory, length(fns))
         sets = map(fn -> replace(fn, r"(\.(rda|csv|gz))+$", ""), fns)
         DataFrame(Package = pkgs, Dataset = sets)
-    end)
+    end...)
 
     dfs_documented = RDatasets.datasets()
 

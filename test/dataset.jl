@@ -9,7 +9,8 @@ module TestDataset
     sets = RDatasets.datasets()
 
     for r in eachrow(sets)
-        pkg, ds = r[:Package], r[:Dataset]
+        pkg = convert(String, r[:Package])
+        ds = convert(String, r[:Dataset])
         recorded_size = (r[:Rows], r[:Columns])
 
         df = dataset(pkg, ds)
@@ -25,7 +26,7 @@ module TestDataset
             println("Names: ", names(df))
             throw(ErrorException("""
 
-                Column names should be match what 'readtable' would produce,
+                Column names should match what 'CSV.read()' would produce,
                 except words should be 'UpperCamelCase' (acronyms uppercase), &
                 '_' used only where two acronyms or two numbers would be concatenated.
             """))

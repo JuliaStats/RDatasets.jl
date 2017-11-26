@@ -5,5 +5,5 @@ end
 
 function datasets()
 	path = joinpath(dirname(@__FILE__), "..", "doc", "datasets.csv")
-	readtable(path)
+	CSV.read(path)
 end
