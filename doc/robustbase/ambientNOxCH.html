@@ -1,15 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Daily Means of NOx (mono-nitrogen oxides) in air</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily Means of NOx (mono-nitrogen oxides) in air</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for ambientNOxCH"><tr><td>ambientNOxCH</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for ambientNOxCH"><tr><td>ambientNOxCH</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2> Daily Means of NOx (mono-nitrogen oxides) in air</h2>
 
 <h3>Description</h3>
-
 
 <p>This dataset contains daily means (from midnight to midnight) of NOx,
 i.e., mono-nitrogen oxides, in [ppb] at 13 sites in central
@@ -23,7 +21,6 @@ Switzerland and Aarau for the year 2004.
 
 
 <h3>Format</h3>
-
 
 <p>A data frame with 366 observations on the following 14 variables.
 </p>
@@ -88,16 +85,15 @@ inLuft).</p>
 
 <h3>Details</h3>
 
-
 <p>The 13 sites are part of one of the three air quality monitoring networks:
 inLuft (regional authorities of central Switzerland and canton Aargau)
-<br>
+<br />
 NABEL (Swiss federal network)
-<br>
+<br />
 MFM-U (Monitoring flankierende Massnahmen Umwelt), special Swiss
 federal network along transit motorways A2 and A13 from Germany to
 Italy through Switzerland
-<br>
+<br />
 The information within the brackets means: Swiss
 coordinates km east, km north; m above sea level; network
 </p>
@@ -117,9 +113,8 @@ is above the inversion boundary between December 10th and 12th.
 
 <h3>Source</h3>
 
-
-<p>http://www.in-luft.ch/ <br>
-http://www.empa.ch/plugin/template/empa/*/6794 <br>
+<p>http://www.in-luft.ch/ <br />
+http://www.empa.ch/plugin/template/empa/*/6794 <br />
 http://www.bafu.admin.ch/umweltbeobachtung/02272/02280
 </p>
 
@@ -191,7 +186,7 @@ arrows(C.cf[lrg,1], C.cf[lrg,2],
 points(R.cf, col=2)
 
 ## All robustness weights
-aW &lt;- t(sapply(R, weights))
+aW &lt;- t(sapply(R, weights, type="robustness"))
 colnames(aW) &lt;- names(yearly)
 summary(aW)
 sort(colSums(aW &lt; 0.05, na.rm = TRUE)) # how often "clear outlier":

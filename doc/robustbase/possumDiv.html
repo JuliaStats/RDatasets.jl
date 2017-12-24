@@ -1,15 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Possum Diversity Data</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Possum Diversity Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for possumDiv"><tr><td>possumDiv</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for possumDiv"><tr><td>possumDiv</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Possum Diversity Data</h2>
 
 <h3>Description</h3>
-
 
 <p>Possum diversity data: As issued from a study of the diversity
 of possum (arboreal marsupials) in the Montane ash forest (Australia),
@@ -32,7 +30,6 @@ other variables.
 
 
 <h3>Format</h3>
-
 
 <p>Two different representations of the same data are available:
 </p>
@@ -69,7 +66,8 @@ nesting and foraging habitat for Leadbeater's possum.</p>
 <dt>BAcacia</dt><dd><p>a numeric vector giving the basal area of acacia species.</p>
 </dd>
 </dl>
-<br>
+<p><br />
+</p>
 <dl>
 <dt>eucalyptus</dt><dd><p>a 3-level <code>factor</code>
 specifying the species of eucalypt with the greatest stand basal
@@ -82,7 +80,8 @@ area.  This has the same information as the following three variables</p>
 <dt>E.nitens</dt><dd><p>0-1 indicator for Eucalyptus nitens</p>
 </dd>
 </dl>
-<br>
+<p><br />
+</p>
 <dl>
 <dt>aspect</dt><dd><p>a 4-level <code>factor</code> specifying the aspect
 of the site.  It is the same information as the following four
@@ -102,30 +101,28 @@ variables.</p>
 
 <h3>Source</h3>
 
-
 <p>Eva Cantoni (2004)
 Analysis of Robust Quasi-deviances for Generalized Linear Models.
-<EM>Journal of Statistical Software</EM> <B>10</B>, 04,
+<em>Journal of Statistical Software</em> <b>10</b>, 04,
 <a href="http://www.jstatsoft.org/v10/i04">http://www.jstatsoft.org/v10/i04</a>
 </p>
 
 
 <h3>References</h3>
 
-
 <p>Lindenmayer, D. B., Cunningham, R. B., Tanton, M. T., Nix, H. A. and
 Smith, A. P. (1991)
 The conservation of arboreal marsupials in the montane ash forests of
 the central highlands of victoria, south-east australia: III. The habitat
-requirements of leadbeater's possum <EM>gymnobelideus leadbeateri</EM> and
+requirements of leadbeater's possum <em>gymnobelideus leadbeateri</em> and
 models of the diversity and abundance of arboreal marsupials.
-<EM>Biological Conservation</EM> <B>56</B>, 295&ndash;315.
+<em>Biological Conservation</em> <b>56</b>, 295&ndash;315.
 </p>
 <p>Lindenmayer, D. B., Cunningham, R. B., Tanton, M. T., Smith, A. P. and
 Nix, H. A. (1990)
 The conservation of arboreal marsupials in the montane ash forests of
 the victoria, south-east australia, I. Factors influencing the occupancy of
-trees with hollows, <EM>Biological Conservation</EM> <B>54</B>, 111&ndash;131.
+trees with hollows, <em>Biological Conservation</em> <b>54</b>, 111&ndash;131.
 </p>
 <p>See also the references in <code>glmrob</code>.
 </p>
@@ -141,6 +138,29 @@ str(possumDiv)
 ## summarize all variables as multilevel factors:
 summary(as.data.frame(lapply(possumDiv, function(v)
                              if(is.integer(v)) factor(v) else v)))
+
+## Following Cantoni &amp; Ronchetti (2001), JASA, p.1026 f.:% cf. ../tests/poisson-ex.R
+pdFit &lt;- glmrob(Diversity ~ . , data = possumDiv,
+                family=poisson, tcc = 1.6, weights.on.x = "hat", acc = 1e-15)
+summary(pdFit)
+summary(pdF2 &lt;- update(pdFit, ~ . -Shrubs))
+summary(pdF3 &lt;- update(pdF2,  ~ . -eucalyptus))
+summary(pdF4 &lt;- update(pdF3,  ~ . -Stumps))
+summary(pdF5 &lt;- update(pdF4,  ~ . -BAcacia))
+summary(pdF6 &lt;- update(pdF5,  ~ . -aspect))# too much ..
+anova(pdFit, pdF3, pdF4, pdF5, pdF6, test = "QD") # indeed,
+## indeed, the last simplification is too much
+possumD.2 &lt;- within(possumDiv, levels(aspect)[1:3] &lt;- rep("other", 3))
+## and use this binary 'aspect' instead of the 4-level one:
+summary(pdF5.1 &lt;- update(pdF5, data = possumD.2))
+
+if(FALSE) # not ok, as formually not nested.
+anova(pdF5, pdF5.1)
+
+summarizeRobWeights(weights(pdF5.1, type="rob"), eps = 0.73)
+##-&gt;  "outliers"  (1, 59, 110)
+wrob &lt;- setNames(weights(pdF5.1, type="rob"), rownames(possumDiv))
+head(sort(wrob))
 </pre>
 
 

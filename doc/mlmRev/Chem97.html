@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Scores on A-level Chemistry in 1997</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Chem97"><tr><td>Chem97</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Scores on A-level Chemistry in 1997</h2>
+
+<h3>Description</h3>
+
+<p>Scores on the 1997 A-level Chemistry examination in Britain.  Students
+are grouped into schools within local education authories.  In
+addition some demographic and pre-test information is provided.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Chem97)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 31022 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt>lea</dt><dd><p>Local Education Authority - a factor</p>
+</dd>
+<dt>school</dt><dd><p>School identifier - a factor</p>
+</dd>
+<dt>student</dt><dd><p>Student identifier - a factor</p>
+</dd>
+<dt>score</dt><dd><p>Point score on A-level Chemistry in 1997</p>
+</dd>
+<dt>gender</dt><dd><p>Student's gender</p>
+</dd>
+<dt>age</dt><dd><p>Age in month, centred at 222 months or 18.5 years</p>
+</dd>
+<dt>gcsescore</dt><dd><p>Average GCSE score of individual.</p>
+</dd>
+<dt>gcsecnt</dt><dd><p>Average GCSE score of individual, centered at mean.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This data set is relatively large with 31,022 individuals in 2,280
+schools.  Note that while this is used, illustratively, to fit Normal
+response models, the distribution of the response is not well
+described by a Normal distribution.</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://multilevel.ioe.ac.uk/softrev/chem97.html">http://multilevel.ioe.ac.uk/softrev/chem97.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Yang, M., Fielding, A. and Goldstein, H. (2002). Multilevel ordinal
+models for examination grades (submitted to <em>Statistical Modelling</em>).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Chem97)
+summary(Chem97)
+(fm1 &lt;- lmer(score ~ (1|school) + (1|lea), Chem97))
+(fm2 &lt;- lmer(score ~ gcsecnt + (1|school) + (1|lea), Chem97))
+</pre>
+
+
+</body></html>

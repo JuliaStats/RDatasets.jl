@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nitrogen concentrations in the Mississippi River</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Mississippi"><tr><td>Mississippi</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Nitrogen concentrations in the Mississippi River</h2>
+
+<h3>Description</h3>
+
+<p>The <code>Mississippi</code> data frame has 37 rows and 3 columns.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>influent</dt><dd>
+<p>an ordered factor with levels
+<code>3</code> &lt; <code>5</code> &lt; <code>2</code> &lt; <code>1</code> &lt; <code>4</code> &lt; <code>6</code>
+</p>
+</dd>
+<dt>y</dt><dd>
+<p>a numeric vector
+</p>
+</dd>
+<dt>Type</dt><dd>
+<p>a factor with levels
+<code>1</code> 
+<code>2</code> 
+<code>3</code> 
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Littel, R. C., Milliken, G. A., Stroup, W. W., and Wolfinger,
+R. D. (1996), <em>SAS System for Mixed Models</em>, SAS Institute
+(Data Set 4.2).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Mississippi)
+if (require("lattice", quietly = TRUE, character = TRUE)) {
+  dotplot(drop(influent:Type) ~ y, groups = Type, Mississippi)
+} 
+if (require("lme4", quietly = TRUE, character = TRUE)) {
+  options(contrasts = c(unordered = "contr.SAS", ordered = "contr.poly"))
+  ## compare with output 4.1, p. 142
+  print(fm1Miss &lt;- lmer(y ~ 1 + (1|influent), Mississippi))
+  ## compare with output 4.2, p. 143
+  print(fm1MLMiss &lt;- update(fm1Miss, REML=FALSE))
+  ## BLUP's of random effects on p. 142
+  ranef(fm1Miss)            
+  ## BLUP's of random effects on p. 144
+  print(ranef(fm1MLMiss))
+#intervals(fm1Miss)       # interval estimates of variance components
+  ## compare to output 4.8 and 4.9, pp. 150-152
+  print(fm2Miss &lt;- lmer(y ~ Type+(1|influent), Mississippi, REML=TRUE))
+  print(anova(fm2Miss))
+}
+</pre>
+
+
+</body></html>

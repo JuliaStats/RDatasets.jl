@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from a balanced incomplete block design</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BIB"><tr><td>BIB</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data from a balanced incomplete block design</h2>
+
+<h3>Description</h3>
+
+<p>The <code>BIB</code> data frame has 24 rows and 5 columns.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>Block</dt><dd>
+<p>an ordered factor with levels
+<code>1</code> &lt; <code>2</code> &lt; <code>3</code> &lt; <code>8</code> &lt; <code>5</code> &lt; <code>4</code> &lt; <code>6</code> &lt; <code>7</code>
+</p>
+</dd>
+<dt>Treatment</dt><dd>
+<p>a treatment factor with levels <code>1</code> to <code>4</code>.
+</p>
+</dd>
+<dt>y</dt><dd>
+<p>a numeric vector representing the response
+</p>
+</dd>
+<dt>x</dt><dd>
+<p>a numeric vector representing the covariate
+</p>
+</dd>
+<dt>Grp</dt><dd>
+<p>a factor with levels
+<code>13</code> and 
+<code>24</code> 
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>These appear to be constructed data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Littel, R. C., Milliken, G. A., Stroup, W. W., and Wolfinger,
+R. D. (1996), <em>SAS System for Mixed Models</em>, SAS Institute
+(Data Set 5.4).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(BIB)
+if (require("lattice", quietly = TRUE, character = TRUE)) {
+  xyplot(y ~ x | Block, BIB, groups = Treatment, type = c("g", "p"),
+         aspect = "xy", auto.key = list(points = TRUE, space = "right",
+         lines = FALSE))
+}
+if (require("lme4", quietly = TRUE, character = TRUE)) {
+  options(contrasts = c(unordered = "contr.SAS", ordered = "contr.poly"))
+  ## compare with Output 5.7, p. 188
+  print(fm1BIB &lt;- lmer(y ~ Treatment * x + (1 | Block), BIB))
+  print(anova(fm1BIB))     # strong evidence of different slopes
+  ## compare with Output 5.9, p. 193
+  print(fm2BIB &lt;- lmer(y ~ Treatment + x : Grp + (1 | Block), BIB))
+  print(anova(fm2BIB))
+}
+</pre>
+
+
+</body></html>

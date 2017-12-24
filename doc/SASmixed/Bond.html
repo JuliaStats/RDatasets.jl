@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Strengths of metal bonds</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Bond"><tr><td>Bond</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Strengths of metal bonds</h2>
+
+<h3>Description</h3>
+
+<p>The <code>Bond</code> data frame has 21 rows and 3 columns of data on the
+strength required to break metal bonds according to the metal and
+the ingot.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>pressure</dt><dd>
+<p>a numeric vector of pressures required to break the bond
+</p>
+</dd>
+<dt>Metal</dt><dd>
+<p>a factor with levels <code>c</code>, <code>i</code> and <code>n</code>
+indicating the metal involved (copper, iron or nickel).
+</p>
+</dd>
+<dt>Ingot</dt><dd>
+<p>an ordered factor indicating the ingot of the composition
+material.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Littel, R. C., Milliken, G. A., Stroup, W. W., and Wolfinger,
+R. D. (1996), <em>SAS System for Mixed Models</em>, SAS Institute
+(Data Set 1.2.4).
+</p>
+<p>Mendenhall, M., Wackerly, D. D. and Schaeffer, R. L. (1990),
+<em>Mathematical Statistics</em>, Wadsworth (Exercise 13.36).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Bond)
+options(contrasts = c(unordered = "contr.SAS", ordered = "contr.poly"))
+if (require("lme4", quietly = TRUE, character = TRUE)) {
+  ## compare with output 1.1 on p. 6
+  print(fm1Bond &lt;- lmer(pressure ~ Metal + (1|Ingot), Bond))
+  print(anova(fm1Bond))
+}
+</pre>
+
+
+</body></html>
