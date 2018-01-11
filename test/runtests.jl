@@ -3,14 +3,13 @@
 #
 
 using RDatasets
+using Base.Test
 
 my_tests = ["packages.jl",
             "datasets.jl",
             "dataset.jl"]
 
-println("Running tests:")
-
-for my_test in my_tests
-    println(" * $(my_test)")
+@testset "$my_test" for my_test in my_tests
+    info("Running $(my_test)...")
     include(my_test)
 end

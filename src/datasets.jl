@@ -4,6 +4,9 @@ function datasets(package_name::AbstractString)
 end
 
 function datasets()
-	path = joinpath(dirname(@__FILE__), "..", "doc", "datasets.csv")
-	readtable(path)
+    if RDatasets.__datasets === nothing
+        path = joinpath(dirname(@__FILE__), "..", "doc", "datasets.csv")
+        global __datasets = CSV.read(path)
+    end
+    return RDatasets.__datasets::DataFrame
 end
