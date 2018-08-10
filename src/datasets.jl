@@ -1,6 +1,6 @@
 function datasets(package_name::AbstractString)
 	d = datasets()
-	d[d[:Package] .== package_name, :]
+	d[findfirst(isequal(package_name), d[:Package]), :]
 end
 
 function datasets()

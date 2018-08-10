@@ -1,5 +1,5 @@
 @testset "Datasets validity" begin
-    goodname(sym) = ismatch(r"^[A-Za-z0-9_][A-Za-z0-9_.]*$", string(sym))
+    goodname(sym) = occursin(r"^[A-Za-z0-9_][A-Za-z0-9_.]*$", string(sym))
 
     allsets = RDatasets.datasets()
     for pkgsets in groupby(allsets, :Package)
