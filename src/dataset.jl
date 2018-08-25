@@ -1,3 +1,4 @@
+using Printf
 # special cases for datasets that need more rows for proper column type detection
 const Dataset_typedetect_rows = Dict{Tuple{String, String}, Int}(
     ("adehabitatLT", "albatross") => 1000,
