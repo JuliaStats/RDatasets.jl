@@ -1,7 +1,6 @@
-__precompile__()
-
 module RDatasets
-    using Reexport, FileIO, CSV, CodecZlib
+    using Reexport, RData, CSV, CodecZlib
+    using Printf: @sprintf
     @reexport using DataFrames
 
     export dataset

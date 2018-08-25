@@ -4,7 +4,7 @@
     dfs_found = vcat(map(readdir(package_directory)) do directory
         fns = readdir(joinpath(package_directory, directory))
         pkgs = fill(directory, length(fns))
-        sets = replace.(fns, r"(\.(rda|csv|gz))+$", "")
+        sets = replace.(fns, Ref(r"(\.(rda|csv|gz))+$" => ""))
         DataFrame(Package = pkgs, Dataset = sets)
     end...)
 
