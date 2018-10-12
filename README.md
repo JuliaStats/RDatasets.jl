@@ -41,6 +41,7 @@ boot         | Bootstrap Functions (Originally by Angelo Canty for S)
 car          | Companion to Applied Regression
 cluster      | Cluster Analysis Extended Rousseeuw et al.
 datasets     | The R Datasets Package
+drc         | Analysis of Dose-Response Curves
 gap          | Genetic analysis package
 ggplot2      | An Implementation of the Grammar of Graphics
 lattice      | Lattice Graphics
