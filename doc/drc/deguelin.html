@@ -5,7 +5,7 @@
 
 <table width="100%" summary="page for deguelin"><tr><td>deguelin</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Deguelin applied to chrysanthemum aphis</h2>
+<h2>Deguelin applied to chrysanthemum aphids</h2>
 
 <h3>Description</h3>
 
@@ -48,7 +48,7 @@ modelling.
 
 <h3>Source</h3>
 
- 
+
 <p>Morgan, B. J. T. (1992) <em>Analysis of Quantal Response Data</em>, London: Chapman \&amp; Hall/CRC (Table 3.9, p. 117).
 </p>
 
@@ -75,7 +75,7 @@ deguelin.m2 &lt;- loess(r/n~dose, data=deguelin, degree=1)
 plot(deguelin.m1, ylim=c(0.2,1))
 lines(1:60, predict(deguelin.m2, newdata=data.frame(dose=1:60)), col = 2, lty = 2)
 
-lines(1:60, 0.95*predict(deguelin.m2, 
+lines(1:60, 0.95*predict(deguelin.m2,
 newdata=data.frame(dose=1:60))+0.05*predict(deguelin.m1, newdata=data.frame(dose=1:60), se = FALSE),
 col = 3, lty=3)
 

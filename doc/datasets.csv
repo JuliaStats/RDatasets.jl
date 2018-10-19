@@ -732,3 +732,38 @@
 "vcd","VonBort","Von Bortkiewicz Horse Kicks Data",280,4
 "vcd","WeldonDice","Weldon's Dice Data",11,2
 "vcd","WomenQueue","Women in Queues",11,2
+"drc","acidiq","Acifluorfen and diquat tested on Lemna minor",180,3
+"drc","algae","Volume of algae as function of increasing concentrations of a herbicide",14,2
+"drc","auxins","Effect of technical grade and commercially formulated auxin herbicides",150,5
+"drc","chickweed","Germination of common chickweed (Stellaria media)",35,3
+"drc","chickweed0","Germination of common chickweed (Stellaria media)",34,3
+"drc","daphnids","Daphnia test",16,4
+"drc","decontaminants","Performance of decontaminants used in the culturing of a micro-organism",128,3
+"drc","deguelin","Deguelin applied to chrysanthemum aphids",6,4
+"drc","earthworms","Earthworm toxicity test",35,3
+"drc","etmotc","Effect of erythromycin on mixed sewage microorganisms",57,4
+"drc","finney71","Example from Finney (1971)",6,3
+"drc","G.aparine","Herbicide applied to Galium aparine",240,3
+"drc","germination","Germination of three crops",192,5
+"drc","glymet","Glyphosate and metsulfuron-methyl tested on algae",113,3
+"drc","H.virescens",Mortality of tobacco budworms,12,4
+"drc","heartrate","Heart rate baroreflexes for rabbits",18,2
+"drc","leaflength","Leaf length of barley",42,2
+"drc","lepidium","Dose-response profile of degradation of agrochemical using lepidium",42,2
+"drc","lettuce","Hormesis in lettuce plants",14,2
+"drc","M.bahia","Effect of an effluent on the growth of mysid shrimp",40,2
+"drc","mecter","Mechlorprop and terbythylazine tested on Lemna minor",102,3
+"drc","metals","Data from heavy metal mixture experiments",543,3
+"drc","methionine","Weight gain for different methionine sources",9,3
+"drc","nasturtium","Dose-response profile of degradation of agrochemical using nasturtium",42,2
+"drc","O.mykiss","Test data from a 21 day fish test",70,2
+"drc","P.promelas","Effect of sodium pentachlorophenate on growth of fathead minnow",24,2
+"drc","RScompetition","Competition between two biotypes",49,3
+"drc","ryegrass","Effect of ferulic acid on growth of ryegrass",24,2
+"drc","S.alba","Potency of two herbicides",68,3
+"drc","S.capricornutum","Effect of cadmium on growth of green alga",18,2
+"drc","secalonic","Root length measurements",7,2
+"drc","selenium","Data from toxicology experiments with selenium",25,4
+"drc","spinach","Inhibition of photosynthesis",105,4
+"drc","terbuthylazin","The effect of terbuthylazin on growth rate",30,2
+"drc","vinclozolin","Vinclozolin from AR in vitro assay",53,3
