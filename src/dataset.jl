@@ -24,8 +24,8 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
     csvname = joinpath(basename, string(dataset_name, ".csv.gz"))
     if isfile(csvname)
         return open(GzipDecompressorStream, csvname, "r") do io
-            CSV.read(io, delim=',', quotechar='\"', missingstring="NA",
-                     rows_for_type_detect=get(Dataset_typedetect_rows, (package_name, dataset_name), 200))
+            CSV.read(IOBuffer(read(io, delim=',', quotechar='\"', missingstring="NA",
+                     rows_for_type_detect=get(Dataset_typedetect_rows, (package_name, dataset_name), 200))))
         end
     end
     error(@sprintf "Unable to locate dataset file %s or %s" rdaname csvname)
