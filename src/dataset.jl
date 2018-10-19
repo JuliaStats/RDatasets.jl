@@ -25,7 +25,7 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
     if isfile(csvname)
         return open(csvname,"r") do io
              uncompressed = IOBuffer(read(GzipDecompressorStream(io)))
-             DataFrame(CSV.File(uncompressed, delim=',', quotechar='\"', missingstring="NA",
+             DataFrame(CSV.read(uncompressed, delim=',', quotechar='\"', missingstring="NA",
                   rows_for_type_detect=get(Dataset_typedetect_rows, (package_name, dataset_name), 200)))
          end
     end
