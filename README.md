@@ -1,13 +1,6 @@
 # RDatasets.jl
 
-**NOTE:** At the moment loading certain datasets can lead to significant CPU and memory overhead when using Julia v0.7.0/v1.0.0. This would be fixed in the upcoming Julia v1.0.1. (See #54 for more details)
-
-[![Julia 0.6 Status](http://pkg.julialang.org/badges/RDatasets_0.6.svg)](http://pkg.julialang.org/?pkg=RDatasets&ver=0.6)
-[![Julia 0.7 Status](http://pkg.julialang.org/badges/RDatasets_0.7.svg)](http://pkg.julialang.org/?pkg=RDatasets&ver=0.7)
-[![Julia 1.0 Status](http://pkg.julialang.org/badges/RDatasets_1.0.svg)](http://pkg.julialang.org/?pkg=RDatasets&ver=1.0)
-
-[![Build Status](https://travis-ci.org/johnmyleswhite/RDatasets.jl.svg)](https://travis-ci.org/johnmyleswhite/RDatasets.jl)
-[![Coverage Status](https://coveralls.io/repos/johnmyleswhite/RDatasets.jl/badge.svg)](https://coveralls.io/r/johnmyleswhite/RDatasets.jl)
+[![Build Status](https://travis-ci.org/JuliaStats/RDatasets.jl.svg)](https://travis-ci.org/JuliaStats/RDatasets.jl)
 
 The RDatasets package provides an easy way for Julia users to experiment with most of the standard data sets that are available in the core of R as well as datasets included with many of R's most popular packages. This package is essentially a simplistic port of the Rdatasets repo created by Vincent Arelbundock, who conveniently gathered data sets from many of the standard R packages in one convenient location on GitHub at https://github.com/vincentarelbundock/Rdatasets
 
