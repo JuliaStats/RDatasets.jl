@@ -20,5 +20,5 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
                       types=get(Dataset_typedetect_rows, (package_name, dataset_name), nothing)) )
         end
     end
-    error(@sprintf "Unable to locate dataset file %s or %s" rdaname csvname)
+    error("Unable to locate dataset file $rdaname or $csvname")
 end

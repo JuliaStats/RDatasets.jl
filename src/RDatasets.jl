@@ -1,6 +1,5 @@
 module RDatasets
     using Reexport, RData, CSV, CodecZlib
-    using Printf: @sprintf
     @reexport using DataFrames
 
     export dataset
