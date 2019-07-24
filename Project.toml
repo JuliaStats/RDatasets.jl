@@ -1,6 +1,6 @@
 name = "RDatasets"
 uuid = "ce6b1742-4840-55fa-b093-852dadbb1d8b"
-version = "0.6.2"
+version = "0.6.3"
 
 [deps]
 CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
@@ -12,7 +12,7 @@ FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 
 [compat]
-DataFrames = "0.15, 0.16, 0.17, 0.18"
+DataFrames = "0.15, 0.16, 0.17, 0.18, 0.19"
 RData = "0.5, 0.6"
 CodecZlib = "0.4, 0.5"
 CSV = "0.5"
