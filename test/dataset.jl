@@ -8,7 +8,7 @@
             for r in eachrow(pkgsets)
                 ds = convert(String, r[:Dataset])
                 @testset "$pkg::$ds dataset" begin
-                    recorded_size = (r[:Rows], r[:Columns])
+                    recorded_size = (r.Rows, r.Columns)
                     df = dataset(pkg, ds)
 
                     @test size(df) == recorded_size
