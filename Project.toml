@@ -1,6 +1,6 @@
 name = "RDatasets"
 uuid = "ce6b1742-4840-55fa-b093-852dadbb1d8b"
-version = "0.6.3"
+version = "0.6.4"
 
 [deps]
 CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
