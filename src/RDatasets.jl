@@ -1,4 +1,8 @@
 module RDatasets
+    if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
+        @eval Base.Experimental.@optlevel 1
+    end
+
     using Reexport, RData, CSV, CodecZlib
     @reexport using DataFrames
 
