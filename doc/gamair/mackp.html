@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Prediction grid data for 1992 mackerel egg model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mackp"><tr><td>mackp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Prediction grid data for 1992 mackerel egg model</h2>
+
+<h3>Description</h3>
+
+<p> This data frame provides a regular grid of values of some predictor variables useful for modelling mackerel egg abundances. Its main purpose is to enable mackerel egg densities to be predicted over a regular spatial grid within the area covered by the 1992 mackerel egg survey (see <code>mack</code>), using a fitted generalised additive model.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(mackp)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5 columns. Each row corresponds to one spatial location within the survey area. 
+The columns are as follows:
+</p>
+
+<dl>
+<dt>lon</dt><dd><p>Longitude of the gridpoint in degrees east</p>
+</dd>
+<dt>lat</dt><dd><p>Latitude of the gridpoint in degrees north.</p>
+</dd>
+<dt>b.depth</dt><dd><p>The sea bed depth at the gridpoint.</p>
+</dd>
+<dt>c.dist</dt><dd><p>The distance from the gridpoint to the 200m sea bed depth contour.</p>
+</dd>
+<dt>salinity</dt><dd><p>Salinity interpolated onto the grid (from <code>mack</code> measurements).</p>
+</dd>
+<dt>temp.surf</dt><dd><p>Surface temperature interpolated onto grid (from <code>mack</code> data).</p>
+</dd>
+<dt>temp.20m</dt><dd><p>Temperature at 20m interpolated from <code>mack</code> data.</p>
+</dd>
+<dt>area.index</dt><dd><p> An indexing vector that enables straightforward copying of
+the other variables into a matrix suitable for plotting against longitude and
+lattitude using <code>image()</code>. See the example below.</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p> The grid is defined on a series of 1/4 degree lon-lat squares.
+</p>
+
+
+<h3>References</h3>
+
+<p>Borchers, D.L., S.T. Buckland, I.G. Priede and S. Ahmadi (1997) &quot;Improving the precision of the daily egg 
+production method using generalized additive models&quot;. Can. J. Fish. Aquat. Sci. 54:2727-2742. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## example of how to use `area.index' to paste gridded info.
+## into a square grid (of NA's) for plotting
+data(mackp)
+lon&lt;-seq(-15,-1,1/4);lat&lt;-seq(44,58,1/4)
+zz&lt;-array(NA,57*57)
+zz[mackp$area.index]&lt;-mackp$b.depth
+image(lon,lat,matrix(zz,57,57))
+</pre>
+
+
+</body></html>

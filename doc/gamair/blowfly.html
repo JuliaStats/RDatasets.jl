@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nicholson's Blowfly data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for blowfly"><tr><td>blowfly</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Nicholson's Blowfly data</h2>
+
+<h3>Description</h3>
+
+<p>Data on a laboratory population of Blowfies, from the classic
+ecological studies of Nicholson.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(blowfly)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2 columns and 180 rows. The columns are:
+</p>
+
+<dl>
+<dt>pop</dt><dd><p>Counts (!) of the population of adult Blowflies in one of the experiments.</p>
+</dd>
+<dt>day</dt><dd><p>Day of experiment.</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>The population counts are actually obtained by counting dead
+blowflies and back calculating.
+</p>
+
+
+<h3>References</h3>
+
+<p>Nicholson, A.J. (1954a) Compensatory reactions of populations to stresses and
+their evolutionary significance. Australian Journal of Zoology 2, 1-8.
+</p>
+<p>Nicholson, A.J. (1954b) An outline of the dynamics of animal populations. 
+Australian Journal of Zoology 2, 9-65.
+</p>
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(blowfly)
+  with(blowfly,plot(day,pop,type="l"))
+</pre>
+
+
+</body></html>

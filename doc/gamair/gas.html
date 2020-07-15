@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Octane rating data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gas"><tr><td>gas</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Octane rating data</h2>
+
+<h3>Description</h3>
+
+<p>The octane rating of fuel determines its &lsquo;knocking&rsquo; resistance. So the higher the octane rating the higher the compression ratio that an engine can run at. Traditionally octane measurement involves comparing the knocking resistance of fuel samples to standard mixtures in special variable compression ratio engines. This is an expensive process relative to obtaining the near infra-red spectrum of a sample. It would be good to be able to predict octane rating from the spectrum.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(gas)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A three item list
+</p>
+
+<dl>
+<dt>octane</dt><dd><p>Octane rating of gasoline (petrol) sample. </p>
+</dd>
+<dt>NIR</dt><dd><p>A matrix each row of which contains the near infra-red reflectance spectrum of the corresponding gasoline sample.</p>
+</dd>
+<dt>nm</dt><dd><p> Matrix of same dimension as <code>NIR</code> containing wavelengths at which measurements were taken.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A scalar-on-function regression (also known as &lsquo;signal regression&rsquo;) works quite well for these data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Originally from the <code>pls</code> package
+</p>
+<p><a href="https://cran.r-project.org/package=pls">https://cran.r-project.org/package=pls</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair);require(mgcv)
+data(gas)
+## plot some spectra...
+with(gas,plot(nm[1,],NIR[1,],type="l",ylab="log(1/R)",
+     xlab="wavelength (nm)",col=1))
+text(1000,1.2,"octane");text(1000,1.2-.1,gas$octane[1],col=1)
+for (i in 2:8) { lines(gas$nm[i,],gas$NIR[i,],col=i)
+  text(1000,1.2-.1*i,gas$octane[i],col=i)
+}
+
+## Fit scalar on function regression...
+
+b &lt;- gam(octane~s(nm,by=NIR,k=50),data=gas)
+
+gam.check(b)
+
+par(mfrow=c(1,2))
+plot(b,scheme=1)
+plot(fitted(b),gas$octane,xlab="fitted octane",
+     ylab="observed octane");abline(0,1)
+
+</pre>
+
+
+</body></html>

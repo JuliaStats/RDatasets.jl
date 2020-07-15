@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Swiss 12 hour extreme rainfall</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for swer"><tr><td>swer</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Swiss 12 hour extreme rainfall</h2>
+
+<h3>Description</h3>
+
+<p>Records the most extreme 12 hourly total rainfall each year for 65 Swiss weather stations. The data period is 1981-2015, although not all stations start in 1981.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(swer)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The <code>swer</code> data frame has the following columns
+</p>
+
+<dl>
+<dt>year</dt><dd><p>The year of observation.</p>
+</dd>
+<dt>exra</dt><dd><p>The highest rainfall observed in any 12 hour period in that year, in mm. </p>
+</dd>
+<dt>nao</dt><dd><p>Annual North Atlantic Oscillation index, based on the difference of normalized sea level pressure (SLP) between Lisbon, Portugal and Stykkisholmur/Reykjavik, Iceland. Positive values are generally associated with wetter and milder weather over Western Europe.</p>
+</dd>
+<dt>location</dt><dd><p>The measuring station location name.</p>
+</dd>
+<dt>code</dt><dd><p>Three letter code identifying the station.</p>
+</dd>
+<dt>elevation</dt><dd><p>metres above sea level.</p>
+</dd>
+<dt>climate.region</dt><dd><p>One of 12 distinct climate regions.</p>
+</dd>
+<dt>N</dt><dd><p>Degrees north.</p>
+</dd>
+<dt>E</dt><dd><p>Degrees east. </p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>The actual extreme rainfall measurements are digitized from plots in the MeteoSwiss reports for each station. The error associated with digitization can be estimated from the error in the digitized year values, since the true values are then known exactly. This translates into a mean square error in rainfall of about 0.1% of the station maximum, and a maximum error of about 0.3% of station maximum. 
+</p>
+
+
+<h3>Source</h3>
+
+<p>Mostly from the MeteoSwiss website:
+</p>
+<p><a href="http://www.meteoswiss.admin.ch/home/climate/past/climate-extremes/extreme-value-analyses/standard-period.html?">http://www.meteoswiss.admin.ch/home/climate/past/climate-extremes/extreme-value-analyses/standard-period.html?</a>
+</p>
+<p>NAO data from:
+</p>
+<p>Hurrell, James &amp; National Center for Atmospheric Research Staff (Eds). Last modified 16 Aug 2016. &quot;The Climate Data Guide: Hurrell North Atlantic Oscillation (NAO) Index (station-based).&quot;
+</p>
+<p><a href="https://climatedataguide.ucar.edu/climate-data/hurrell-north-atlantic-oscillation-nao-index-station-based.">https://climatedataguide.ucar.edu/climate-data/hurrell-north-atlantic-oscillation-nao-index-station-based.</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair);require(mgcv)
+data(swer)
+## GEV model, over-simplified for speed...
+system.time(b &lt;- gam(list(exra~s(elevation)+ climate.region,
+         ~s(elevation),~1),family=gevlss,data=swer))
+plot(b,pages=1,scale=0,scheme=1)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Brain scan data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for brain"><tr><td>brain</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Brain scan data</h2>
+
+<h3>Description</h3>
+
+<p> Functional magnetic resonance imaging measurements for a human
+brain subject to a particular experimental stimulus. One slice of the image is
+provided, described as a near-axial slice through the dorsal cerebral cortex.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(brain)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5 columns and 1567 rows. Each row refers to one &lsquo;voxel&rsquo; of
+the image. The columns are:
+</p>
+
+<dl>
+<dt>X</dt><dd><p>voxel position on horizontal axis.</p>
+</dd>
+<dt>Y</dt><dd><p>voxel position on vertical axis.</p>
+</dd>
+<dt>medFPQ</dt><dd><p>median of three replicate 'Fundamental 
+Power Quotient' values at the voxel: this is the main measurement of brain 
+activivity.</p>
+</dd>
+<dt>region</dt><dd><p>code indicating which of several regions of the brain the voxel
+belongs to. The regions are defined by the experimenters. <code>0</code> is the base
+region; <code>1</code> is the
+region of interest; <code>2</code> is the region activated by the experimental 
+stimulus; <code>NA</code> denotes a voxel with no allocation.</p>
+</dd>
+<dt>meanTheta</dt><dd><p>mean phase shift at the Voxel, over three measurments.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p> See the source article for fuller details.
+</p>
+
+
+<h3>Source</h3>
+
+<p> S. Landau et al (2003)
+&lsquo;Tests for a difference in timing of physiological response between two brain regions measured by using functional magnetic resonance imaging&rsquo;.
+Journal of the Royal Statistical Society, Series C, Applied Statistics, 53(1):63-82
+</p>
+
+
+</body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bordeaux Wines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wine"><tr><td>wine</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bordeaux Wines</h2>
+
+<h3>Description</h3>
+
+<p> Data on prices and growing characteristics of 25 Bordeaux wines
+from 1952 to 1998.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(wine)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7 columns and 47 rows. The columns are:
+</p>
+
+<dl>
+<dt>year</dt><dd><p>year of production</p>
+</dd>
+<dt>price</dt><dd><p>average price of the wines as a percentage of the 1961 price.</p>
+</dd>
+<dt>h.rain</dt><dd><p>mm of rain in the harvest month.</p>
+</dd>
+<dt>s.temp</dt><dd><p>Average temperature (C) over the summer preceding harvest.</p>
+</dd>
+<dt>w.rain</dt><dd><p>mm of rain in the winter preceding harvest.</p>
+</dd>
+<dt>h.temp</dt><dd><p>average temperature (C) at harvest.</p>
+</dd>
+<dt>parker</dt><dd><p>a rating of the wine quality (see source for details).</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+ 
+<p><a href="http://schwert.ssb.rochester.edu/a425/a425.htm">http://schwert.ssb.rochester.edu/a425/a425.htm</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R. CRC
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(wine)
+  pairs(wine[,-7])
+</pre>
+
+
+</body></html>

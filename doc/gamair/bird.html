@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bird distribution data from Portugal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bird"><tr><td>bird</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bird distribution data from Portugal</h2>
+
+<h3>Description</h3>
+
+<p>Data from the compilation of the Portuguese Atlas of Breeding Birds.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(bird)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6 columns and 25100 rows. Each row refers to one 2km by 2km
+square (tetrad). The columns are:
+</p>
+
+<dl>
+<dt>QUADRICULA</dt><dd><p>An identifier for the 10km by 10km square that this tetrad
+belongs to.</p>
+</dd>
+<dt>TET</dt><dd><p>Which tetrad the observation is from.</p>
+</dd>
+<dt>crestlark</dt><dd><p>Were crested lark (or possibly thekla lark!) found (1), not
+found (0) breading in this tetrad, or was the tetrad not visited (<code>NA</code>). </p>
+</dd>
+<dt>linnet</dt><dd><p>As <code>crestlark</code>, but for linnet.</p>
+</dd>
+<dt>x</dt><dd><p>location of tetrad (km east of an origin).</p>
+</dd>
+<dt>y</dt><dd><p>location of tetrad (km north of an origin).</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>At least 6 tetrads from each 10km square were visited, to establish
+whether each species was breeding there, or not. Each Tetrad was visited twice
+for one hour each visit. These data are not
+definitive: at time of writing the fieldwork was not quite complete.
+</p>
+<p>The data were kindly supplied by Jose Pedro Granadeiro.
+</p>
+
+
+<h3>Source</h3>
+
+ 
+<p>The Atlas of the Portuguese Breeding Birds.
+</p>
+
+
+<h3>References</h3>
+
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(bird)
+  species &lt;- "crestlark"
+  op&lt;-par(bg="white",mfrow=c(1,1),mar=c(5,5,1,1))
+  ind &lt;- bird[[species]]==0&amp;!is.na(bird[[species]])
+  plot(bird$y[ind]/1000,1000-bird$x[ind]/1000,pch=19,cex=.3,col="white",
+     ylab="km west",xlab="km north",cex.lab=1.4,cex.axis=1.3,type="n")
+  polygon(c(4000,4700,4700,4000),c(250,250,600,600),col="grey",border="black")
+  points(bird$y[ind]/1000,1000-bird$x[ind]/1000,pch=19,cex=.3,col="white")
+  ind &lt;- bird[[species]]==1&amp;!is.na(bird[[species]])
+  with(bird,points(y[ind]/1000,1000-x[ind]/1000,pch=19,cex=.3))
+  par(op)
+</pre>
+
+
+</body></html>

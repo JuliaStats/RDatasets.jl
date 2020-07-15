@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Egg data from 1992 mackerel survey</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mack"><tr><td>mack</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Egg data from 1992 mackerel survey</h2>
+
+<h3>Description</h3>
+
+<p> The data relate to the distribution of mackerel eggs and were collected as part of the 1992 mackerel survey aimed at assessing the mackerel spawning stock biomass using the daily egg production method. </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(mack)
+</pre>
+
+
+<h3>Format</h3>
+
+<p> A data frame with 16 columns. Each row corresponds to one sample of 
+eggs. 
+</p>
+
+<dl>
+<dt>egg.count</dt><dd><p>The number of stage I eggs in this sample.</p>
+</dd>
+<dt>egg.dens</dt><dd><p>The number of stage I eggs per square metre of sea surface, produced per day. This is calculated from <code>egg.count</code> and other information about sampling net size, and egg stage duration.</p>
+</dd>
+<dt>b.depth</dt><dd><p>The sea bed depth at the sampling location.</p>
+</dd>
+<dt>c.dist</dt><dd><p>The distance from the sample location to the 200m contour measured in degrees as if degrees latitude equalled degrees longitude, which actually they don't.</p>
+</dd>
+<dt>lon</dt><dd><p>The longitude of the sample station in degrees east.</p>
+</dd>
+<dt>lat</dt><dd><p>The latitude of the sample station in degrees north.</p>
+</dd>
+<dt>time</dt><dd><p>The time of day (in hours) at which the sample was taken.</p>
+</dd>
+<dt>salinity</dt><dd><p>The salinity (saltiness) of the water at the sampling location.</p>
+</dd>
+<dt>flow</dt><dd><p>Reading from the flow meter attached to the sampling net - used for calibration.</p>
+</dd>
+<dt>s.depth</dt><dd><p>The depth that the sampling net started sampling from (the net is dropped to this depth and then hauled up to the surface, filtering eggs etc out of the water as it goes).</p>
+</dd>
+<dt>temp.surf</dt><dd><p>The temperature at the sea surface at the sampling location.</p>
+</dd>
+<dt>temp.20m</dt><dd><p>The temperature 20m down at the sampling location.</p>
+</dd>
+<dt>net.area</dt><dd><p>The area of the sampling net in square metres.</p>
+</dd>
+<dt>country</dt><dd><p>A code identifying the country responsible for the boat that took  this sample.</p>
+</dd>
+<dt>vessel</dt><dd><p>A code identifying the boat that took this sample.</p>
+</dd>
+<dt>vessel.haul</dt><dd><p>A code uniquely identifying this sample, given that the vessel is known.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p> At each of a number of stations located as defined in <code>lon</code>
+and <code>lat</code>, mackerel eggs were sampled by hauling a fine net up from deep below the sea surface to the sea surface. The egg count data are obtained from the resulting samples, and these have been converted to (stage I) eggs produced per metre squared per day - the egg density data. Other possibly useful predictor variable information has been recorded, along with identification information, and some information that is probably useless!  
+</p>
+
+
+<h3>Source</h3>
+
+<p> The data are effectively a combination of datasets <code>mackerel</code>
+and <code>smacker</code> from the <code>sm</code> library. They were originally analyzed
+using GAMs by:
+</p>
+<p>Borchers, D.L., S.T. Buckland, I.G. Priede and S. Ahmadi (1997) &quot;Improving the precision of the daily egg 
+production method using generalized additive models&quot;. Can. J. Fish. Aquat. Sci. 54:2727-2742. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(mack)
+# plot the egg densities against location
+plot(mack$lon,mack$lat,cex=0.2+mack$egg.dens/150,col="red")
+</pre>
+
+
+</body></html>

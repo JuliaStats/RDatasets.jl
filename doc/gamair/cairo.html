@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily temperature data for Cairo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cairo"><tr><td>cairo</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Daily temperature data for Cairo</h2>
+
+<h3>Description</h3>
+
+<p>The average air temperature (F) in Cairo from Jan 1st 1995.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(cairo)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6 columns and 3780 rows. The columns are:
+</p>
+
+<dl>
+<dt>month</dt><dd><p>month of year from 1 to 12.</p>
+</dd>
+<dt>day.of.month</dt><dd><p>day of month, from 1 to 31.</p>
+</dd>
+<dt>year</dt><dd><p>Year, starting 1995.</p>
+</dd>
+<dt>temp</dt><dd><p>Average temperature (F).</p>
+</dd>
+<dt>day.of.year</dt><dd><p>Day of year from 1 to 366.</p>
+</dd>
+<dt>time</dt><dd><p>Number of days since 1st Jan 1995.</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p><a href="http://academic.udayton.edu/kissock/http/Weather/citylistWorld.htm">http://academic.udayton.edu/kissock/http/Weather/citylistWorld.htm</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(cairo)
+  with(cairo,plot(time,temp,type="l"))
+</pre>
+
+
+</body></html>
