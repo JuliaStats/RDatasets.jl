@@ -5,7 +5,7 @@ end
 
 function datasets()
     if RDatasets.__datasets === nothing
-        path = joinpath(dirname(@__FILE__), "..", "doc", "datasets.csv")
+        path = joinpath(@__DIR__, "..", "doc", "datasets.csv")
         global __datasets = CSV.read(path)
     end
     return RDatasets.__datasets::DataFrame

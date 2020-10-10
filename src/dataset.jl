@@ -5,7 +5,7 @@ const Dataset_typedetect_rows = Dict{Tuple{String, String}, Union{Vector,Dict}}(
 )
 
 function dataset(package_name::AbstractString, dataset_name::AbstractString)
-    basename = joinpath(dirname(@__FILE__), "..", "data", package_name)
+    basename = joinpath(@__DIR__, "..", "data", package_name)
 
     rdaname = joinpath(basename, string(dataset_name, ".rda"))
     if isfile(rdaname)
