@@ -3,7 +3,7 @@ os:
   - linux
 julia:
   - 1.0
-  - 1.1
+  - 1.5
   - nightly
 matrix:
   fast_finish: true
