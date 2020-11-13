@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from 2010 horse mackerel and mackerel egg survey</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for meh"><tr><td>meh</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data from 2010 horse mackerel and mackerel egg survey</h2>
+
+<h3>Description</h3>
+
+<p> The data relate to the distribution of horse mackerel (<code>meh</code>, Trachurus trachurus) eggs and mackerel (<code>med</code>, Scomber scombrus) eggs and were collected as part of the 2010 mackerel survey aimed at assessing the mackerel spawning stock biomass using the daily egg production method. </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(med)
+data(meh)
+</pre>
+
+
+<h3>Format</h3>
+
+<p> A data frame with the following columns. Each row corresponds to one sample of eggs. 
+</p>
+
+<dl>
+<dt>count</dt><dd><p>The number of stage I eggs in this sample.</p>
+</dd>
+<dt>la</dt><dd><p>sample station latitude</p>
+</dd>
+<dt>lo</dt><dd><p>sample station longitude</p>
+</dd>
+<dt>vol</dt><dd><p>volume of water sampled</p>
+</dd>
+<dt>T.surf</dt><dd><p>surface temperature in centigrade</p>
+</dd>
+<dt>T.x</dt><dd><p>temperature at x metres depth.</p>
+</dd>
+<dt>T1.x</dt><dd><p>Second temperature measurements.</p>
+</dd>
+<dt>Sal20</dt><dd><p>Salinity at 20m depth</p>
+</dd>
+<dt>b.depth</dt><dd><p>seabed depth in metres for <code>med</code> only.</p>
+</dd>
+<dt>lon</dt><dd><p>The longitude of the sample station in degrees east.</p>
+</dd>
+<dt>lat</dt><dd><p>The latitude of the sample station in degrees north.</p>
+</dd>
+<dt>time</dt><dd><p>The time of day (in hours) at which the sample was taken.</p>
+</dd>
+<dt>salinity</dt><dd><p>The salinity (saltiness) of the water at the sampling location.</p>
+</dd>
+<dt>period</dt><dd><p>sampling period</p>
+</dd>
+<dt>country</dt><dd><p>Country responsible for sample</p>
+</dd>
+<dt>ship</dt><dd><p>Vessel ID</p>
+</dd>
+<dt>DT</dt><dd><p>sample data and time</p>
+</dd>
+<dt>ID</dt><dd><p>Sample ID</p>
+</dd>
+<dt>gear</dt><dd><p>type of sampling gear used</p>
+</dd>
+</dl>
+
+<p>The remaining fields are undocumented.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The original data files do not always exactly match the file documentation, so these data should not be treated as definitive.  
+</p>
+
+
+<h3>Source</h3>
+
+<p>ICES Eggs and Larvae Dataset 2012, ICES, Copenhagen
+</p>
+<p><a href="http://www.ices.dk/">http://www.ices.dk/</a>
+</p>
+<p><a href="http://eggsandlarvae.ices.dk/Download.aspx">http://eggsandlarvae.ices.dk/Download.aspx</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair)
+par(mfrow=c(1,2))
+data(meh);data(med);data(coast)
+# plot the egg counts against location
+plot(meh$lo,meh$la,cex=0.2+meh$count^.5/10,col="grey",
+     pch=19,xlab="lo",ylab="la",main="horse mackerel")
+ind &lt;- meh$count==0
+points(meh$lo[ind],meh$la[ind],cex=0.1,pch=19)
+lines(coast)
+
+# same for med
+plot(med$lo,med$la,cex=0.2+med$count^.5/10,col="grey",
+     pch=19,xlab="lo",ylab="la",main="mackerel")
+ind &lt;- med$count==0
+points(med$lo[ind],med$la[ind],cex=0.1,pch=19)
+lines(coast)
+
+</pre>
+
+
+</body></html>

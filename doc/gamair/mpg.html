@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on automobile efficiency on town streets and highway.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mpg"><tr><td>mpg</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data on automobile efficiency on town streets and highway.</h2>
+
+<h3>Description</h3>
+
+<p>Fuel efficiency in miles per gallon for a variety of cars in the USA. </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(mpg)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame listing fuel efficiency and other car characteristics including
+</p>
+
+<dl>
+<dt>symbol</dt><dd><p>Insurers measure of relative riskiness of car from -3 (safe) to 3 (risky)</p>
+</dd>
+<dt>loss</dt><dd><p>average insurance loss payment per insured vehicle per year.</p>
+</dd>
+<dt>hw.mpg</dt><dd><p>Fuel consumption on highway as miles per US gallon.</p>
+</dd>
+<dt>city.mpg</dt><dd><p>Fuel consumption in town as miles per US gallon.</p>
+</dd>
+<dt>make</dt><dd><p>Name of car maker.</p>
+</dd>
+<dt>fuel</dt><dd><p>2 level factor. <code>gas</code> or <code>diesel</code>.</p>
+</dd>
+<dt>aspir</dt><dd><p>2 level factor. <code>std</code> or <code>turbo</code>.</p>
+</dd>
+<dt>doors</dt><dd><p>2 level factor. <code>two</code> or <code>four</code>.</p>
+</dd>
+<dt>style</dt><dd><p>Factor indicating style of car.</p>
+</dd>
+<dt>drive</dt><dd><p>3 level factor indicating front, rear or all wheel drive: <code>fwd</code>, <code>rwd</code> or <code>4wd</code>.</p>
+</dd>
+<dt>eng.loc</dt><dd><p>Engine location</p>
+</dd>
+<dt>wb</dt><dd><p>wheel base in inches</p>
+</dd>
+<dt>length</dt><dd><p>in inches</p>
+</dd>
+<dt>width</dt><dd><p>in inches</p>
+</dd>
+<dt>height</dt><dd><p>in inches</p>
+</dd>
+<dt>weight</dt><dd><p>in pounds</p>
+</dd>
+<dt>eng.type</dt><dd><p>Factor giving engine type</p>
+</dd>
+<dt>cylinders</dt><dd><p>Factor for number of cylinders</p>
+</dd>
+<dt>eng.cc</dt><dd><p>cubic capicity of engine in cubic inches.</p>
+</dd>
+<dt>fuel.sys</dt><dd><p>fuel system</p>
+</dd>
+<dt>bore</dt><dd><p>in inches</p>
+</dd>
+<dt>stroke</dt><dd><p>in inches</p>
+</dd>
+<dt>comp.ratio</dt><dd><p>compression ratio</p>
+</dd>
+<dt>hp</dt><dd><p>horse power</p>
+</dd>
+<dt>rpm</dt><dd><p>maximum RPM</p>
+</dd>
+<dt>price</dt><dd><p>in US dollars</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>Data were collected by Jeffrey C. Schlimmer from
+1) 1985 Model Import Car and Truck Specifications, 1985 Ward's
+Automotive Yearbook.
+2) Personal Auto Manuals, Insurance Services Office, 160 Water
+Street, New York, NY 10038 
+3) Insurance Collision Report, Insurance Institute for Highway
+Safety, Watergate 600, Washington, DC 20037
+</p>
+
+
+<h3>Source</h3>
+
+ 
+<p><a href="https://archive.ics.uci.edu/ml/datasets/Automobile">https://archive.ics.uci.edu/ml/datasets/Automobile</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Wood, S.N. (2006) Generalized Additive Models: An Introduction with R
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair);require(mgcv)
+data(mpg)
+b &lt;- gam(list(city.mpg~fuel+style+drive+s(weight)+s(hp)+s(make,bs="re"),
+          hw.mpg~fuel+style+drive++s(weight)+s(hp)+s(make,bs="re")),
+          family=mvn(d=2),data=mpg)
+plot(b,pages=1,scheme=1)
+</pre>
+
+
+</body></html>

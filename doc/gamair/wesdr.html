@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diabetic retinopathy in Wisconsin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wesdr"><tr><td>wesdr</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Diabetic retinopathy in Wisconsin</h2>
+
+<h3>Description</h3>
+
+<p>The data, originally from the <code>gss</code> package, record whether or not diabetic patients developed retinopathy along with three possible predictors.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(wesdr)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The <code>wesdr</code> data frame has the following columns
+</p>
+
+<dl>
+<dt>ret</dt><dd><p>binary variable: 1 = retinopathy, 0 = not.</p>
+</dd>
+<dt>bmi</dt><dd><p>Body mass index (weight in kg divided by square of height in metres)</p>
+</dd>
+<dt>gly</dt><dd><p>Glycosylated hemoglobin - the percentage of hemoglobin bound to glucuse in the blood. This reflects long term average blood glucose levels: less than 6% is typical of non-diabetics, but is only rarely acheived by diabetic patients.</p>
+</dd>
+<dt>dur</dt><dd><p>Duration of disease in years.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Retinopathy is a common problem in diabetic patients and the interst is in predicting the risk using the measured predictors.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data are from Chong Gu's <code>gss</code> package. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair);require(mgcv)
+data(wesdr)
+## Smooth ANOVA model...
+k &lt;- 5
+b &lt;- gam(ret~s(dur,k=k)+s(gly,k=k)+s(bmi,k=k)+ti(dur,gly,k=k)+
+         ti(dur,bmi,k=k)+ti(gly,bmi,k=k),select=TRUE,
+         data=wesdr,family=binomial(),method="ML")
+ow &lt;- options(warn=-1) ## avoid complaint about zlim 
+plot(b,pages=1,scheme=1,zlim=c(-3,3))
+options(ow)
+</pre>
+
+
+</body></html>

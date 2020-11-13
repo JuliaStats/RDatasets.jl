@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Aral sea remote sensed chlorophyll data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for aral"><tr><td>aral</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Aral sea remote sensed chlorophyll data</h2>
+
+<h3>Description</h3>
+
+<p>SeaWifs satellite chlorophyll measurements for the 38th 8-day observation period of the year in the Aral sea, averaged over 1998-2002, along with an Aral sea boundary file. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(aral)
+data(aral.bnd)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The <code>aral</code> data frame has the following columns
+</p>
+
+<dl>
+<dt>lon</dt><dd><p>longitude of pixel or boundary vertex.</p>
+</dd>
+<dt>lat</dt><dd><p>latitude of pixel or boundary vertex.</p>
+</dd>
+<dt>chl</dt><dd><p>chlorophyll measurement</p>
+</dd>
+<dt>exra</dt><dd><p>The highest rainfall observed in any 12 hour period in that year, in mm. </p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>Trying to smooth the data with a conventional smoother, such as a thin plate spline, leads to linkage between the two arms of the sea, which is clearly an artefact. A soap film smoother avoids this problem.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="https://seawifs.gsfc.nasa.gov/">https://seawifs.gsfc.nasa.gov/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(gamair);require(mgcv)
+data(aral); data(aral.bnd)
+
+## define some knots...
+knt &lt;- list(lon=c(58.55,59.09,59.36,59.64,59.91,60.18,58.27,58.55,59.09,
+59.36,59.64,59.91,60.18,60.45,58.27,58.55,58.82,59.09,59.36,59.64,59.91,
+60.18,60.45,58.27,58.55,59.36,59.64,59.91,60.18,58.55,59.36,59.64,59.91,
+60.18,58.55,58.82,59.36,59.64,59.91,60.18,60.45,58.82,59.09,59.64,59.91,
+60.18,59.64),
+lat=c(44.27,44.27,44.27,44.27,44.27,44.27,44.55,44.55,44.55,44.55,44.55,
+44.55,44.55,44.55,44.82,44.82,44.82,44.82,44.82,44.82,44.82,44.82,44.82,
+45.09,45.09,45.09,45.09,45.09,45.09,45.36,45.36,45.36,45.36,45.36,45.64,
+45.64,45.64,45.64,45.64,45.64,45.64,45.91,45.91,45.91,45.91,45.91,46.18))
+
+## fit soap film...
+b &lt;-  gam(chl~s(lon,lat,k=30,bs="so",xt=list(bnd=list(aral.bnd),
+                nmax=150)),knots=knt,data=aral)
+
+## plot results...
+plot(b)
+</pre>
+
+
+</body></html>

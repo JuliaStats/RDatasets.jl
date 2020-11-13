@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Initial Public Offering Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ipo"><tr><td>ipo</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Initial Public Offering Data</h2>
+
+<h3>Description</h3>
+
+<p> Data on the relationship between the number of initial public
+offerings (of shares in a company) and other potentially important variables.
+It is probably necessary to lag some of the explanatory variables.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(ipo)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6 columns and 156 rows. The columns are:
+</p>
+
+<dl>
+<dt>n.ipo</dt><dd><p>number of initial pubilc offerings each month.</p>
+</dd>
+<dt>ir</dt><dd><p>the average initial return (volume weighted): this is the percentage
+difference between the offer proce of shares and the price after the first day
+of trading.</p>
+</dd>
+<dt>dp</dt><dd><p>the average percentage difference between middle of the price range
+proposed at first filing of the IPO, and the eventual offer price.</p>
+</dd>
+<dt>reg.t</dt><dd><p>the average time between filing and offer.</p>
+</dd>
+<dt>t</dt><dd><p>time, in months.</p>
+</dd>
+<dt>month</dt><dd><p>month of the year (1 = January).</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+ 
+<p><a href="http://schwert.ssb.rochester.edu">http://schwert.ssb.rochester.edu</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Lowry, M. and G.W. Schwert (2002) IPO market cycles: Bubbles or sequential
+learning? The Journal of Finance 67(3), 1171-1198
+</p>
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R. CRC
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(ipo)
+  pairs(ipo)
+</pre>
+
+
+</body></html>

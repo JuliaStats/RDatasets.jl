@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Atmospheric CO2 at South Pole</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for co2s"><tr><td>co2s</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Atmospheric CO2 at South Pole</h2>
+
+<h3>Description</h3>
+
+<p>Monthly CO2 concentration in parts per million at the South Pole.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(co2s)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3 columns and 507 rows. The columns are:
+</p>
+
+<dl>
+<dt>co2</dt><dd><p>atmospheric CO2 concentration in parts per million</p>
+</dd>
+<dt>c.month</dt><dd><p>cumulative number of months since Jan 1957</p>
+</dd>
+<dt>month</dt><dd><p>month of year</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p><a href="http://cdiac.esd.ornl.gov/trends/co2/">http://cdiac.esd.ornl.gov/trends/co2/</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Keeling C.P. and T.P Whorf (2000) Atmospheric CO2 records from sites in the
+SIO air sampling network. In Trends: A Compedium of Data on Global
+Change. Carbon Dioxide Analyis Center, Oak Ridge National Laboratory,
+U.S. Department of Energy, Oak Ridge Tenn., USA
+</p>
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R. CRC
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(co2s)
+  with(co2s,plot(c.month,co2,type="l",ylab=
+  expression(paste(CO[2]," in ppm.")),xlab="Month since Jan. 1957"))
+</pre>
+
+
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bone marrow treatemtn survival data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bone"><tr><td>bone</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bone marrow treatemtn survival data</h2>
+
+<h3>Description</h3>
+
+<p>Data from Klein and Moeschberger (2003), for 23 patients with non-Hodgkin's lymphoma.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(bone)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3 columns and 23 rows. Each row refers to one patient. The columns are:
+</p>
+
+<dl>
+<dt>t</dt><dd><p>Time of death, relapse or last follow up after treatment, in days.</p>
+</dd>
+<dt>d</dt><dd><p>1 for death or relapse. 0 otherwise.</p>
+</dd>
+<dt>trt</dt><dd><p>2 level factor. <code>allo</code> or <code>auto</code> depending on treatment recieved.</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>The data were collected at the Ohio State University bone marrow transplant unit. The <code>allo</code> treatment is bone marrow transplant from a matched sibling donor. The <code>auto</code> treatment consists of bone marrow removal and replacement after chemotherapy. 
+</p>
+
+
+<h3>Source</h3>
+
+ 
+<p>Klein and Moeschberger (2003).
+</p>
+
+
+<h3>References</h3>
+
+<p>Klein and Moeschberger (2003) Survival Analysis: techniques for censored and truncated data.
+</p>
+<p>Wood, S.N. (2017) Generalized Additive Models: An Introduction with R
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## example of fitting a Cox PH model as a Poisson GLM... 
+## First a function to convert data frame of raw data
+## to data frame of artificial data...
+
+psurv &lt;- function(surv,time="t",censor="d",event="z") {
+## create data frame to fit Cox PH as Poisson model.
+## surv[[censor]] should be 1 for event or zero for censored.   
+  if (event %in% names(surv)) warning("event name already in use in data frame")
+  surv &lt;- as.data.frame(surv)[order(surv[[time]]),] ## ascending time order
+  et &lt;- unique(surv[[time]][surv[[censor]]==1]) ## unique times requiring record
+  es &lt;- match(et,surv[[time]]) ## starts of risk sets in surv
+  n &lt;- nrow(surv); t &lt;- rep(et,1+n-es) ## times for risk sets
+  st &lt;- cbind(0,surv[unlist(apply(matrix(es),1,function(x,n) x:n,n=n)),])
+  st[st[[time]]==t&amp;st[[censor]]!=0,1] &lt;- 1 ## signal events 
+  st[[time]] &lt;- t ## reset time field to time for this risk set
+  names(st)[1] &lt;- event
+  st
+} ## psurv
+
+## Now fit the model...
+require(gamair)
+data(bone);bone$id &lt;- 1:nrow(bone)
+pb &lt;- psurv(bone); pb$tf &lt;- factor(pb$t)
+## Note that time factor tf should go first to ensure
+## it has no contrasts applied... 
+b &lt;- glm(z ~ tf + trt - 1,poisson,pb)
+drop1(b,test="Chisq") ## test for effect - no evidence
+
+## martingale and deviance residuals
+chaz &lt;- tapply(fitted(b),pb$id,sum) ## cum haz by subject
+mrsd &lt;- bone$d - chaz
+drsd &lt;- sign(mrsd)*sqrt(-2*(mrsd + bone$d*log(chaz)))
+
+## Estimate and plot survivor functions and standard
+## errors for the two groups...
+
+te &lt;- sort(unique(bone$t[bone$d==1])) ## event times
+
+## predict survivor function for "allo"...
+pd &lt;- data.frame(tf=factor(te),trt=bone$trt[1])
+fv &lt;- predict(b,pd)
+H &lt;- cumsum(exp(fv)) ## cumulative hazard
+plot(stepfun(te,c(1,exp(-H))),do.points=FALSE,ylim=c(0,1),xlim=c(0,550),
+     main="black allo, grey auto",ylab="S(t)",xlab="t (days)")
+## add s.e. bands...     
+X &lt;- model.matrix(~tf+trt-1,pd)
+J &lt;- apply(exp(fv)*X,2,cumsum)
+se &lt;- diag(J%*%vcov(b)%*%t(J))^.5
+lines(stepfun(te,c(1,exp(-H+se))),do.points=FALSE,lty=2)
+lines(stepfun(te,c(1,exp(-H-se))),do.points=FALSE,lty=2)
+
+## same for "auto"...
+pd &lt;- data.frame(tf=factor(te),trt=bone$trt[23])
+fv &lt;- predict(b,pd); H &lt;- cumsum(exp(fv))
+lines(stepfun(te,c(1,exp(-H))),col="grey",lwd=2,do.points=FALSE)
+X &lt;- model.matrix(~tf+trt-1,pd)
+J &lt;- apply(exp(fv)*X,2,cumsum)
+se &lt;- diag(J%*%vcov(b)%*%t(J))^.5
+lines(stepfun(te,c(1,exp(-H+se))),do.points=FALSE,lty=2,col="grey",lwd=2)
+lines(stepfun(te,c(1,exp(-H-se))),do.points=FALSE,lty=2,col="grey",lwd=2)
+
+</pre>
+
+
+</body></html>

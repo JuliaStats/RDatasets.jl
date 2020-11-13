@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Chlorophyll data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for chl"><tr><td>chl</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Chlorophyll data</h2>
+
+<h3>Description</h3>
+
+<p>Data relating to the callibration of remote sensed satellite
+data. The SeaWifs satellite provides estimates of chlorophyll concentration
+at the ocean surface from measurements of ocean surface colour. It is of
+interest to attempt to use these data to predict direct bottle measurements of
+chl. conc.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(chl)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6 columns and 13840 rows. The columns are:
+</p>
+
+<dl>
+<dt>lon</dt><dd><p>longitude</p>
+</dd>
+<dt>lat</dt><dd><p>latitude</p>
+</dd>
+<dt>jul.day</dt><dd><p>Julian day (i.e. day of year starting at Jan 1st.)</p>
+</dd>
+<dt>bath</dt><dd><p>Ocean depth in metres.</p>
+</dd>
+<dt>chl</dt><dd><p>direct chlorophyll concentration measured at given location from
+a bottle sample.</p>
+</dd>
+<dt>chl.sw</dt><dd><p>chl. conc. as measured by Seawifs Satellite</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p><a href="https://oceancolor.gsfc.nasa.gov/SeaWiFS/">https://oceancolor.gsfc.nasa.gov/SeaWiFS/</a>
+</p>
+<p>and the World Ocean Database.
+</p>
+
+
+<h3>References</h3>
+
+<p>Wood, S.N. (2006, 2017) Generalized Additive Models: An Introduction with R. CRC
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(chl)
+  with(chl,plot(chl,chl.sw))
+</pre>
+
+
+</body></html>
