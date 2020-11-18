@@ -732,3 +732,33 @@
 "vcd","VonBort","Von Bortkiewicz Horse Kicks Data",280,4
 "vcd","WeldonDice","Weldon's Dice Data",11,2
 "vcd","WomenQueue","Women in Queues",11,2
+"gamair","aral.bnd","aral.bnd",107,3
+"gamair","aral","aral",488,4
+"gamair","bird","bird",25100,7
+"gamair","blowfly","blowfly",180,3
+"gamair","bone","bone",23,4
+"gamair","brain","brain",1567,6
+"gamair","cairo","cairo",3780,7
+"gamair","chicago","chicago",5114,8
+"gamair","chl","chl",13840,7
+"gamair","co2s","co2s",507,4
+"gamair","coast","coast",2091,3
+"gamair","engine","engine",19,3
+"gamair","gas","gas",60,804
+"gamair","harrier","harrier",37,3
+"gamair","hubble","hubble",24,4
+"gamair","ipo","ipo",156,7
+"gamair","mack","mack",634,17
+"gamair","mackp","mackp",1162,9
+"gamair","med","med",1476,25
+"gamair","meh","meh",1476,24
+"gamair","mpg","mpg",205,27
+"gamair","prostate","prostate",654,530
+"gamair","sitka","sitka",1027,6
+"gamair","sole","sole",1575,8
+"gamair","sperm.comp1","sperm.comp1",15,5
+"gamair","sperm.comp2","sperm.comp2",24,11
+"gamair","stomata","stomata",24,4
+"gamair","swer","swer",2196,10
+"gamair","wesdr","wesdr",669,5
+"gamair","wine","wine",47,8
