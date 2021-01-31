@@ -1,7 +1,7 @@
 # RDatasets.jl
 
-[![Build Status](https://travis-ci.org/JuliaStats/RDatasets.jl.svg)](https://travis-ci.org/JuliaStats/RDatasets.jl)
-
+[![Build status](https://github.com/JuliaStats/RDatasets.jl/workflows/CI/badge.svg)]((https://github.com/JuliaStats/RDatasets.jl/actions?query=workflow%3ACI+branch%3Amaster))
+  
 The RDatasets package provides an easy way for Julia users to experiment with most of the standard data sets that are available in the core of R as well as datasets included with many of R's most popular packages. This package is essentially a simplistic port of the Rdatasets repo created by Vincent Arelbundock, who conveniently gathered data sets from many of the standard R packages in one convenient location on GitHub at https://github.com/vincentarelbundock/Rdatasets
 
 In order to load one of the data sets included in the RDatasets package, you will need to have the `DataFrames` package installed. This package is automatically installed as a dependency of the `RDatasets` package if you install `RDatasets` as follows:
