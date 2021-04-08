@@ -456,6 +456,7 @@
 "cluster","ruspini","Ruspini Data",75,2
 "cluster","votes.repub","Votes for Republican Candidate in Presidential Elections",50,32
 "cluster","xclara","Bivariate Data Set with 3 Clusters",3000,2
+"datasets","AirPassengers","Monthly Airline Passenger Numbers 1949-1960",144,3
 "datasets","BOD","Biochemical Oxygen Demand",6,2
 "datasets","CO2","Carbon Dioxide Uptake in Grass Plants",84,5
 "datasets","Formaldehyde","Determination of Formaldehyde",6,2
