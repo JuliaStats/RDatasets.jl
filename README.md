@@ -39,6 +39,7 @@ gap          | Genetic analysis package
 ggplot2      | An Implementation of the Grammar of Graphics
 lattice      | Lattice Graphics
 lme4         | Linear mixed-effects models using Eigen and S4
+ltm          | Latent Trait Models under IRT
 mgcv         | Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation
 mlmRev       | Examples from Multilevel Modelling Software Review
 nlreg        | Higher Order Inference for Nonlinear Heteroscedastic Models

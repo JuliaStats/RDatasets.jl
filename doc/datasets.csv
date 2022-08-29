@@ -541,6 +541,13 @@
 "lme4","cbpp","Contagious bovine pleuropneumonia",56,4
 "lme4","grouseticks","Data on red grouse ticks from Elston et al. 2001",403,7
 "lme4","sleepstudy","Reaction times in a sleep deprivation study",180,3
+"ltm","Abortion","Attitude Towards Abortion",379,4
+"ltm","Environment","Attitude to the Environment",291,6
+"ltm","LSAT","The Law School Admission Test (LSAT), Section VI",1000,5
+"ltm","Mobility","Women's Mobility",8445,8
+"ltm","Science","Attitude to Science and Technology",392,7
+"ltm","WIRS","Workplace Industrial Relation Survey Data",1005,6
+"ltm","gh","Gauss-Hermite Quadrature Points",NA,NA
 "mgcv","columb","Reduced version of Columbus OH crime data",49,8
 "mlmRev","Chem97","Scores on A-level Chemistry in 1997",31022,8
 "mlmRev","Contraception","Contraceptive use in Bangladesh",1934,6

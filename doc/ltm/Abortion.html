@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><title>R: Attitude Towards Abortion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Abortion</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Attitude Towards Abortion </h2>
+
+<h3>Description</h3>
+
+<p>The data contain responses given by 410 individuals to four out of seven items
+concerning attitude to abortion. A small number of individual did not answer
+to some of the questions and this data set contains only the complete cases.
+</p>
+
+
+<h3>Format</h3>
+
+<p>379 individuals answered to the following questions after being asked if
+the law should allow abortion under the circumstances presented under each item,
+</p>
+
+<dl>
+<dt>Item 1</dt><dd><p>The woman decides on her own that she does not.</p>
+</dd>
+<dt>Item 2</dt><dd><p>The couple agree that they do not wish to have a child.</p>
+</dd>
+<dt>Item 3</dt><dd><p>The woman is not married and does not wish to marry the man.</p>
+</dd>
+<dt>Item 4</dt><dd><p>The couple cannot afford any more children.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>1986 British Social Attitudes Survey (McGrath and Waterton, 1986).
+</p>
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D., Steel, F., Moustaki, I. and Galbraith, J. (2002) <em>The Analysis and Interpretation of 
+Multivariate Data for Social Scientists</em>. London: Chapman and Hall.
+</p>
+<p>Knott, M., Albanese, M. and Galbraith, J. (1990) Scoring attitudes
+to abortion. <em>The Statistician</em>, <b>40</b>, 217&ndash;223.
+</p>
+<p>McGrath, K. and Waterton, J. (1986) <em>British social attitudes, 1983-86 panel
+survey</em>. London: SCPR.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Descriptive statistics for Abortion data
+dsc &lt;- descript(Abortion)
+dsc
+plot(dsc)
+
+</code></pre>
+
+
+</div>
+</body></html>

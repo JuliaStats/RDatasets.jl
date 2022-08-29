@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><title>R: Workplace Industrial Relation Survey Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>WIRS</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Workplace Industrial Relation Survey Data</h2>
+
+<h3>Description</h3>
+
+<p>These data were taken from a section of the 1990 Workplace 
+Industrial Relation Survey (WIRS) dealing with management/worker 
+consultation in firms. The questions asked are given below:
+</p>
+
+
+<h3>Format</h3>
+
+<p>Please consider the most recent change involving the introduction 
+of the new plant, machinery and equipment. Were discussions or 
+consultations of any of the type on this card held either about the 
+introduction of the change or about the way it was to be implemented.
+</p>
+
+<dl>
+<dt>Item 1</dt><dd><p>Informal discussion with individual workers.</p>
+</dd>
+<dt>Item 2</dt><dd><p>Meeting with groups of workers.</p>
+</dd>
+<dt>Item 3</dt><dd><p>Discussions in established joint consultative committee.</p>
+</dd>
+<dt>Item 4</dt><dd><p>Discussions in specially constituted committee to consider the change.</p>
+</dd>
+<dt>Item 5</dt><dd><p>Discussions with the union representatives at the establishment.</p>
+</dd>
+<dt>Item 6</dt><dd><p>Discussions with paid union officials from outside.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D. (1998) Scaling unobservable constructs in social science. 
+<em>Applied Statistics</em>, <b>47</b>, 1&ndash;13. 
+</p>
+<p>Bartholomew, D., Steel, F., Moustaki, I. and Galbraith, J. (2002) <em>The Analysis and Interpretation of 
+Multivariate Data for Social Scientists</em>. London: Chapman and Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Descriptive statistics for Wirs data
+descript(WIRS)
+
+</code></pre>
+
+
+</div>
+</body></html>

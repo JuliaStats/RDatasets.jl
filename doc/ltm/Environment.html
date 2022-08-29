@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>R: Attitude to the Environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Environment</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Attitude to the Environment</h2>
+
+<h3>Description</h3>
+
+<p>This data set comes from the Environment section of the 1990 British Social Attitudes Survey (Brook et al., 1991). 
+A sample of 291 responded to the questions below:
+</p>
+
+
+<h3>Format</h3>
+
+<p>All of the below items were measured on a three-group scale with response categories &quot;very concerned&quot;, 
+&quot;slightly concerned&quot; and &quot;not very concerned&quot;:
+</p>
+
+<dl>
+<dt>LeadPetrol</dt><dd><p>Lead from petrol.</p>
+</dd>
+<dt>RiverSea</dt><dd><p>River and sea pollution.</p>
+</dd>
+<dt>RadioWaste</dt><dd><p>Transport and storage of radioactive waste.</p>
+</dd>
+<dt>AirPollution</dt><dd><p>Air pollution.</p>
+</dd>
+<dt>Chemicals</dt><dd><p>Transport and disposal of poisonous chemicals.</p>
+</dd>
+<dt>Nuclear</dt><dd><p>Risks from nuclear power station.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D., Steel, F., Moustaki, I. and Galbraith, J. (2002) <em>The Analysis and Interpretation of 
+Multivariate Data for Social Scientists</em>. London: Chapman and Hall.
+</p>
+<p>Brook, L., Taylor, B. and Prior, G. (1991) <em>British Social Attitudes, 1990, Survey</em>. London: SCPR.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Descriptive statistics for Environment data
+descript(Environment)
+
+</code></pre>
+
+
+</div>
+</body></html>

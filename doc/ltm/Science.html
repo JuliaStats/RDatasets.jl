@@ -1,0 +1,75 @@
+<!DOCTYPE html><html><head><title>R: Attitude to Science and Technology</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Science</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Attitude to Science and Technology</h2>
+
+<h3>Description</h3>
+
+<p>This data set comes from the Consumer Protection and Perceptions of Science and Technology section of the 
+1992 Euro-Barometer Survey (Karlheinz and Melich, 1992) based on a sample from Great Britain. The questions 
+asked are given below:
+</p>
+
+
+<h3>Format</h3>
+
+<p>All of the below items were measured on a four-group scale with response categories &quot;strongly disagree&quot;, 
+&quot;disagree to some extent&quot;, &quot;agree to some extent&quot; and &quot;strongly agree&quot;:
+</p>
+
+<dl>
+<dt>Comfort</dt><dd><p>Science and technology are making our lives healthier, easier and more comfortable.</p>
+</dd>
+<dt>Environment</dt><dd><p>Scientific and technological research cannot play an important role in protecting
+the environment and repairing it.</p>
+</dd>
+<dt>Work</dt><dd><p>The application of science and new technology will make work more interesting.</p>
+</dd>
+<dt>Future</dt><dd><p>Thanks to science and technology, there will be more opportunities for the future generations.</p>
+</dd>
+<dt>Technology</dt><dd><p>New technology does not depend on basic scientific research.</p>
+</dd>
+<dt>Industry</dt><dd><p>Scientific and technological research do not play an important role in industrial development.</p>
+</dd>
+<dt>Benefit</dt><dd><p>The benefits of science are greater than any harmful effect it may have.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D., Steel, F., Moustaki, I. and Galbraith, J. (2002) <em>The Analysis and Interpretation of 
+Multivariate Data for Social Scientists</em>. London: Chapman and Hall.
+</p>
+<p>Karlheinz, R. and Melich, A. (1992) Euro-Barometer 38.1: <em>Consumer Protection and Perceptions of Science 
+and Technology</em>. INRA (Europe), Brussels. [computer file]
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Descriptive statistics for Science data
+descript(Science)
+
+</code></pre>
+
+
+</div>
+</body></html>

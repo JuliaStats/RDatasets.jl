@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Women's Mobility</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Mobility</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Women's Mobility </h2>
+
+<h3>Description</h3>
+
+<p>A rural subsample of 8445 women from the Bangladesh Fertility Survey of 1989.
+</p>
+
+
+<h3>Format</h3>
+
+<p>The dimension of interest is women's mobility of social freedom. Women were asked
+whether they could engage in the following activities alone (1 = yes, 0 = no):  
+</p>
+
+<dl>
+<dt>Item 1</dt><dd><p>Go to any part of the village/town/city.</p>
+</dd>
+<dt>Item 2</dt><dd><p>Go outside the village/town/city.</p>
+</dd>
+<dt>Item 3</dt><dd><p>Talk to a man you do not know.</p>
+</dd>
+<dt>Item 4</dt><dd><p>Go to a cinema/cultural show.</p>
+</dd>
+<dt>Item 5</dt><dd><p>Go shopping.</p>
+</dd>
+<dt>Item 6</dt><dd><p>Go to a cooperative/mothers' club/other club.</p>
+</dd>
+<dt>Item 7</dt><dd><p>Attend a political meeting.</p>
+</dd>
+<dt>Item 8</dt><dd><p>Go to a health centre/hospital.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Bangladesh Fertility Survey of 1989 (Huq and Cleland, 1990).
+</p>
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D., Steel, F., Moustaki, I. and Galbraith, J. (2002) <em>The Analysis and Interpretation of 
+Multivariate Data for Social Scientists</em>. London: Chapman and Hall.
+</p>
+<p>Huq, N. and Cleland, J. (1990) <em>Bangladesh Fertility Survey, 1989</em>. Dhaka: National
+Institute of Population Research and Training (NIPORT).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Descriptive statistics for Mobility data
+descript(Mobility)
+
+</code></pre>
+
+
+</div>
+</body></html>
