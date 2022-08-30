@@ -1,0 +1,146 @@
+<!DOCTYPE html><html><head><title>R: Subset of Early Childhood Longitudinal Study, Kindergarten...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>items_ordered_eclsk_atl</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Subset of Early Childhood Longitudinal Study, Kindergarten (ECLS-K)'s
+Approaches to Learning Item Responses</h2>
+
+<h3>Description</h3>
+
+<p>Subset of Early Childhood Longitudinal Study, Kindergarten (ECLS-K)'s
+Approaches to Learning Item Responses
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>items_ordered_eclsk_atl
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 13354 rows and 12 columns.
+</p>
+
+
+<h3>Details</h3>
+
+<p>Items were split between being answered by <strong>Parents</strong> and <strong>Teachers</strong>.
+</p>
+
+<ul>
+<li> <p><strong>Parents</strong>:
+</p>
+
+<ul>
+<li> <p><code>P4SRS10</code>: Keep working at something until he/she is finished?
+</p>
+</li>
+<li> <p><code>P4SRS13</code>: Show interest in a variety of things?
+</p>
+</li>
+<li> <p><code>P4SRS15</code>: Concentrate on a task and ignore distractions?
+</p>
+</li>
+<li> <p><code>P4SRS18</code>: Help with chores?
+</p>
+</li>
+<li> <p><code>P4SRS22</code>: Eager to learn new things?
+</p>
+</li>
+<li> <p><code>P4SRS24</code>: Creative in work or in play?
+</p>
+</li></ul>
+
+</li>
+<li> <p><strong>Teachers</strong>:
+</p>
+
+<ul>
+<li> <p><code>T4SRS11</code>: Keeps belongings organized.
+</p>
+</li>
+<li> <p><code>T4SRS14</code>: Shows eagerness to learn new things.
+</p>
+</li>
+<li> <p><code>T4SRS15</code>: Works independently.
+</p>
+</li>
+<li> <p><code>T4SRS21</code>: Easily adapts to changes in routine.
+</p>
+</li>
+<li> <p><code>T4SRS23</code>: Persists in completing tasks.
+</p>
+</li>
+<li> <p><code>T4SRS24</code>: Pays attention well.
+</p>
+</li></ul>
+
+</li></ul>
+
+
+
+<h3>Data pre-processing</h3>
+
+<p>The Early Childhood Longitudinal Study, Kindergarten (ECLS-K) has been
+subset down both the number of observations and variables. In particular,
+only observations without any missing values from a set of reduced
+variables &ndash; given above &ndash; are included. If additional data is required,
+please visit the data download page found in the reference section.
+</p>
+
+
+<h3>Answer coding</h3>
+
+<p>Parents and teachers each answered a set of survey items involving a
+likert scale that ranged from &quot;1 = never&quot; to &quot;4 = very often&quot; regarding the
+subject. Within the teacher responses, they also  had the option of marking
+&quot;-7 = no opportunity to observe&quot; option, which was treated as a missing
+observation. To align with <em>C++</em>, we perform a index shift backward of 1
+and, thus, make the scale &quot;0=never&quot; to &quot;3=very often&quot;.
+</p>
+
+
+<h3>References</h3>
+
+<p><strong>Data originated from:</strong>
+</p>
+
+<ul>
+<li><p> NCES. (2010). <em>Early childhood longitudinal study, kindergarten class of
+1998-99 (ecls-k) kindergarten through fifth grade approaches to learning
+and self-description questionnaire (sdq) items and public-use data
+files</em>. <a href="https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2010070">https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2010070</a>
+</p>
+</li></ul>
+
+<p><strong>Data used in:</strong>
+</p>
+
+<ul>
+<li><p> Culpepper, S. (2019). An exploratory diagnostic model for ordinal
+responses with binary attributes: Identifiability and estimation.
+<em>Psychometrika</em>, <em>84</em>(4), 921–940.
+doi: <a href="https://doi.org/10.1007/s11336-019-09683-4">10.1007/s11336-019-09683-4</a>
+</p>
+</li></ul>
+
+
+
+</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Oracle Q Matrices</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>qmatrix_oracle</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Oracle Q Matrices</h2>
+
+<h3>Description</h3>
+
+<p>Pre-generated identified Q matrices used in simulation studies to verify
+recovery.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>matrix</code> with varying numbers of traits (<code>K</code>) and items (<code>J</code>).
+</p>
+<p>Specifically:
+</p>
+
+<ul>
+<li> <p><code>qmatrix_oracle_k2_j12</code>: 12 items and 2 traits.
+</p>
+</li>
+<li> <p><code>qmatrix_oracle_k3_j20</code>: 20 items and 3 traits.
+</p>
+</li>
+<li> <p><code>qmatrix_oracle_k4_j20</code>: 20 items and 4 traits.
+</p>
+</li>
+<li> <p><code>qmatrix_oracle_k5_j30</code>: 30 items and 5 traits.
+</p>
+</li></ul>
+
+
+
+<h3>Details</h3>
+
+<p>Each entry in the matrix is either <code>1</code>, if the item uses the skill, or <code>0</code>, if
+the item does not use the skill.
+</p>
+
+
+</div>
+</body></html>

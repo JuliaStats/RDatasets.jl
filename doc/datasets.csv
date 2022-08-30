@@ -506,6 +506,30 @@
 "datasets","volcano","Topographic Information on Auckland's Maunga Whau Volcano",87,61
 "datasets","warpbreaks","The Number of Breaks in Yarn during Weaving",54,3
 "datasets","women","Average Heights and Weights for American Women",15,2
+"edmdata","items_ecpe","Examination for the Certificate of Proficiency in English (ECPE) Item Responses",2922,28
+"edmdata","items_fractions","Fraction Subtraction and Addition Assessment Item Responses",536,20
+"edmdata","items_matrix_reasoning","Experimental Matrix Reasoning Test Item Responses",400,25
+"edmdata","items_narcissistic_personality_inventory","Narcissistic Personality Inventory Item Responses",11243,40
+"edmdata","items_ordered_eclsk_atl","Subset of Early Childhood Longitudinal Study, Kindergarten (ECLS-K)'s Approaches to Learning Item Responses",13354,12
+"edmdata","items_probability_part_one","Elementary Probability Theory Assessment Item Responses",504,12
+"edmdata","items_revised_psvtr","Revised PSVT:R Item Responses",516,30
+"edmdata","items_spm_ls","Last Series of the Standard Progressive Matrices (SPM-LS) Item Responses",499,12
+"edmdata","items_taylor_manifest_anxiety_scale","Taylor Manifest Anxiety Scale Item Responses",4468,50
+"edmdata","qmatrix_ecpe","Examination for the Certificate of Proficiency in English (ECPE) Expert-Derived Q matrix",28,3
+"edmdata","qmatrix_fractions","Fraction Subtraction and Addition Assessment Expert-Derived Q Matrix",20,8
+"edmdata","qmatrix_oracle_k2_j12","Oracle Q Matrices",12,2
+"edmdata","qmatrix_oracle_k3_j20","Oracle Q Matrices",20,3
+"edmdata","qmatrix_oracle_k4_j20","Oracle Q Matrices",20,4
+"edmdata","qmatrix_oracle_k5_j30","Oracle Q Matrices",30,5
+"edmdata","qmatrix_probability_part_one","Elementary Probability Theory Assessment Expert-Derived Q Matrix",12,4
+"edmdata","strategy_oracle_k3_j20_s2","Strategy Oracle Sets",20,3
+"edmdata","strategy_oracle_k3_j30_s2","Strategy Oracle Sets",30,3
+"edmdata","strategy_oracle_k3_j40_s2","Strategy Oracle Sets",40,3
+"edmdata","strategy_oracle_k3_j50_s2","Strategy Oracle Sets",50,3
+"edmdata","strategy_oracle_k4_j20_s2","Strategy Oracle Sets",20,4
+"edmdata","strategy_oracle_k4_j30_s2","Strategy Oracle Sets",30,4
+"edmdata","strategy_oracle_k4_j40_s2","Strategy Oracle Sets",40,4
+"edmdata","strategy_oracle_k4_j50_s2","Strategy Oracle Sets",50,4
 "gap","PD","A study of Parkinson's disease and APOE, LRRK2, SNCA makers",825,22
 "gap","aldh2","ALDH2 markers and Alcoholism",263,18
 "gap","apoeapoc","APOE/APOC1 markers and Alzheimer's",353,8

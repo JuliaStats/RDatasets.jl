@@ -1,0 +1,191 @@
+<!DOCTYPE html><html><head><title>R: Fraction Subtraction and Addition Assessment Expert-Derived Q...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>qmatrix_fractions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fraction Subtraction and Addition Assessment Expert-Derived Q Matrix</h2>
+
+<h3>Description</h3>
+
+<p>Fraction Subtraction and Addition Assessment Expert-Derived Q Matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>qmatrix_fractions
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 20 rows and 8 columns.
+</p>
+
+
+<h3>Details</h3>
+
+<p>Each entry in the matrix is either <code>1</code>, if the Item uses the Trait, or <code>0</code>, if
+the Item does not use the Trait. The traits identified by this <code>matrix</code> are:
+</p>
+
+<ul>
+<li> <p><code>Trait1</code>: Convert a whole number to a fraction,
+</p>
+</li>
+<li> <p><code>Trait2</code>: Separate a whole number from fraction,
+</p>
+</li>
+<li> <p><code>Trait3</code>: Simplify before subtraction,
+</p>
+</li>
+<li> <p><code>Trait4</code>: Find a common denominator,
+</p>
+</li>
+<li> <p><code>Trait5</code>: Borrow from the whole number part,
+</p>
+</li>
+<li> <p><code>Trait6</code>: Column borrow to subtract the second numerator from the first,
+</p>
+</li>
+<li> <p><code>Trait7</code>: Subtract numerators,
+</p>
+</li>
+<li> <p><code>Trait8</code>: Reduce answers to simplest form.
+</p>
+</li></ul>
+
+<p>The subjects answered the following assessment items:
+</p>
+
+<ul>
+<li> <p><code>Item01</code>: <code class="reqn">\frac{5}{3}-\frac{3}{4}</code>
+</p>
+</li>
+<li> <p><code>Item02</code>: <code class="reqn">\frac{3}{4}-\frac{3}{8}</code>
+</p>
+</li>
+<li> <p><code>Item03</code>: <code class="reqn">\frac{5}{6}-\frac{1}{9}</code>
+</p>
+</li>
+<li> <p><code>Item04</code>: <code class="reqn">3\frac{1}{2}-2\frac{3}{2}</code>
+</p>
+</li>
+<li> <p><code>Item05</code>: <code class="reqn">4\frac{3}{5}-3\frac{4}{10}</code>
+</p>
+</li>
+<li> <p><code>Item06</code>: <code class="reqn">\frac{6}{7}-\frac{4}{7}</code>
+</p>
+</li>
+<li> <p><code>Item07</code>: <code class="reqn">3-2\frac{1}{5}</code>
+</p>
+</li>
+<li> <p><code>Item08</code>: <code class="reqn">\frac{2}{3}-\frac{2}{3}</code>
+</p>
+</li>
+<li> <p><code>Item09</code>: <code class="reqn">3\frac{7}{8}-2</code>
+</p>
+</li>
+<li> <p><code>Item10</code>: <code class="reqn">4\frac{4}{12}-2\frac{7}{12}</code>
+</p>
+</li>
+<li> <p><code>Item11</code>: <code class="reqn">4\frac{1}{3}-2\frac{4}{3}</code>
+</p>
+</li>
+<li> <p><code>Item12</code>: <code class="reqn">\frac{11}{8}-\frac{1}{8}</code>
+</p>
+</li>
+<li> <p><code>Item13</code>: <code class="reqn">3\frac{3}{8}-2\frac{5}{6}</code>
+</p>
+</li>
+<li> <p><code>Item14</code>: <code class="reqn">3\frac{4}{5}-3\frac{2}{5}</code>
+</p>
+</li>
+<li> <p><code>Item15</code>: <code class="reqn">2-\frac{1}{3}</code>
+</p>
+</li>
+<li> <p><code>Item16</code>: <code class="reqn">4\frac{5}{7}-1\frac{4}{7}</code>
+</p>
+</li>
+<li> <p><code>Item17</code>: <code class="reqn">7\frac{3}{5}-2\frac{4}{5}</code>
+</p>
+</li>
+<li> <p><code>Item18</code>: <code class="reqn">4\frac{1}{10}-2\frac{8}{10}</code>
+</p>
+</li>
+<li> <p><code>Item19</code>: <code class="reqn">4-1\frac{4}{3}</code>
+</p>
+</li>
+<li> <p><code>Item20</code>: <code class="reqn">4\frac{1}{3}-1\frac{5}{3}</code>
+</p>
+</li></ul>
+
+
+
+<h3>References</h3>
+
+<p><strong>Data originated from:</strong>
+</p>
+
+<ul>
+<li><p> Tatsuoka, C. (2002). Data analytic methods for latent partially ordered
+classification models. <em>Journal of the Royal Statistical Society: Series
+C (Applied Statistics)</em>, <em>51</em>(3), 337–350.
+doi: <a href="https://doi.org/10.1111/1467-9876.00272">10.1111/1467-9876.00272</a>
+</p>
+</li>
+<li><p> Tatsuoka, K. K. (1984), Analysis of errors in fraction addition and subtraction
+problems (Final Report for Grant No. NIE-G-81-0002). Urbana: University of
+Illinois, Computer-Based Education Research Laboratory (CERL).
+</p>
+</li></ul>
+
+<p><strong>Data used in:</strong>
+</p>
+
+<ul>
+<li><p> Chen, Y., Liu, Y., Culpepper, S. A., &amp; Chen, Y. (2021).
+Inferring the number of attributes for the exploratory DINA model.
+Psychometrika, 86(1), 30–64. doi: <a href="https://doi.org/10.1007/s11336-021-09750-9">10.1007/s11336-021-09750-9</a>
+</p>
+</li>
+<li><p> Chen, Y., Culpepper, S. A., &amp; Liang, F. (2020). A sparse latent class model
+for cognitive diagnosis. <em>Psychometrika</em>, 1–33.
+doi: <a href="https://doi.org/10.1007/s11336-019-09693-2">10.1007/s11336-019-09693-2</a>
+</p>
+</li>
+<li><p> Culpepper, S. A. (2019). Estimating the cognitive diagnosis <code class="reqn">Q</code> matrix
+with expert knowledge: Application to the fraction-subtraction dataset.
+<em>Psychometrika</em>, <em>84</em>(2), 333–357.
+doi: <a href="https://doi.org/10.1007/s11336-018-9643-8">10.1007/s11336-018-9643-8</a>
+</p>
+</li>
+<li><p> Culpepper, S. A., &amp; Chen, Y. (2019). Development and application of an
+exploratory reduced reparameterized unified model. <em>Journal of
+Educational and Behavioral Statistics</em>, <em>44</em>(1), 3–24.
+doi: <a href="https://doi.org/10.3102/1076998618791306">10.3102/1076998618791306</a>
+</p>
+</li>
+<li><p> Chen, Y., Culpepper, S. A., Chen, Y., &amp; Douglas, J. (2018). Bayesian
+estimation of the dina q matrix. <em>Psychometrika</em>, <em>83</em>(1), 89–108.
+doi: <a href="https://doi.org/10.1007/s11336-017-9579-4">10.1007/s11336-017-9579-4</a>
+</p>
+</li></ul>
+
+
+
+</div>
+</body></html>

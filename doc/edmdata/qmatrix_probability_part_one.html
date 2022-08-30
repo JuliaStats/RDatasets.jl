@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head><title>R: Elementary Probability Theory Assessment Expert-Derived Q...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>qmatrix_probability_part_one</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Elementary Probability Theory Assessment Expert-Derived Q Matrix</h2>
+
+<h3>Description</h3>
+
+<p>Elementary Probability Theory Assessment Expert-Derived Q Matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>qmatrix_probability_part_one
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 12 rows and 4 columns.
+</p>
+
+
+<h3>Details</h3>
+
+<p>Each entry in the matrix is either <code>1</code>, if the item uses the trait, or <code>0</code>, if
+the item does not use the trait. The traits identified by this <code>matrix</code> are:
+</p>
+
+<ul>
+<li> <p><code>cp</code>: the probability of the complement of an event
+</p>
+</li>
+<li> <p><code>id</code>: two independent events
+</p>
+</li>
+<li> <p><code>pb</code>: probability of an event
+</p>
+</li>
+<li> <p><code>un</code>: union of two disjoint events
+</p>
+</li></ul>
+
+<p>For a detailed overview of items, please see <code>items_probability_part_one</code>.
+</p>
+
+
+<h3>Identifiability</h3>
+
+<p>Note, the expert supplied Q-matrix is <em>not</em> strictly identified.
+Though, the expert matrix is generically identified.
+</p>
+
+
+<h3>References</h3>
+
+<p><strong>Data originated from:</strong>
+</p>
+
+<ul>
+<li><p> Heller, J., &amp; Wickelmaier, F. (2013).
+Minimum discrepancy estimation in probabilistic knowledge structures.
+Electronic Notes in Discrete Mathematics, 42, 49–56.
+doi: <a href="https://doi.org/10.1016/j.endm.2013.05.145">10.1016/j.endm.2013.05.145</a>
+</p>
+</li></ul>
+
+<p><strong>Data used in:</strong>
+</p>
+
+<ul>
+<li><p> Chen, Yinghan, Liu, Y., Culpepper, S. A., &amp; Chen, Y. (2021).
+Inferring the number of attributes for the exploratory DINA model.
+Psychometrika, 86(1), 30–64. doi: <a href="https://doi.org/10.1007/s11336-021-09750-9">10.1007/s11336-021-09750-9</a>
+</p>
+</li></ul>
+
+
+
+</div>
+</body></html>

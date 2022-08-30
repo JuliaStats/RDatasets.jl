@@ -1,0 +1,577 @@
+<!DOCTYPE html><html><head><title>R: Narcissistic Personality Inventory Item Responses</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>items_narcissistic_personality_inventory</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Narcissistic Personality Inventory Item Responses</h2>
+
+<h3>Description</h3>
+
+<p>Narcissistic Personality Inventory Item Responses
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>items_narcissistic_personality_inventory
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 11243 rows and 40 columns.
+</p>
+
+
+<h3>Details</h3>
+
+<p>Items with their desired option response bolded:
+</p>
+
+<ul>
+<li> <p><code>Q1</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I have a natural talent for influencing people
+</p>
+</li>
+<li><p> Option 2: I am not good at influencing people.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q2</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: Modesty doesn't become me
+</p>
+</li>
+<li><p> Option 2: I am essentially a modest person.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q3</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I would do almost anything on a dare
+</p>
+</li>
+<li><p> Option 2: I tend to be a fairly cautious person.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q4</code>
+</p>
+
+<ul>
+<li><p> Option 1: When people compliment me I sometimes get embarrassed
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I know that I am good because everybody keeps telling me so.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q5</code>
+</p>
+
+<ul>
+<li><p> Option 1: The thought of ruling the world frightens the hell out of me
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: If I ruled the world it would be a better place.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q6</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I can usually talk my way out of anything
+</p>
+</li>
+<li><p> Option 2: I try to accept the consequences of my behavior.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q7</code>
+</p>
+
+<ul>
+<li><p> Option 1: I prefer to blend in with the crowd
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to be the center of attention.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q8</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I will be a success
+</p>
+</li>
+<li><p> Option 2: I am not too concerned about success.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q9</code>
+</p>
+
+<ul>
+<li><p> Option 1: I am no better or worse than most people
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I think I am a special person.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q10</code>
+</p>
+
+<ul>
+<li><p> Option 1: I am not sure if I would make a good leader
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I see myself as a good leader.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q11</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I am assertive
+</p>
+</li>
+<li><p> Option 2: I wish I were more assertive.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q12</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I like to have authority over other people
+</p>
+</li>
+<li><p> Option 2: I don't mind following orders.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q13</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I find it easy to manipulate people
+</p>
+</li>
+<li><p> Option 2: I don't like it when I find myself manipulating people.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q14</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I insist upon getting the respect that is due me
+</p>
+</li>
+<li><p> Option 2: I usually get the respect that I deserve.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q15</code>
+</p>
+
+<ul>
+<li><p> Option 1: I don't particularly like to show off my body
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to show off my body.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q16</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I can read people like a book
+</p>
+</li>
+<li><p> Option 2: People are sometimes hard to understand.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q17</code>
+</p>
+
+<ul>
+<li><p> Option 1: If I feel competent I am willing to take responsibility for making decisions
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to take responsibility for making decisions.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q18</code>
+</p>
+
+<ul>
+<li><p> Option 1: I just want to be reasonably happy
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I want to amount to something in the eyes of the world.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q19</code>
+</p>
+
+<ul>
+<li><p> Option 1: My body is nothing special
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to look at my body.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q20</code>
+</p>
+
+<ul>
+<li><p> Option 1: I try not to be a show off
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I will usually show off if I get the chance.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q21</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I always know what I am doing
+</p>
+</li>
+<li><p> Option 2: Sometimes I am not sure of what I am doing.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q22</code>
+</p>
+
+<ul>
+<li><p> Option 1: I sometimes depend on people to get things done
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I rarely depend on anyone else to get things done.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q23</code>
+</p>
+
+<ul>
+<li><p> Option 1: Sometimes I tell good stories
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: Everybody likes to hear my stories.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q24</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I expect a great deal from other people
+</p>
+</li>
+<li><p> Option 2: I like to do things for other people.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q25</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I will never be satisfied until I get all that I deserve
+</p>
+</li>
+<li><p> Option 2: I take my satisfactions as they come.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q26</code>
+</p>
+
+<ul>
+<li><p> Option 1: Compliments embarrass me
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to be complimented.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q27</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I have a strong will to power
+</p>
+</li>
+<li><p> Option 2: Power for its own sake doesn't interest me.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q28</code>
+</p>
+
+<ul>
+<li><p> Option 1: I don't care about new fads and fashions
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I like to start new fads and fashions.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q29</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I like to look at myself in the mirror
+</p>
+</li>
+<li><p> Option 2: I am not particularly interested in looking at myself in the mirror.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q30</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I really like to be the center of attention
+</p>
+</li>
+<li><p> Option 2: It makes me uncomfortable to be the center of attention.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q31</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I can live my life in any way I want to
+</p>
+</li>
+<li><p> Option 2: People can't always live their lives in terms of what they want.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q32</code>
+</p>
+
+<ul>
+<li><p> Option 1: Being an authority doesn't mean that much to me
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: People always seem to recognize my authority.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q33</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I would prefer to be a leader
+</p>
+</li>
+<li><p> Option 2: It makes little difference to me whether I am a leader or not.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q34</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I am going to be a great person
+</p>
+</li>
+<li><p> Option 2: I hope I am going to be successful.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q35</code>
+</p>
+
+<ul>
+<li><p> Option 1: People sometimes believe what I tell them
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I can make anybody believe anything I want them to.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q36</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I am a born leader
+</p>
+</li>
+<li><p> Option 2: Leadership is a quality that takes a long time to develop.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q37</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I wish somebody would someday write my biography
+</p>
+</li>
+<li><p> Option 2: I don't like people to pry into my life for any reason.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q38</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I get upset when people don't notice how I look when I go out in public
+</p>
+</li>
+<li><p> Option 2: I don't mind blending into the crowd when I go out in public.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q39</code>
+</p>
+
+<ul>
+<li> <p><strong>Option 1</strong>: I am more capable than other people
+</p>
+</li>
+<li><p> Option 2: There is a lot that I can learn from other people.
+</p>
+</li></ul>
+
+</li>
+<li> <p><code>Q40</code>
+</p>
+
+<ul>
+<li><p> Option 1: I am much like everybody else
+</p>
+</li>
+<li> <p><strong>Option 2</strong>: I am an extraordinary person.
+</p>
+</li></ul>
+
+</li></ul>
+
+
+
+<h3>Data pre-processing</h3>
+
+<p>We have applied list-wise deletion during pre-processing to remove any
+observations with missing values from the data set.
+</p>
+
+
+<h3>Answer coding</h3>
+
+<p>The subjects answered a set of assessment items seeking to determine
+the level of anxiety. Answers given in <strong>bold</strong> represent the desired
+response. If a subject matched this response, they were given a 1 inside
+of the item matrix, otherwise they received a zero.
+</p>
+
+
+<h3>References</h3>
+
+<p><strong>Assessment Design:</strong>
+</p>
+
+<ul>
+<li><p> Raskin, R., &amp; Terry, H. (1988). A principal-components analysis of the
+narcissistic personality inventory and further evidence of its construct
+validity. <em>Journal of Personality and Social Psychology</em>, <em>54</em>(5), 890.
+doi: <a href="https://doi.org/10.1037/0022-3514.54.5.890">10.1037/0022-3514.54.5.890</a>
+</p>
+</li></ul>
+
+<p><strong>Data originated from:</strong>
+</p>
+
+<ul>
+<li><p> OpenPsychometrics. 2013. <em>Narcissistic Personality Inventory</em>.
+<a href="https://openpsychometrics.org/_rawdata/NPI.zip">https://openpsychometrics.org/_rawdata/NPI.zip</a>.
+</p>
+</li></ul>
+
+<p><strong>Data used in:</strong>
+</p>
+
+<ul>
+<li><p> TBA
+</p>
+</li></ul>
+
+
+
+</div>
+</body></html>
