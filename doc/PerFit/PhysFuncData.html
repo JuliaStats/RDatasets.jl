@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: The SF-36 physical functioning data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Physical Functioning</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The SF-36 physical functioning data</h2>
+
+<h3>Description</h3>
+
+<p>These data are from the Physical Functioning scale of the SF-36 (Ware and Sherbourne, 1992). Data consist of scores of 714 respondents on 10 polytomously scored items (0 = no, not limited at all; 1 = limited a little; 2 = limited a lot). 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(PhysFuncData)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A 714x10 matrix of polytomous item scores (scores 0, 1, and 2).</p>
+
+
+<h3>References</h3>
+
+<p>Ware, J. E., Jr., and Sherbourne, C. D. (1992) The MOS 36-item short-form health survey (SF-36): Conceptual framework and item selection. <em>Medical Care</em>, <b>30</b>, 473&ndash;483.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(PhysFuncData)</code></pre>
+
+
+</div>
+</body></html>

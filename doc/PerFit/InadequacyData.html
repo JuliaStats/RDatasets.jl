@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: The NPV-J inadequacy scale data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Inadequacy scale data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The NPV-J inadequacy scale data</h2>
+
+<h3>Description</h3>
+
+<p>The NPV-J (Dutch: Junior Nederlandse Persoonlijkheidsvragenlijst, NPV-J; Luteijn, van Dijk, and Barelds, 2005) is a large Dutch personality inventory. The NPV-J consists of 105 mostly positively formulated items and is intended to determine how adolescents between 9 and 15 years of age judge their own behavior. The NPV-J has five subscales; the <code>InadequacyScale</code> data concern scores of 806 adolescents on 28 items measuring inadequacy (one of the subscales). The data are dichotomous (0 = Disagree, 1 = Agree). The original sample consisted of 866 respondents, however 60 all-0s or all-1s response vectors were removed from the data. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(InadequacyData)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A 806x28 matrix of dichotomous item scores.</p>
+
+
+<h3>References</h3>
+
+<p>Luteijn, F., van  Dijk, H., and Barelds, D. P. H. (2005) <em>NPV-J: Junior Nederlandse Persoonlijkheidsvragenlijst.</em> Herziene handleiding 2005. Amsterdam: Harcourt Assessments B.V..
+</p>
+<p>Meijer, R. R., and Tendeiro, J. N. (2012) The use of the lz and lz* person-fit statistics and problems derived from model misspecification. <em>Journal of Educational and Behavioral Statistics</em>, <b>37(6)</b>, 758&ndash;766. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(InadequacyData)</code></pre>
+
+
+</div>
+</body></html>

@@ -306,6 +306,9 @@
 "MASS","waders","Counts of Waders at 15 Sites in South Africa",15,20
 "MASS","whiteside","House Insulation: Whiteside's Data",56,3
 "MASS","wtloss","Weight Loss Data from an Obese Patient",52,2
+"PerFit","InadequacyData","The NPV-J inadequacy scale data",806,28
+"PerFit","IntelligenceData","Intelligence data (number completion)",1000,26
+"PerFit","PhysFuncData","The SF-36 physical functioning data",714,10
 "SASmixed","AvgDailyGain","Average daily weight gain of steers on different diets",32,6
 "SASmixed","Multilocation","A multilocation trial",108,7
 "SASmixed","SIMS","Second International Mathematics Study data",3691,3

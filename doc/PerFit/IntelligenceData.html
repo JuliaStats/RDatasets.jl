@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Intelligence data (number completion)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>Intelligence data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Intelligence data (number completion)</h2>
+
+<h3>Description</h3>
+
+<p>The data are dichotomous scores of a Dutch intelligence test on number completion (Dutch: &quot;Cijferreeksen&quot;, Drenth and Hoolwerf, 1970).  The file consists of archival data that were collected in a high-stakes personnel selection context around 1990. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(IntelligenceData)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A 1000x26 matrix of dichotomous item scores.</p>
+
+
+<h3>References</h3>
+
+<p>Drenth, P. J. D., and Hoolwerf, G. (1970) <em>Numerieke aanleg test - Cijferreeksen (NAT-Cijferreeksen)</em> [Numerical ability test]. Amsterdam: The Netherlands.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(IntelligenceData)</code></pre>
+
+
+</div>
+</body></html>
