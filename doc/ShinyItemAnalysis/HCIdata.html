@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><title>R: Homeostasis concept inventory full dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>HCIdata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Homeostasis concept inventory full dataset</h2>
+
+<h3>Description</h3>
+
+<p><code>HCIdata</code> dataset consists of the responses of 669 students
+(405 males, 246 females, 18 without gender specification) to Homeostasis
+Concept Inventory (HCI) multiple-choice test. It contains answers to 20
+multiple-choice items, scored items, total score, gender membership,
+identifier whether students plan to major in science, study year, minority
+membership, identifier whether English is the student's first language, and
+type of school.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(HCIdata)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>HCIdata</code> is a <code>data.frame</code> consisting of 669 observations
+on the 47 variables.
+</p>
+
+<dl>
+<dt>A1-A20</dt><dd><p>Multiple-choice items of the HCI test. </p>
+</dd>
+<dt>QR1-QR20</dt><dd><p>Scored items of the HCI test, <code>"0"</code> incorrect,
+<code>"1"</code> correct. </p>
+</dd>
+<dt>total</dt><dd><p>Total test score. </p>
+</dd>
+<dt>gender</dt><dd><p>Gender membership, <code>"M"</code> males, <code>"F"</code> females,
+<code>"none"</code> undisclosed. </p>
+</dd>
+<dt>major</dt><dd><p>Identifier whether students plans to major in the life sciences. </p>
+</dd>
+<dt>yearc5</dt><dd><p>Study year. </p>
+</dd>
+<dt>minority</dt><dd><p>Minority membership, <code>"maj"</code> majority, <code>"min"</code>
+Black/Hispanic minority, <code>"none"</code> undisclosed. </p>
+</dd>
+<dt>EnglishF</dt><dd><p>Identifier whether English is the student's first language. </p>
+</dd>
+<dt>typeS</dt><dd><p>Course type, <code>"allied"</code> allied health, <code>"majors"</code>
+physiology courses for
+science majors, <code>"mixed majors"</code> courses for non-majors. </p>
+</dd>
+<dt>typeSCH</dt><dd><p>Type of school, <code>"AC"</code> associate's college, <code>"BCAS"</code>
+baccalaureate college: arts and sciences focus, <code>"R1"</code> research
+university, <code>"MCU"</code> master's college and university. </p>
+</dd> </dl>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Jenny L. McFarland <br /> Biology Department, Edmonds Community College
+</p>
+
+
+<h3>References</h3>
+
+<p>McFarland, J. L., Price, R. M., Wenderoth, M. P., Martinkova, P.,
+Cliff, W., Michael, J., ... &amp; Wright, A. (2017). Development and validation
+of the homeostasis concept inventory. CBE-Life Sciences Education, 16(2),
+ar35. doi: <a href="https://doi.org/10.1187/cbe.16-10-0305">10.1187/cbe.16-10-0305</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>HCI()</code> for HCI dichotomous dataset<br />
+<code>HCItest()</code> for HCI multiple-choice dataset<br />
+<code>HCIkey()</code> for key of correct answers for HCI<br />
+<code>HCIgrads()</code>  for HCI dataset of graduate students<br />
+<code>HCIprepost()</code> for HCI pretest and posttest scores<br />
+<code>HCItestretest()</code> for HCI test-retest dataset
+</p>
+
+
+</div>
+</body></html>

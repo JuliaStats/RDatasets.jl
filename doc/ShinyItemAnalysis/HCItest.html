@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Homeostasis concept inventory multiple-choice dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>HCItest</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Homeostasis concept inventory multiple-choice dataset</h2>
+
+<h3>Description</h3>
+
+<p><code>HCItest</code> dataset consists of the responses of 651
+students (405 males, 246 females) to Homeostasis Concept Inventory (HCI)
+multiple-choice test. It containts 20 items, vector of gender membership
+and identificator whether students plan to major in life sciences.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(HCItest)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>HCItest</code> is a <code>data.frame</code> consisting of 651 observations
+on the 22 variables.
+</p>
+
+<dl>
+<dt>Item1-Item20</dt><dd><p>Multiple-choice items of the HCI test. </p>
+</dd>
+<dt>gender</dt><dd><p>Gender membership, <code>"0"</code> males, <code>"1"</code> females. </p>
+</dd>
+<dt>major</dt><dd><p>Identificator whether student plans to major in the life
+sciences. </p>
+</dd> </dl>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Jenny L. McFarland <br /> Biology Department, Edmonds Community College
+</p>
+
+
+<h3>References</h3>
+
+<p>McFarland, J. L., Price, R. M., Wenderoth, M. P., Martinkova, P.,
+Cliff, W., Michael, J., ... &amp; Wright, A. (2017). Development and validation
+of the homeostasis concept inventory. CBE-Life Sciences Education, 16(2),
+ar35. doi: <a href="https://doi.org/10.1187/cbe.16-10-0305">10.1187/cbe.16-10-0305</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>HCIkey()</code> for key of correct answers for HCI<br />
+<code>HCI()</code> for HCI dichotomous dataset<br />
+<code>HCIdata()</code> for HCI full dataset<br />
+<code>HCIgrads()</code>  for HCI dataset of graduate students<br />
+<code>HCIprepost()</code> for HCI pretest and posttest scores<br />
+<code>HCItestretest()</code> for HCI test-retest dataset
+</p>
+
+
+</div>
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><title>R: PROMIS Anxiety Scale Dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>anxiety</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>PROMIS Anxiety Scale Dataset</h2>
+
+<h3>Description</h3>
+
+<p>The data contains responses from 766 people sampled from a general population
+to the PROMIS Anxiety scale (http://www.nihpromis.org) composed of 29
+Likert-type questions with a common rating scale (1 = Never, 2 = Rarely,
+3 = Sometimes, 4 = Often, and 5 = Always).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>anxiety
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 766 observations on the following 32 variables.
+</p>
+
+<dl>
+<dt><code>age</code></dt><dd><p>0 = younger than 65 and 1 = 65 and older</p>
+</dd>
+<dt><code>gender</code></dt><dd><p>0 = Male and 1 = Female</p>
+</dd>
+<dt><code>education</code></dt><dd><p>0 = some college or higher and 1 = high school or lower</p>
+</dd>
+<dt><code>R1</code></dt><dd><p>I felt fearful</p>
+</dd>
+<dt><code>R2</code></dt><dd><p>I felt frightened</p>
+</dd>
+<dt><code>R3</code></dt><dd><p>It scared me when I felt nervous</p>
+</dd>
+<dt><code>R4</code></dt><dd><p>I felt anxious</p>
+</dd>
+<dt><code>R5</code></dt><dd><p>I felt like I needed help for my anxiety</p>
+</dd>
+<dt><code>R6</code></dt><dd><p>I was concerned about my mental health</p>
+</dd>
+<dt><code>R7</code></dt><dd><p>I felt upset</p>
+</dd>
+<dt><code>R8</code></dt><dd><p>I had a racing or pounding heart</p>
+</dd>
+<dt><code>R9</code></dt><dd><p>I was anxious if my normal routine was disturbed</p>
+</dd>
+<dt><code>R10</code></dt><dd><p>I had sudden feelings of panic</p>
+</dd>
+<dt><code>R11</code></dt><dd><p>I was easily startled</p>
+</dd>
+<dt><code>R12</code></dt><dd><p>I had trouble paying attention</p>
+</dd>
+<dt><code>R13</code></dt><dd><p>I avoided public places or activities</p>
+</dd>
+<dt><code>R14</code></dt><dd><p>I felt fidgety</p>
+</dd>
+<dt><code>R15</code></dt><dd><p>I felt something awful would happen</p>
+</dd>
+<dt><code>R16</code></dt><dd><p>I felt worried</p>
+</dd>
+<dt><code>R17</code></dt><dd><p>I felt terrified</p>
+</dd>
+<dt><code>R18</code></dt><dd><p>I worried about other people's reactions to me</p>
+</dd>
+<dt><code>R19</code></dt><dd><p>I found it hard to focus on anything other than my anxiety</p>
+</dd>
+<dt><code>R20</code></dt><dd><p>My worries overwhelmed me</p>
+</dd>
+<dt><code>R21</code></dt><dd><p>I had twitching or trembling muscles</p>
+</dd>
+<dt><code>R22</code></dt><dd><p>I felt nervous</p>
+</dd>
+<dt><code>R23</code></dt><dd><p>I felt indecisive</p>
+</dd>
+<dt><code>R24</code></dt><dd><p>Many situations made me worry</p>
+</dd>
+<dt><code>R25</code></dt><dd><p>I had difficulty sleeping</p>
+</dd>
+<dt><code>R26</code></dt><dd><p>I had trouble relaxing</p>
+</dd>
+<dt><code>R27</code></dt><dd><p>I felt uneasy</p>
+</dd>
+<dt><code>R28</code></dt><dd><p>I felt tense</p>
+</dd>
+<dt><code>R29</code></dt><dd><p>I had difficulty calming down</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Reexport from <code>lordif</code> package; http://www.nihpromis.org
+</p>
+
+
+<h3>References</h3>
+
+<p>PROMIS Cooperative Group. Unpublished Manual for the
+Patient-Reported Outcomes Measurement Information System (PROMIS) Version
+1.1. October, 2008: http://www.nihpromis.org
+</p>
+
+
+</div>
+</body></html>

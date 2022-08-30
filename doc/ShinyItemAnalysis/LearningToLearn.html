@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><title>R: Dichotomous dataset of learning to learn test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>LearningToLearn</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dichotomous dataset of learning to learn test</h2>
+
+<h3>Description</h3>
+
+<p><code>LearningToLearn</code> is a real longitudinal dataset used in Martinkova et al
+(2020) study, demonstrating differential item functioning in change (DIF-C)
+on Learning to Learn (LtL) test. Among other variables, it primarily contains
+binary-coded responses of 782 subjects to (mostly) multiple-choice test
+consisting of 41 items within 7 subscales (see <strong>Format</strong> for details). Each
+respondent was tested twice in total &ndash; the first time in Grade 6 and the
+second time in Grade 9. Most importantly, school track (variable <code>track_01</code>
+or <code>track</code>) is available, with 391 students attending basic school (BS) and
+391 pursuing selective academic school (AS). This dataset was created using
+propensity score matching algorithm to achieve similar characteristics in
+both tracks (see <strong>References</strong> for details). To further simplify the work
+with <code>LtL</code> dataset, we provide computed total scores as well as 7 subscores,
+both for Grade 6 and Grade 9. The dataset also includes <em>change</em> variables
+for each item (see <strong>Format</strong> for details) for more detailed DIF-C analysis
+using multinomial regression model.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>LearningToLearn
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A <code>LearningToLearn</code> data frame consists of 782 observations on the following 141 variables:
+</p>
+
+<dl>
+<dt>track_01</dt><dd><p>Dichotomously scored school track, where <code>"1"</code> denotes the selective academic school one. </p>
+</dd>
+<dt>track</dt><dd><p>School track, where <code>"AS"</code> represents the selective academic school track, and <code>"BS"</code> stands
+for basic school track. </p>
+</dd>
+<dt>score_6 &amp; score_9</dt><dd><p>Total test score value obtained by summing all 41 items of <code>LtL</code>, the number denotes
+the Grade which the respondent was taking at the time of testing. </p>
+</dd>
+<dt>score_6_subtest1&ndash;score_6_subtest7</dt><dd><p>Scores of respective cognitive subtest (1&ndash;7) of <code>LtL</code> in Grade 6. </p>
+</dd>
+<dt>score_9_subtest1&ndash;score_9_subtest7</dt><dd><p>Scores of respective cognitive subtest (1&ndash;7) of <code>LtL</code> in Grade 9. </p>
+</dd>
+<dt>Item1A_6&ndash;Item7F_6</dt><dd><p>Dichotomously coded 41 individual items obtained at Grade 6, <code>"1"</code> represents
+the correct answer to the particular item. </p>
+</dd>
+<dt>Item1A_9&ndash;Item7F_9</dt><dd><p>Dichotomously coded 41 individual items obtained at Grade 9, <code>"1"</code> represents
+the correct answer to the particular item. </p>
+</dd>
+<dt>Item1A_changes&ndash;Item7F_changes</dt><dd><p>Change patterns with those possible values:
+</p>
+
+<ul>
+<li><p> a student responded correctly in neither Grade 6 nor in Grade 9 (did not improve, <code>"00"</code>)
+</p>
+</li>
+<li><p> a student responded correctly in Grade 6 but not in Grade 9 (deteriorated, <code>"10"</code>)
+</p>
+</li>
+<li><p> a student did not respond correctly in Grade 6 but responded correctly in Grade 9 (improved, <code>"01"</code>), and
+</p>
+</li>
+<li><p> a student responded correctly in both grades (did not deteriorate, <code>"11"</code>)</p>
+</li></ul>
+
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Martinkova, P., Hladka, A., &amp; Potuznikova, E. (2020). Is academic
+tracking related to gains in learning competence? Using propensity score
+matching and differential item change functioning analysis for better
+understanding of tracking implications. <em>Learning and Instruction</em>, <em>66</em>,
+101286. doi: <a href="https://doi.org/10.1016/j.learninstruc.2019.101286">10.1016/j.learninstruc.2019.101286</a>
+</p>
+
+
+</div>
+</body></html>

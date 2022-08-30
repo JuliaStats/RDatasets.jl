@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><head><title>R: Correlation matrix for the test anxiety dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>TestAnxietyCor</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Correlation matrix for the test anxiety dataset</h2>
+
+<h3>Description</h3>
+
+<p>The <code>TestAnxietyCor</code> dataset contains between-item correlations for 20 items
+of the Test Anxiety dataset.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(TestAnxietyCor)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>TestAnxietyCor</code> is a <code>data.frame</code> consisting of between-item
+correlations for 20 items.
+</p>
+
+<dl>
+<dt>i1</dt><dd><p>Lack of confidence during tests. </p>
+</dd>
+<dt>i2</dt><dd><p>Uneasy, upset feeling. </p>
+</dd>
+<dt>i3</dt><dd><p>Thinking about grades. </p>
+</dd>
+<dt>i4</dt><dd><p>Freeze up. </p>
+</dd>
+<dt>i5</dt><dd><p>Thinking about getting through school. </p>
+</dd>
+<dt>i6</dt><dd><p>The harder I work, the more confused I get. </p>
+</dd>
+<dt>i7</dt><dd><p>Thoughts interfere with concentration. </p>
+</dd>
+<dt>i8</dt><dd><p>Jittery when taking tests. </p>
+</dd>
+<dt>i9</dt><dd><p>Even when prepared, get nervous. </p>
+</dd>
+<dt>i10</dt><dd><p>Uneasy before getting the test back. </p>
+</dd>
+<dt>i11</dt><dd><p>Tense during test. </p>
+</dd>
+<dt>i12</dt><dd><p>Exams bother me. </p>
+</dd>
+<dt>i13</dt><dd><p>Tense/ stomach upset. </p>
+</dd>
+<dt>i14</dt><dd><p>Defeat myself during tests. </p>
+</dd>
+<dt>i15</dt><dd><p>Panicky during tests. </p>
+</dd>
+<dt>i16</dt><dd><p>Worry before important tests. </p>
+</dd>
+<dt>i17</dt><dd><p>Think about failing. </p>
+</dd>
+<dt>i18</dt><dd><p>Heart beating fast during tests. </p>
+</dd>
+<dt>i19</dt><dd><p>Can’t stop worrying. </p>
+</dd>
+<dt>i20</dt><dd><p>Nervous during test, forget facts. </p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Bartholomew, D. J., Steele, F., &amp; Moustaki, I. (2008). Analysis
+of multivariate social science data. CRC press.
+</p>
+
+
+</div>
+</body></html>

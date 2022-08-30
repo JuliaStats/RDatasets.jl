@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head><title>R: Attitudes towards the Expulsion of the Sudeten Germans...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>AttitudesExpulsion</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Attitudes towards the Expulsion of the Sudeten Germans (dataset)</h2>
+
+<h3>Description</h3>
+
+<p>Dataset from Kolek et al. (2021) study investigating a video game's effects
+on implicit and explicit attitudes towards depicted historical events in the
+short- and long-term. As an intervention tool, a serious game
+<em>Czechoslovakia 38–89: Borderlands</em> was utilized that deals with the
+expulsion of the Sudeten Germans from the former Czechoslovakia after the
+WWII. Data consists responses from 145 adults from two groups (experimental
+and control group) on number of multi-item measurements.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>AttitudesExpulsion
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A <em>data.frame</em> with 145 rows and
+239 variables:
+</p>
+
+<dl>
+<dt>ID</dt><dd><p>anonymous identifier</p>
+</dd>
+<dt>Group</dt><dd><p>C = control or E = experimental group</p>
+</dd>
+<dt>Gender</dt><dd><p><em>factor</em>, <code>male</code> or <code>female</code></p>
+</dd>
+<dt>GenderF</dt><dd><p><em>integer</em>, 1 = female</p>
+</dd>
+<dt>Merkel</dt><dd><p>effect of Merkel speech between the posttest and the delayed
+posttest, range 0&ndash;5, where 0 stands for no effect, 5 for very significant
+effect</p>
+</dd>
+<dt>Sudety</dt><dd><p><em>factor</em>, N = not originally from Czech Borderlands; Y =
+originally from Czech Borderlands</p>
+</dd>
+<dt>Education</dt><dd><p><em>factor</em>, V = university; S = high school; Z = elementary
+school</p>
+</dd>
+<dt>Education123</dt><dd><p><em>integer</em>, same as above, but coded as 3= university;
+2= high school; 1= elementary school, meaning higher the number, higher the
+education</p>
+</dd>
+<dt>*PANASpn</dt><dd><p>total PANAS score of positive and negative affect scales</p>
+</dd>
+<dt>*PANASp</dt><dd><p>total PANAS score of positive affect scale</p>
+</dd>
+<dt>*PANASn</dt><dd><p>total PANAS score of negative affect scale</p>
+</dd>
+<dt>*Macro</dt><dd><p>Macro attitude measurement</p>
+</dd>
+<dt>*Micro</dt><dd><p>Micro attitude measurement</p>
+</dd>
+<dt>*IATeffect</dt><dd><p>Single-Category Implicit association test score</p>
+</dd>
+</dl>
+
+<p>Items beginning with an asterisk have following prefixes in the actual
+dataset:
+</p>
+
+<dl>
+<dt>pre</dt><dd><p>pretest</p>
+</dd>
+<dt>post</dt><dd><p>immediate posttest</p>
+</dd>
+<dt>del</dt><dd><p>one month delayed posttest</p>
+</dd>
+<dt>Post_Pre</dt><dd><p>difference between posttest_pretest</p>
+</dd>
+<dt>Del_Post</dt><dd><p>difference between delayed posttest and posttest</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p> Kolek, L., Šisler, V., Martinková, P., &amp; Brom, C. (2021). Can video
+games change attitudes towards history? Results from a laboratory experiment
+measuring short- and long-term effects. <em>Journal of Computer Assisted
+Learning</em>, <em>1&ndash;22</em>. doi: <a href="https://doi.org/10.1111/jcal.12575">10.1111/jcal.12575</a>
+</p>
+
+
+</div>
+</body></html>

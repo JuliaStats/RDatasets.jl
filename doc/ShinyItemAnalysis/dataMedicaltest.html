@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Dataset of admission test to medical school</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>dataMedicaltest</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dataset of admission test to medical school</h2>
+
+<h3>Description</h3>
+
+<p>The <code>dataMedicaltest</code> dataset consists of the responses of
+2,392 subjects (750 males, 1,633 females and 9 subjects without gender
+specification) to multiple-choice admission test to a medical school. It
+contains 100 items, possible answers were A, B, C, D, while any combination
+of these can be correct.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(dataMedicaltest)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A <code>dataMedicaltest</code> is a <code>data.frame</code> consisting of 2,392
+observations on the following 102 variables.
+</p>
+
+<dl>
+<dt>X</dt><dd><p>The first 100 columns represent items answers.</p>
+</dd>
+<dt>gender</dt><dd><p>Variable describing gender; values <code>"0"</code> and <code>"1"</code> refer to
+males and females.</p>
+</dd>
+<dt>StudySuccess</dt><dd><p>Criterion variable; value <code>"1"</code> means that student
+studies standardly, <code>"0"</code> otherwise (e.g., leaving or interrupting studies). </p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Stuka, C., Vejrazka, M., Martinkova, P., Komenda, M., &amp; Stepanek, L. (2016).
+The use of test and item analysis for improvement of tests. Workshop held at
+conference MEFANET, 2016, Brno, Czech Republic.
+</p>
+
+
+<h3>References</h3>
+
+<p>Martinkova, P., &amp; Drabinova, A. (2018). ShinyItemAnalysis for
+teaching psychometrics and to enforce routine analysis of educational tests.
+The R Journal, 10(2), 503&ndash;515, doi: <a href="https://doi.org/10.32614/RJ-2018-074">10.32614/RJ-2018-074</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>dataMedical()</code>, <code>dataMedicalkey()</code>,
+<code>dataMedicalgraded()</code>
+</p>
+
+
+</div>
+</body></html>

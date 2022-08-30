@@ -7,6 +7,7 @@
 "KMsurv","Data sets from Klein and Moeschberger (1997), Survival Analysis"
 "MASS","Support Functions and Datasets for Venables and Ripley's MASS"
 "SASmixed","Data sets from ""SAS System for Mixed Models"""
+"ShinyItemAnalysis","Test and Item Analysis via Shiny"
 "Zelig","Everyone's Statistical Software"
 "adehabitatLT","Analysis of Animal Movements"
 "boot","Bootstrap Functions (Originally by Angelo Canty for S)"

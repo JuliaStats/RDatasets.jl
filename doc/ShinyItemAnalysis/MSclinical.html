@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><title>R: Clinical outcomes in multiple sclerosis patients dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>MSclinical</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Clinical outcomes in multiple sclerosis patients dataset</h2>
+
+<h3>Description</h3>
+
+<p>The <code>MSclinical</code> dataset contains clinical measures on multiple sclerosis patients.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(MSclinical)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>MSclinical</code> is a <code>data.frame</code> consisting of 17 observations on
+13 variables.
+</p>
+
+<dl>
+<dt>LCLA</dt><dd><p>Low-Contrast Letter Acuity test.  </p>
+</dd>
+<dt>MI</dt><dd><p>Motricity Index. </p>
+</dd>
+<dt>MAS</dt><dd><p>Modified Ashworth Scale. </p>
+</dd>
+<dt>BBS</dt><dd><p>Berg Balance Scale. </p>
+</dd>
+<dt>T</dt><dd><p>Tremor. </p>
+</dd>
+<dt>DD</dt><dd><p>Dysdiadochokinesia. </p>
+</dd>
+<dt>DM</dt><dd><p>Dysmetria. </p>
+</dd>
+<dt>PRs</dt><dd><p>Postural reactions. </p>
+</dd>
+<dt>KH</dt><dd><p>Knee Hyperextension. </p>
+</dd>
+<dt>NHPT</dt><dd><p>Nine-Hole Peg Test. </p>
+</dd>
+<dt>T25FW</dt><dd><p>Timed 25-Foot Walk. </p>
+</dd>
+<dt>PASAT3</dt><dd><p>3-minute version of the Paced Auditory Serial Addition Test. </p>
+</dd>
+<dt>EDSS</dt><dd><p>Kurtzke Expanded Disability Status Scale. </p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Rasova, K., Martinkova, P., Vyskotova, J., &amp; Sedova, M. (2012).
+Assessment set for evaluation of clinical outcomes in multiple sclerosis: Psychometric properties.
+Patient related outcome measures, 3, 59. doi: <a href="https://doi.org/10.2147/PROM.S32241">10.2147/PROM.S32241</a>
+</p>
+
+
+</div>
+</body></html>

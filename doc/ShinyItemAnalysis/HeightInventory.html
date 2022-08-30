@@ -1,0 +1,122 @@
+<!DOCTYPE html><html><head><title>R: Height inventory dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>HeightInventory</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Height inventory dataset</h2>
+
+<h3>Description</h3>
+
+<p><code>HeightInventory</code> dataset consists of the responses of 4,885 respondents
+(1479 males, 3406 females) to a Height Inventory  (Rečka, 2018). It contains 26
+ordinal items of self-perceived height rated on a scale <code>"1"</code> strongly disagree,
+<code>"2"</code> disagree, <code>"3"</code> agree, <code>"4"</code> strongly agree, vector of self-reported
+heights (in centimeters), and vector of gender membership.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(HeightInventory)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>HeightInventory</code> is a <code>data.frame</code> consisting of 4,885 observations
+on the 28 variables. First 26 variables are responses on scale <code>"1"</code>
+strongly disagree, <code>"2"</code> disagree, <code>"3"</code> agree, <code>"4"</code> strongly agree.
+Items 14 - 26 were reverse-coded, so that all items are scored in the same
+direction. Names of these items start with <code>"Not"</code>. Original item number
+and English wording is provided below.
+</p>
+
+<dl>
+<dt>ShortTrousers</dt><dd><p>1. A lot of trousers are too short for me.</p>
+</dd>
+<dt>TallerThanM</dt><dd><p>2.	I am taller than men of my age.</p>
+</dd>
+<dt>TallerThanF</dt><dd><p>3.	I am taller than women of my age.</p>
+</dd>
+<dt>HeightForBasketball</dt><dd><p>4.	I have an appropriate height for playing basketball or volleyball.</p>
+</dd>
+<dt>AskMeToReach</dt><dd><p>5.	Other people sometimes ask me to reach something for them.</p>
+</dd>
+<dt>CommentsTall</dt><dd><p>6.	I am used to hearing comments about how tall I am.</p>
+</dd>
+<dt>ConcertObstructs</dt><dd><p>7.	At concerts, my stature usually obstructs other people’s views.</p>
+</dd>
+<dt>ShortBed</dt><dd><p>8.	Ordinary beds are too short for me.</p>
+</dd>
+<dt>TopShelfEasy</dt><dd><p>9.	I can easily take wares from top shelves at a store.</p>
+</dd>
+<dt>CrowdViewComf</dt><dd><p>10.	In a crowd of people, I still have a comfortable view.</p>
+</dd>
+<dt>ShortBlanket</dt><dd><p>11.	Blankets and bedspreads rarely cover me completely.</p>
+</dd>
+<dt>BendToHug</dt><dd><p>12.	When I want to hug someone, I usually need to bend over.</p>
+</dd>
+<dt>CarefullHead</dt><dd><p>13.	I must often be careful to avoid bumping my head against a doorjamb or a low ceiling.</p>
+</dd>
+<dt>NotSmallerThanM</dt><dd><p>14.	I am smaller than men of my age.</p>
+</dd>
+<dt>NotStoolNeeded</dt><dd><p>15.	I often need a stool to reach something other people could reach without one.</p>
+</dd>
+<dt>NotPlayDwarf</dt><dd><p>16.	I could play a dwarf.</p>
+</dd>
+<dt>NotSmallerThanW</dt><dd><p>17.	I am smaller than women of my age.</p>
+</dd>
+<dt>NotNoticeSmall</dt><dd><p>18.	One of the first things people notice about me is how small I am.</p>
+</dd>
+<dt>NotOnTipToes</dt><dd><p>19.	I often need to stand on the tip of my toes to get a better view.</p>
+</dd>
+<dt>NotClothChildSize</dt><dd><p>20.	When I buy clothes, children’s sizes often fit me well.</p>
+</dd>
+<dt>NotBusLegsEnoughSpace</dt><dd><p>21.	I have enough room for my legs when traveling by bus.</p>
+</dd>
+<dt>NotFasterWalk</dt><dd><p>22.	I often need to walk faster than I’m used to in order to keep pace with taller people.</p>
+</dd>
+<dt>NotAgeUnderestim</dt><dd><p>23.	Because of my smaller stature, people underestimate my age.</p>
+</dd>
+<dt>NotWishLowerChair</dt><dd><p>24.	It would be more comfortable for me if chairs were made lower.</p>
+</dd>
+<dt>NotUpwardLook</dt><dd><p>25.	When talking to other adults, I have to look upwards if I want to meet their eyes.</p>
+</dd>
+<dt>NotMirrorTooHigh</dt><dd><p>26.	Some mirrors are placed so high up that I have to crane my neck to use them.</p>
+</dd>
+<dt>gender</dt><dd><p>Gender membership, <code>"M"</code> males, <code>"F"</code> females.</p>
+</dd>
+<dt>HeightCM</dt><dd><p>Self-reported height in centimeters.</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>Thanks to Karel Rečka and Hynek Cígler for sharing this dataset.
+</p>
+
+
+<h3>References</h3>
+
+<p>Rečka, K. (2018). Height and Weight Inventory. Brno, Masaryk
+University: Unpublished Master's thesis
+</p>
+
+
+</div>
+</body></html>

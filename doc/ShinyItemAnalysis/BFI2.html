@@ -1,0 +1,205 @@
+<!DOCTYPE html><html><head><title>R: BFI2 Dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>BFI2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>BFI2 Dataset</h2>
+
+<h3>Description</h3>
+
+<p><code>BFI2</code> dataset (Hřebíčková et al., 2020) consists of responses of
+1,733
+respondents
+(1,003
+females,
+730
+males) to Big Five Inventory 2 (BFI-2). It contains 60 ordinal items, vector
+of age, education, and vector of gender membership.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(BFI2)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>BFI2</code> is a <code>data.frame</code> consisting of
+1,733
+observations on 64 variables.
+</p>
+
+<dl>
+<dt>i1&ndash;i60</dt><dd><p>The BFI items, scored on Likert scale where
+<code>1</code> = Disagree strongly,
+<code>2</code> = Disagree a little,
+<code>3</code> = Neutral; no opinion,
+<code>4</code> = Agree a little, and
+<code>5</code> = Agree strongly.
+Some items were recoded so that all items are scored in the same direction, see Details.</p>
+</dd>
+<dt>Gender</dt><dd><p>Gender membership, <code>0</code> = females, <code>1</code> = males.</p>
+</dd>
+<dt>Age</dt><dd><p>Age in years.</p>
+</dd>
+<dt>Educ</dt><dd><p>Education,
+<code>1</code> = Basic school,
+<code>2</code> = Secondary technical school,
+<code>3</code> = Secondary general school,
+<code>4</code> = Other secondary school,
+<code>5</code> = Tertiary professional school,
+<code>6</code> = Bachelor degree,
+<code>7</code> = Masters degree,
+<code>8</code> = PhD</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The items prefixed with <code>i</code> are item scores. Items are indicators of 5 latent
+personality factors/dimensions/domains, which are further broken down into
+so-called facets. The 5 personality domains are: N = Negative Emotionality, E
+= Extraversion, O = Open-Mindedness, C = Consciousness and A = Agreeability.
+These are further broken down into so-called facets, as shown in the
+following table:</p>
+
+<table>
+<tr>
+ <td style="text-align: left;">
+   <strong>Domain</strong> </td><td style="text-align: left;"> <strong>Facet</strong> </td><td style="text-align: left;"> <strong>Item numbers</strong> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   E </td><td style="text-align: left;"> Sociability (scb) </td><td style="text-align: left;"> 1, 16, 31, 46 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   E </td><td style="text-align: left;"> Assertiveness (asr) </td><td style="text-align: left;"> 6, 21, 36, 51 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   E </td><td style="text-align: left;"> Energy Level (enl) </td><td style="text-align: left;"> 11, 26, 41, 56 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   A </td><td style="text-align: left;"> Compassion (cmp) </td><td style="text-align: left;"> 2, 17, 32, 47 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   A </td><td style="text-align: left;"> Respectfulness (rsp) </td><td style="text-align: left;"> 7, 22, 37, 52 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   A </td><td style="text-align: left;"> Trust (trs) </td><td style="text-align: left;"> 12, 27, 42, 57 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   C </td><td style="text-align: left;"> Organization (org) </td><td style="text-align: left;"> 3, 18, 33, 48 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   C </td><td style="text-align: left;"> Productiveness (prd) </td><td style="text-align: left;"> 8, 23, 38, 53 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   C </td><td style="text-align: left;"> Responsibility (rsp) </td><td style="text-align: left;"> 13, 28, 43, 58 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   N </td><td style="text-align: left;"> Anxiety (anx) </td><td style="text-align: left;"> 4, 19, 34, 49 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   N </td><td style="text-align: left;"> Depression (dep) </td><td style="text-align: left;"> 9, 24, 39, 54 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   N </td><td style="text-align: left;"> Emotional Volatility (emt) </td><td style="text-align: left;"> 14, 29, 44, 59 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   O </td><td style="text-align: left;"> Intellectual Curiosity (int) </td><td style="text-align: left;"> 10, 25, 40, 55 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   O </td><td style="text-align: left;"> Aesthetic Sensitivity (aes) </td><td style="text-align: left;"> 5, 20, 35, 50 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+   O </td><td style="text-align: left;"> Creative Imagination (crt) </td><td style="text-align: left;"> 15, 30, 45, 60 </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+<p>In the original instrument, some items are inversely oriented, i.e., the
+higher score means the lower latent trait. This was the case of items number
+3, 4, 5, 8, 9, 11, 12, 16, 17, 22, 23, 24, 25, 26, 28, 29, 30, 31, 36, 37,
+42, 44, 45, 47, 48, 49, 50, 51, 55, and 58. These <strong>items have been recoded</strong>
+for you, i.e., displayed is value of <code style="white-space: pre;">&#8288;6 - original score&#8288;</code>.
+</p>
+<p>In the sample code, alternative item names are provided. These item names
+can be used to decode the item domain, facet, item number, and
+whether it was recoded or not. For example, <code>iCorg03r</code> stands for recoded 3rd
+item (out of 60) from Consciousness domain and Organization facet.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Thanks to Martina Hřebíčková for sharing this dataset.
+</p>
+
+
+<h3>References</h3>
+
+<p>Hřebíčková, M., Jelínek, M., Květon,P., Benkovič, A., Botek, M.,
+Sudzina, F. Soto, Ch., John, O. (2020).  Big Five Inventory 2 (BFI-2):
+Hierarchický model s 15 subškálami [Big Five Inventory 2 (BFI-2):
+Hierarchical model with 15 subscales, in Czech]. <em>Československá
+psychologie, 64,</em> 437&ndash;460.
+</p>
+<p>Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (BFI-2):
+Developing and assessing a hierarchical model with 15 facets to enhance
+bandwidth, fidelity, and predictive power. <em>Journal of Personality and
+Social Psychology, 113,</em> 117&ndash;143.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(BFI2)
+colnames(BFI2)[1:60] &lt;- c("iEscb01", "iAcmp02", "iCorg03r", "iNanx04r", "iOaes05r", "iEasr06",
+"iArsp07", "iCprd08r", "iNdep09r", "iOint10", "iEenl11r", "iAtrs12r", "iCrsp13", "iNemt14",
+"iOcrt15", "iEscb16r", "iAcmp17r", "iCorg18", "iNanx19", "iOaes20", "iEasr21", "iArsp22r",
+"iCprd23r", "iNdep24r", "iOint25r", "iEenl26r", "iAtrs27", "iCrsp28r", "iNemt29r",
+"iOcrt30r", "iEscb31r", "iAcmp32", "iCorg33", "iNanx34", "iOaes35", "iEasr36r", "iArsp37r",
+"iCprd38", "iNdep39", "iOint40", "iEenl41", "iAtrs42r", "iCrsp43", "iNemt44r", "iOcrt45r",
+"iEscb46", "iAcmp47r", "iCorg48r", "iNanx49r", "iOaes50r", "iEasr51r", "iArsp52", "iCprd53",
+"iNdep54", "iOint55r", "iEenl56", "iAtrs57", "iCrsp58r", "iNemt59", "iOcrt60")
+
+</code></pre>
+
+
+</div>
+</body></html>

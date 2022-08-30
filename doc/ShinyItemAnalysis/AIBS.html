@@ -1,0 +1,141 @@
+<!DOCTYPE html><html><head><title>R: AIBS grant peer review scoring dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>AIBS</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>AIBS grant peer review scoring dataset</h2>
+
+<h3>Description</h3>
+
+<p>The <code>AIBS</code> dataset (Gallo, 2020) comes from the scientific peer review
+facilitated by the American Institute of Biological Sciences (AIBS) of
+biomedical applications from and intramural collaborative biomedical research
+program for 2014&ndash;2017. For each proposal, three assigned individual
+reviewers were asked to provide scores and commentary for the following
+application criteria: Innovation, Approach/Feasibility, Investigator, and
+Significance (Impact added as scored criterion in 2014). Each of these
+criteria is scored on a scale from 1.0 (best) to 5.0 (worst) with a 0.1
+gradation, as well as an overall score (1.0&ndash;5.0 with a 0.1 gradation).
+Asynchronous discussion was allowed, although few scores changed
+post-discussion. The data includes reviewers' self-reported expertise scores
+(1/2/3, 1 is high expertise) relative to each proposal reviewed, and reviewer
+/ principal investigator demographics. A total of 72 applications (&quot;Standard&quot;
+or &quot;Pilot&quot;) were reviewed in 3 review cycles. The success rate was 34&ndash;38 %.
+Application scores indicate where each application falls among all
+practically possible applications in comparison with the ideal standard of
+quality from a perfect application. The dataset was used by Erosheva et al.
+(2021a) to demonstrate issues of inter-rater reliability in case of
+restricted samples. For details, see Erosheva et al. (2021b).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(AIBS)
+</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>AIBS</code> is a <code>data.frame</code> consisting of 216 observations on
+25 variables. Data describes 72 proposals with 3 ratings each.
+</p>
+
+<dl>
+<dt>ID</dt><dd><p>Proposal ID. </p>
+</dd>
+<dt>Year</dt><dd><p>Year of the review. </p>
+</dd>
+<dt>PropType</dt><dd><p>Proposal type; <code>"Standard"</code> or <code>"Pilot"</code>. </p>
+</dd>
+<dt>PIID</dt><dd><p>Anonymized ID of principal investigator (PI). </p>
+</dd>
+<dt>PIOrgType</dt><dd><p>PI's organization type. </p>
+</dd>
+<dt>PIGender</dt><dd><p>PI's gender membership; <code>"1"</code> females, <code>"2"</code> males. </p>
+</dd>
+<dt>PIRank</dt><dd><p>PI's rank; <code>"3"</code> full professor, <code>"1"</code> assistant professor. </p>
+</dd>
+<dt>PIDegree</dt><dd><p>PI's degree; <code>"1"</code> PhD, <code>"2"</code> MD, <code>"3"</code> PhD/MD. </p>
+</dd>
+<dt>Innovation</dt><dd><p>Innovation score. </p>
+</dd>
+<dt>Approach</dt><dd><p>Approach score. </p>
+</dd>
+<dt>Investig</dt><dd><p>Investigator score. </p>
+</dd>
+<dt>Signif</dt><dd><p>Significance score. </p>
+</dd>
+<dt>Impact</dt><dd><p>Impact score. </p>
+</dd>
+<dt>Score</dt><dd><p>Scientific merit (overall) score. </p>
+</dd>
+<dt>ScoreAvg</dt><dd><p>Average of the three overall scores from three different reviewers. </p>
+</dd>
+<dt>ScoreAvgAdj</dt><dd><p>Average of the three overall scores from three different reviewers, increased by multiple of 0.001 of the worst score. </p>
+</dd>
+<dt>ScoreRank</dt><dd><p>Project rank calculated based on <code>ScoreAvg</code>. </p>
+</dd>
+<dt>ScoreRankAdj</dt><dd><p>Project rank calculated based on <code>ScoreAvgAdj</code>. </p>
+</dd>
+<dt>RevID</dt><dd><p>Reviewer's ID. </p>
+</dd>
+<dt>RevExp</dt><dd><p>Reviewer's experience. </p>
+</dd>
+<dt>RevInst</dt><dd><p>Reviewer's institution; <code>"1"</code> academia, <code>"2"</code> government. </p>
+</dd>
+<dt>RevGender</dt><dd><p>Reviewer's gender; <code>"1"</code> females, <code>"2"</code> males. </p>
+</dd>
+<dt>RevRank</dt><dd><p>Reviewer's rank; <code>"3"</code> full professor, <code>"1"</code> assistant professor. </p>
+</dd>
+<dt>RevDegree</dt><dd><p>Reviewer's degree; <code>"1"</code> PhD, <code>"2"</code> MD, <code>"3"</code> PhD/MD. </p>
+</dd>
+<dt>RevCode</dt><dd><p>Reviewer code (<code>"A"</code>, <code>"B"</code>, <code>"C"</code>) in the original wide dataset. </p>
+</dd>
+</dl>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Stephen Gallo <br /> American Institute of Biological Sciences
+</p>
+
+
+<h3>References</h3>
+
+<p>Gallo, S. (2021). Grant  peer  review  scoring  data  with  criteria  scores.
+doi: <a href="https://doi.org/10.6084/m9.figshare.12728087">10.6084/m9.figshare.12728087</a>
+</p>
+<p>Erosheva, E., Martinkova, P., &amp; Lee, C. (2021a). When zero may not be zero: A
+cautionary note on the use of inter-rater reliability in evaluating grant
+peer review. Journal of the Royal Statistical Society - Series A.
+doi: <a href="https://doi.org/10.1111/rssa.12681">10.1111/rssa.12681</a>
+</p>
+<p>Erosheva, E., Martinkova, P., &amp; Lee, C. (2021b). Supplementary material: When
+zero may not be zero: A cautionary note on the use of inter-rater reliability
+in evaluating grant peer review. doi: <a href="https://doi.org/10.17605/OSF.IO/KNPH8">10.17605/OSF.IO/KNPH8</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>ICCrestricted()</code>
+</p>
+
+
+</div>
+</body></html>
