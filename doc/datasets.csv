@@ -542,6 +542,12 @@
 "lme4","grouseticks","Data on red grouse ticks from Elston et al. 2001",403,7
 "lme4","sleepstudy","Reaction times in a sleep deprivation study",180,3
 "mgcv","columb","Reduced version of Columbus OH crime data",49,8
+"mirt","Bock1997","Description of Bock 1997 data",64,4
+"mirt","LSAT6","Description of LSAT6 data",30,6
+"mirt","LSAT7","Description of LSAT7 data",32,6
+"mirt","SAT12","Description of SAT12 data",600,32
+"mirt","Science","Description of Science data",392,4
+"mirt","deAyala","Description of deAyala data",32,6
 "mlmRev","Chem97","Scores on A-level Chemistry in 1997",31022,8
 "mlmRev","Contraception","Contraceptive use in Bangladesh",1934,6
 "mlmRev","Early","Early childhood intervention study",309,4

@@ -19,6 +19,7 @@
 "lattice","Lattice Graphics"
 "lme4","Linear mixed-effects models using Eigen and S4"
 "mgcv","Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness estimation"
+"mirt","Multidimensional Item Response Theory"
 "mlmRev","Examples from Multilevel Modelling Software Review"
 "nlreg","Higher Order Inference for Nonlinear Heteroscedastic Models"
 "plm","Linear Models for Panel Data"

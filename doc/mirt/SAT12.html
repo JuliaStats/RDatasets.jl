@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Description of SAT12 data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>SAT12</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Description of SAT12 data</h2>
+
+<h3>Description</h3>
+
+<p>Data obtained from the TESTFACT (Woods et al., 2003) manual, with 32 response pattern
+scored items for a grade 12 science assessment test (SAT) measuring topics of chemistry,
+biology, and physics. The scoring key for these data is
+[1, 4, 5, 2, 3, 1, 2, 1, 3, 1, 2, 4, 2, 1, 5, 3, 4, 4, 1, 4, 3, 3, 4, 1, 3, 5, 1, 3, 1, 5, 4, 5],
+respectively. However, careful analysis using the nominal response model suggests that the
+scoring key for item 32 may be incorrect, and should be changed from 5 to 3.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Phil Chalmers <a href="mailto:rphilip.chalmers@gmail.com">rphilip.chalmers@gmail.com</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Chalmers, R., P. (2012). mirt: A Multidimensional Item Response Theory
+Package for the R Environment. <em>Journal of Statistical Software, 48</em>(6), 1-29.
+<a href="https://doi.org/10.18637/jss.v048.i06">doi:10.18637/jss.v048.i06</a>
+</p>
+<p>Wood, R., Wilson, D. T., Gibbons, R. D., Schilling, S. G., Muraki, E., &amp; Bock, R. D. (2003).
+TESTFACT 4 for Windows: Test Scoring, Item Statistics, and Full-information Item Factor Analysis
+[Computer software]. Lincolnwood, IL: Scientific Software International.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+## Not run: 
+
+itemstats(SAT12, use_ts = FALSE)
+
+#score the data (missing scored as 0)
+head(SAT12)
+dat &lt;- key2binary(SAT12,
+    key = c(1,4,5,2,3,1,2,1,3,1,2,4,2,1,5,3,4,4,1,4,3,3,4,1,3,5,1,3,1,5,4,5))
+head(dat)
+itemstats(dat)
+
+#score the data, missing (value of 8) treated as NA
+SAT12missing &lt;- SAT12
+SAT12missing[SAT12missing == 8] &lt;- NA
+dat &lt;- key2binary(SAT12missing,
+    key = c(1,4,5,2,3,1,2,1,3,1,2,4,2,1,5,3,4,4,1,4,3,3,4,1,3,5,1,3,1,5,4,5))
+head(dat)
+
+#potentially better scoring for item 32 (based on nominal model finding)
+dat &lt;- key2binary(SAT12,
+    key = c(1,4,5,2,3,1,2,1,3,1,2,4,2,1,5,3,4,4,1,4,3,3,4,1,3,5,1,3,1,5,4,3))
+
+## End(Not run)
+</code></pre>
+
+
+</div>
+</body></html>
