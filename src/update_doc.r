@@ -32,7 +32,7 @@ do_package_update <- function(data_dir, package_df, old_dataset_df, dataset_df, 
     datasets <- dir(path = file.path(data_dir, package))
 
     # Trim filenames to dataset names
-    r <- "(.+)\\.(csv\\.gz|rda)$"
+    r <- "(.+)\\.(csv\\.gz|rda|RData)$"
     format_recognized <- grepl(r, datasets)
     if (!(all(format_recognized))) {
         stop("Unrecognized formats:\n",
