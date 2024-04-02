@@ -44,8 +44,12 @@ This object prints well in the REPL, and can also be shown as markdown or HTML.
     This function is left deliberately unexported, since the name is pretty common.
 """
 function description(package_name::AbstractString, dataset_name::AbstractString)
-    RDatasetDescription(read(joinpath(@__DIR__, "..", "doc",
-                                       package_name, "$dataset_name.html"), String))
+    doc_html_file = joinpath(@__DIR__, "..", "doc", package_name, "$dataset_name.html")
+    if isfile(doc_html_file)
+        return RDatasetDescription(read(doc_html_file, String))
+    else
+        return RDatasetDescription("No description available.")
+    end
 end
 
 # This is a convenience function to get the description of a dataset from a DataFrame.
