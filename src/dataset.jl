@@ -28,6 +28,21 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
     error("Unable to locate dataset file $rdaname or $csvname")
 end
 
+
+"""
+    description(package_name::AbstractString, dataset_name::AbstractString)
+
+Returns an `RDatasetDescription` object containing the description of the dataset.
+
+Invoke this function in exactly the same way you would invoke `dataset` to get the dataset itself.
+
+This object prints well in the REPL, and can also be shown as markdown or HTML.
+"""
+function description(package_name::AbstractString, dataset_name::AbstractString)
+    RDatasetDescription(read(joinpath(@__DIR__, "..", "doc",
+                                       package_name, "$dataset_name.html"), String))
+end
+
 """
     RDatasetDescription(content::String)
 
@@ -35,11 +50,57 @@ A type to hold the content of a dataset description.
 
 The main purpose of its existence is to provide a way to display the content
 differently in HTML and markdown contexts.
+
+Invoked through [`RDatasets.description`](@ref).
 """
 struct RDatasetDescription
     content::String
 end
 
+function Base.show(io::IO, mime::MIME"text/plain", d::RDatasetDescription)
+    s = description_to_markdown(d.content)
+    # Here, we show a Markdown.jl object, which the REPL can render correctly
+    # as markdown, as it does in help-mode.
+    show(io, mime, Markdown.parse(s))
+end
+function Base.show(io::IO, mime::MIME"text/markdown", d::RDatasetDescription)
+    s = description_to_markdown(d.content)
+    # Here, we return a Markdown string directly.  This is useful for e.g. documentation, 
+    # where we want to render the markdown as HTML.
+    show(io, mime, s)
+end
+# This returns raw HTML documentation.
+function Base.show(io::IO, mime::MIME"text/html", d::RDatasetDescription)
+    show(io, mime, Docs.HTML(d.content))
+end
+
+
+"""
+    description_to_markdown(string::String)
+
+Converts an HTML string to markdown.  This function is written specifically 
+for HTML descriptions in RDatasets.jl, and so is a bit opinionated on what to 
+replace, etc.
+
+It replaces all known HTML tags using regex, and then removes all other HTML tags.
+
+## Behaviour
+
+Currently, it handles the following HTML tags:
+- `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` -> `#`, `##`, `###`, `####`, `#####`, `######`
+- `<title>` -> `#`
+- `<code>` -> `` `code` ``
+- `<pre>` -> "```R\\npre\\n```"
+- `<EM>` -> `*EM*`
+- `<B>` -> `**B**`
+- `&ndash;` -> `-`
+
+## TODOs
+
+- Tables
+- Links
+- Images
+"""
 function description_to_markdown(string)
     html_header_regex = r"<h(?'hnum'\d)>(?'content'[^<]+)<\/h\g'hnum'>"
     function regexmatch2md(matched_string)
@@ -70,32 +131,4 @@ function description_to_markdown(string)
     )
     nohtml = replace(new_string, Regex("<[^>]*>") => "")
     return replace(nohtml, Regex("\n\n+") => "\n\n")
-end
-"""
-    description(package_name::AbstractString, dataset_name::AbstractString)
-
-Return a `RDatasetDescription` object containing the description of the dataset.
-
-Invoke this function in exactly the same way you would invoke `dataset` to get the dataset itself.
-"""
-function description(package_name::AbstractString, dataset_name::AbstractString)
-    RDatasetDescription(read(joinpath(@__DIR__, "..", "doc",
-                                       package_name, "$dataset_name.html"), String))
-end
-
-function Base.show(io::IO, mime::MIME"text/plain", d::RDatasetDescription)
-    s = description_to_markdown(d.content)
-    # Here, we show a Markdown.jl object, which the REPL can render correctly
-    # as markdown, as it does in help-mode.
-    show(io, mime, Markdown.parse(s))
-end
-function Base.show(io::IO, mime::MIME"text/markdown", d::RDatasetDescription)
-    s = description_to_markdown(d.content)
-    # Here, we return a Markdown string directly.  This is useful for e.g. documentation, 
-    # where we want to render the markdown as HTML.
-    show(io, mime, s)
-end
-# This returns raw HTML documentation.
-function Base.show(io::IO, mime::MIME"text/html", d::RDatasetDescription)
-    show(io, mime, Docs.HTML(d.content))
 end
