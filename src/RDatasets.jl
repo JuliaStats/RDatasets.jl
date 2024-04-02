@@ -3,6 +3,7 @@ module RDatasets
         @eval Base.Experimental.@optlevel 1
     end
 
+    import Markdown
     using Reexport, RData, CSV, CodecZlib
     @reexport using DataFrames
 

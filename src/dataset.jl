@@ -28,18 +28,74 @@ function dataset(package_name::AbstractString, dataset_name::AbstractString)
     error("Unable to locate dataset file $rdaname or $csvname")
 end
 
-struct RDatasetsDescription
+"""
+    RDatasetDescription(content::String)
+
+A type to hold the content of a dataset description.
+
+The main purpose of its existence is to provide a way to display the content
+differently in HTML and markdown contexts.
+"""
+struct RDatasetDescription
     content::String
 end
+
+function description_to_markdown(string)
+    html_header_regex = r"<h(?'hnum'\d)>(?'content'[^<]+)<\/h\g'hnum'>"
+    function regexmatch2md(matched_string)
+        m = match(html_header_regex, matched_string)
+        if isnothing(m.captures[1]) || isnothing(m.captures[2])
+            return matched_string
+        end
+
+        hnum = parse(Int, m[:hnum])
+        content = m[:content]
+
+        return join(("\n", "#"^hnum, " ", content, "\n\n"))
+    end
+    title_matcher_regex = r"<title>(?'content'[^<]+)<\/title>"
+    code_matcher_regex = r"<code>(?'content'[^<]+)<\/code>"
+    pre_matcher_regex = r"<pre>(?'content'[^<]+)<\/pre>"
+    emph_matcher_regex = r"<(?i)EM(?-i)>(?'content'[^<]+)<\/(?i)EM(?-i)>"
+    b_matcher_regex = r"<(?i)B(?-i)>(?'content'[^<]+)<\/(?i)B(?-i)>"
+    new_string = replace(
+        string, 
+        html_header_regex => regexmatch2md, 
+        title_matcher_regex => titlestr -> "# " * match(title_matcher_regex, titlestr)[:content],
+        code_matcher_regex => codestr -> "`" * match(code_matcher_regex, codestr)[:content] * "`",
+        pre_matcher_regex => prestr -> "\n```R\n" * match(pre_matcher_regex, prestr)[:content] * "\n```\n",
+        emph_matcher_regex => emphstr -> "*" * match(emph_matcher_regex, emphstr)[:content] * "*",
+        b_matcher_regex => bstr -> "**" * match(b_matcher_regex, bstr)[:content] * "**",
+        "&ndash;" => "-",
+    )
+    nohtml = replace(new_string, Regex("<[^>]*>") => "")
+    return replace(nohtml, Regex("\n\n+") => "\n\n")
+end
+"""
+    description(package_name::AbstractString, dataset_name::AbstractString)
+
+Return a `RDatasetDescription` object containing the description of the dataset.
+
+Invoke this function in exactly the same way you would invoke `dataset` to get the dataset itself.
+"""
 function description(package_name::AbstractString, dataset_name::AbstractString)
-    RDatasetsDescription(read(joinpath(@__DIR__, "..", "doc",
+    RDatasetDescription(read(joinpath(@__DIR__, "..", "doc",
                                        package_name, "$dataset_name.html"), String))
 end
-function Base.show(io::IO, mime::MIME"text/plain", d::RDatasetsDescription)
-    nohtml = replace(d.content, Regex("<[^>]*>") => "")
-    s = replace(nohtml, Regex("\n\n+") => "\n\n")
-    show(io, mime, Docs.Text(s))
+
+function Base.show(io::IO, mime::MIME"text/plain", d::RDatasetDescription)
+    s = description_to_markdown(d.content)
+    # Here, we show a Markdown.jl object, which the REPL can render correctly
+    # as markdown, as it does in help-mode.
+    show(io, mime, Markdown.parse(s))
 end
-function Base.show(io::IO, mime::MIME"text/html", d::RDatasetsDescription)
-    show(io, mime, HTML(d.content))
+function Base.show(io::IO, mime::MIME"text/markdown", d::RDatasetDescription)
+    s = description_to_markdown(d.content)
+    # Here, we return a Markdown string directly.  This is useful for e.g. documentation, 
+    # where we want to render the markdown as HTML.
+    show(io, mime, s)
+end
+# This returns raw HTML documentation.
+function Base.show(io::IO, mime::MIME"text/html", d::RDatasetDescription)
+    show(io, mime, Docs.HTML(d.content))
 end
