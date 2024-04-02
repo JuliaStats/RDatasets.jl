@@ -5,15 +5,21 @@
 The RDatasets package provides an easy way for Julia users to experiment with most of the standard data sets that are available in the core of R as well as datasets included with many of R's most popular packages. This package is essentially a simplistic port of the Rdatasets repo created by Vincent Arelbundock, who conveniently gathered data sets from many of the standard R packages in one convenient location on GitHub at https://github.com/vincentarelbundock/Rdatasets
 
 In order to load one of the data sets included in the RDatasets package, you will need to have the `DataFrames` package installed. This package is automatically installed as a dependency of the `RDatasets` package if you install `RDatasets` as follows:
-
-    Pkg.add("RDatasets")
-
+```julia
+Pkg.add("RDatasets")
+```
 After installing the RDatasets package, you can then load data sets using the `dataset()` function, which takes the name of a package and a data set as arguments:
-
-    using RDatasets
-    iris = dataset("datasets", "iris")
-    neuro = dataset("boot", "neuro")
-
+```julia
+using RDatasets
+iris = dataset("datasets", "iris")
+neuro = dataset("boot", "neuro")
+```
+You can also get descriptions of the datasets by calling `RDatasets.description`:
+```julia
+RDatasets.description("datasets", "iris")
+# or
+RDatasets.description(iris) # only use this on DataFrames returned from `dataset`!
+```
 # Data Sets
 
 The `RDatasets.packages()` function returns a table of represented R packages:
