@@ -6,41 +6,59 @@ const Dataset_typedetect_rows = Dict{Tuple{String, String}, Union{Vector,Dict}}(
 
 function dataset(package_name::AbstractString, dataset_name::AbstractString)
     basename = joinpath(@__DIR__, "..", "data", package_name)
-
+    # First, identify possible files
     rdataname = joinpath(basename, string(dataset_name, ".RData"))
-    if isfile(rdataname)
-        return load(rdataname)[dataset_name]
-    end
-
     rdaname = joinpath(basename, string(dataset_name, ".rda"))
-    if isfile(rdaname)
-        return load(rdaname)[dataset_name]
-    end
-
     csvname = joinpath(basename, string(dataset_name, ".csv.gz"))
-    if isfile(csvname)
-        return open(csvname,"r") do io
+    # Then, check to see which exists.  If none exist, error.
+    dataset = if isfile(rdataname)
+        load(rdataname)[dataset_name]
+    elseif isfile(rdaname)
+        load(rdaname)[dataset_name]
+    elseif isfile(csvname)
+        open(csvname,"r") do io
             uncompressed = IOBuffer(read(GzipDecompressorStream(io)))
             DataFrame(CSV.File(uncompressed, delim=',', quotechar='\"', missingstring="NA",
                       types=get(Dataset_typedetect_rows, (package_name, dataset_name), nothing)) )
         end
+    else
+        error("Unable to locate dataset file $rdaname or $csvname")
     end
-    error("Unable to locate dataset file $rdaname or $csvname")
+    # Finally, inject metadata into the dataframe to indicate origin:
+    DataFrames.metadata!(dataset, "RDatasets.jl", (string(package_name), string(dataset_name)))
+    return dataset
 end
 
 
 """
-    description(package_name::AbstractString, dataset_name::AbstractString)
+    RDatasets.description(package_name::AbstractString, dataset_name::AbstractString)
+    RDatasets.description(df::DataFrame) # only call this on dataframes from RDatasets!
 
 Returns an `RDatasetDescription` object containing the description of the dataset.
 
 Invoke this function in exactly the same way you would invoke `dataset` to get the dataset itself.
 
 This object prints well in the REPL, and can also be shown as markdown or HTML.
+
+!!! note Unexported
+    This function is left deliberately unexported, since the name is pretty common.
 """
 function description(package_name::AbstractString, dataset_name::AbstractString)
     RDatasetDescription(read(joinpath(@__DIR__, "..", "doc",
                                        package_name, "$dataset_name.html"), String))
+end
+
+# This is a convenience function to get the description of a dataset from a DataFrame.
+# Since we set metadata on the DataFrame, we can use this to get the description,
+# if it exists.
+function description(df::AbstractDataFrame)
+    if "RDatasets.jl" in DataFrames.metadatakeys(df)
+        package_name, dataset_name = DataFrames.metadata(df, "RDatasets.jl")
+        return description(package_name, dataset_name)
+    else
+        @warn "No metadata indicating dataset origin found.  Returning default description."
+        return RDatasetDescription("No description available.")
+    end
 end
 
 """
