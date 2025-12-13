@@ -5,15 +5,21 @@
 The RDatasets package provides an easy way for Julia users to experiment with most of the standard data sets that are available in the core of R as well as datasets included with many of R's most popular packages. This package is essentially a simplistic port of the Rdatasets repo created by Vincent Arelbundock, who conveniently gathered data sets from many of the standard R packages in one convenient location on GitHub at https://github.com/vincentarelbundock/Rdatasets
 
 In order to load one of the data sets included in the RDatasets package, you will need to have the `DataFrames` package installed. This package is automatically installed as a dependency of the `RDatasets` package if you install `RDatasets` as follows:
-
-    Pkg.add("RDatasets")
-
+```julia
+Pkg.add("RDatasets")
+```
 After installing the RDatasets package, you can then load data sets using the `dataset()` function, which takes the name of a package and a data set as arguments:
-
-    using RDatasets
-    iris = dataset("datasets", "iris")
-    neuro = dataset("boot", "neuro")
-
+```julia
+using RDatasets
+iris = dataset("datasets", "iris")
+neuro = dataset("boot", "neuro")
+```
+You can also get descriptions of the datasets by calling `RDatasets.description`:
+```julia
+RDatasets.description("datasets", "iris")
+# or
+RDatasets.description(iris) # only use this on DataFrames returned from `dataset`!
+```
 # Data Sets
 
 The `RDatasets.packages()` function returns a table of represented R packages:
@@ -73,6 +79,23 @@ mlmRev|egsingle|US Sustaining Effects study|7230|12
 mlmRev|guImmun|Immunization in Guatemala|2159|13
 mlmRev|guPrenat|Prenatal care in Guatemala|2449|15
 mlmRev|star|Student Teacher Achievement Ratio (STAR) project data|26796|18
+
+# How to add datasets from a new package
+
+**Step 1: add the data from the package**
+
+ 1. In your clone of this repo `mkdir -p data/$PKG`
+ 2. Go to CRAN
+ 3. Download the *source package*
+ 4. Extract one or more of the datasets in the `data` directory into the new directory
+
+**Step 2: add the metadata**
+
+Run the script:
+
+     $ scripts/update_doc_one.sh $PKG
+
+Now it's ready for you to submit your pull request.
 
 # Licensing and Intellectual Property
 
