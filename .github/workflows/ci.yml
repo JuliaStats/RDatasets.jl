@@ -19,6 +19,8 @@ jobs:
           - 'pre'
         os:
           - ubuntu-latest
+        arch:
+          - x64
         include:
           - version: 1
             os: macOS-latest
