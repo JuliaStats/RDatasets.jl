@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><title>R: Two-stage sample from MU284</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>mu284</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Two-stage sample from MU284</h2>
+
+<h3>Description</h3>
+
+<p>The MU284 population comes from Sarndal et al, and the complete data are
+available from Statlib. These data are a two-stage sample from the
+population, analyzed on page 143 of the book.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(mu284)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>id1</code></dt><dd><p>identifier for PSU</p>
+</dd>
+<dt><code>n1</code></dt><dd><p>number of PSUs in population</p>
+</dd>
+<dt><code>id2</code></dt><dd><p>identifier for second-stage unit</p>
+</dd>
+<dt><code>y1</code></dt><dd><p>variable to be analysed</p>
+</dd>
+<dt><code>n2</code></dt><dd><p>number of second-stage units in this PSU</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Carl Erik Sarndal, Bengt Swensson, Jan Wretman. (1991) &quot;Model Assisted
+Survey Sampling&quot; Springer.
+</p>
+<p>(downloaded from StatLib, which is no longer active)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(mu284)
+(dmu284&lt;-svydesign(id=~id1+id2,fpc=~n1+n2, data=mu284))
+(ytotal&lt;-svytotal(~y1, dmu284))
+vcov(ytotal)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

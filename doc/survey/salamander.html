@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><title>R: Salamander mating data set from McCullagh and Nelder (1989)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>salamander</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Salamander mating data set from McCullagh and Nelder (1989)</h2>
+
+<h3>Description</h3>
+
+<p>This data set presents the outcome of three experiments
+conducted at the University of Chicago in 1986 to study interbreeding
+between populations of mountain dusky salamanders (McCullagh and
+Nelder, 1989, Section 14.5). The analysis here is from Lumley (1998,
+section 5.3)</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(salamander)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with the following columns:
+</p>
+
+<dl>
+<dt>Mate</dt><dd><p>Whether the salamanders mated (1) or did not mate (0).</p>
+</dd>
+<dt>Cross</dt><dd><p>Cross between female and male type. A factor with four levels: <code>R/R</code>,<code>R/W</code>,<code>W/R</code>, and <code>W/W</code>. The type of the female salamander is listed first and the male is listed second. Rough Butt is represented by R and White Side is represented by W. For example, <code>Cross=W/R</code> indicates a White Side female was crossed with a Rough Butt male.</p>
+</dd>
+<dt>Male</dt><dd><p>Identification number of the male salamander. A factor.</p>
+</dd>
+<dt>Female</dt><dd><p>Identification number of the female salamander. A factor.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>McCullagh P. and Nelder, J. A. (1989)  <em>Generalized
+Linear Models</em>.  Chapman and Hall/CRC.
+Lumley T (1998) PhD thesis, University of Washington
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(salamander)
+salamander$mixed&lt;-with(salamander, Cross=="W/R" | Cross=="R/W")
+salamander$RWvsWR&lt;-with(salamander,  ifelse(mixed,
+          ((Cross=="R/W")-(Cross=="W/R"))/2,
+          0))
+xsalamander&lt;-xdesign(id=list(~Male, ~Female), data=salamander,
+    overlap="unbiased")
+
+## Adjacency matrix
+## Blocks 1 and 2 are actually the same salamanders, but
+## it's traditional to pretend they are independent.
+image(xsalamander$adjacency)
+
+## R doesn't allow family=binomial(identity)
+success &lt;- svyglm(Mate~mixed+RWvsWR, design=xsalamander,
+    family=quasi(link="identity", variance="mu(1-mu)"))
+summary(success)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

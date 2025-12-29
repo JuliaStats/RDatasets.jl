@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head><title>R: Survival in cardiac arrest</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>scd</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Survival in cardiac arrest</h2>
+
+<h3>Description</h3>
+
+<p>These data are from Section 12.2 of Levy and Lemeshow.  They describe
+(a possibly apocryphal) study of survival in out-of-hospital cardiac
+arrest. Two out of five ambulance stations were sampled from each of
+three emergency service areas.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(scd)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>ESA</dt><dd><p>Emergency Service Area (strata)</p>
+</dd>
+<dt>ambulance</dt><dd><p>Ambulance station (PSU)</p>
+</dd>
+<dt>arrests</dt><dd><p>estimated number of cardiac arrests</p>
+</dd>
+<dt>alive</dt><dd><p>number reaching hospital alive</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Levy and Lemeshow. &quot;Sampling of Populations&quot; (3rd edition). Wiley.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(scd)
+
+## survey design objects
+scddes&lt;-svydesign(data=scd, prob=~1, id=~ambulance, strata=~ESA,
+nest=TRUE, fpc=rep(5,6))
+scdnofpc&lt;-svydesign(data=scd, prob=~1, id=~ambulance, strata=~ESA,
+nest=TRUE)
+
+# convert to BRR replicate weights
+scd2brr &lt;- as.svrepdesign(scdnofpc, type="BRR")
+# or to Rao-Wu bootstrap
+scd2boot &lt;- as.svrepdesign(scdnofpc, type="subboot")
+
+# use BRR replicate weights from Levy and Lemeshow
+repweights&lt;-2*cbind(c(1,0,1,0,1,0), c(1,0,0,1,0,1), c(0,1,1,0,0,1),
+c(0,1,0,1,1,0))
+scdrep&lt;-svrepdesign(data=scd, type="BRR", repweights=repweights)
+
+# ratio estimates
+svyratio(~alive, ~arrests, design=scddes)
+svyratio(~alive, ~arrests, design=scdnofpc)
+svyratio(~alive, ~arrests, design=scd2brr)
+svyratio(~alive, ~arrests, design=scd2boot)
+svyratio(~alive, ~arrests, design=scdrep)
+
+# or a logistic regression
+summary(svyglm(cbind(alive,arrests-alive)~1, family=quasibinomial, design=scdnofpc))
+summary(svyglm(cbind(alive,arrests-alive)~1, family=quasibinomial, design=scdrep))
+
+# Because no sampling weights are given, can't compute design effects
+# without replacement: use deff="replace"
+
+svymean(~alive+arrests, scddes, deff=TRUE)
+svymean(~alive+arrests, scddes, deff="replace")
+
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

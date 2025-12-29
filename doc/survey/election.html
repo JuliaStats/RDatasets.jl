@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><title>R: US 2004 presidential election data at state or county level</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>election</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>US 2004 presidential election data at state or county level</h2>
+
+<h3>Description</h3>
+
+<p>A sample of voting data from US states or counties (depending on data
+availability), sampled with probability proportional to number of votes. The sample was drawn using Tille's splitting method, implemented in the &quot;sampling&quot; package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(election)</code></pre>
+
+
+<h3>Format</h3>
+
+<p><code>election</code> is a data frame with 4600 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>County</code></dt><dd><p>A factor specifying the state or country</p>
+</dd>
+<dt><code>TotPrecincts</code></dt><dd><p>Number of precincts in the state or county</p>
+</dd>
+<dt><code>PrecinctsReporting</code></dt><dd><p>Number of precincts supplying data</p>
+</dd>
+<dt><code>Bush</code></dt><dd><p>Votes for George W. Bush</p>
+</dd>
+<dt><code>Kerry</code></dt><dd><p>Votes for John Kerry</p>
+</dd>
+<dt><code>Nader</code></dt><dd><p>Votes for Ralph Nader</p>
+</dd>
+<dt><code>votes</code></dt><dd><p>Total votes for those three candidates</p>
+</dd>
+<dt><code>p</code></dt><dd><p>Sampling probability, proportional to <code>votes</code></p>
+</dd>
+</dl>
+
+<p><code>election_pps</code> is a sample of 40 counties or states taken with
+probability proportional to the number of votes. It includes the
+additional column <code>wt</code> with the sampling weights. 
+</p>
+<p><code>election_insample</code> indicates which rows of <code>election</code> were sampled.
+</p>
+<p><code>election_jointprob</code> are the pairwise sampling probabilities and
+<code>election_jointHR</code> are approximate pairwise sampling probabilities using
+the Hartley-Rao approximation.
+</p>
+
+
+<h3>Source</h3>
+
+<p>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(election)
+## high positive correlation between totals
+plot(Bush~Kerry,data=election,log="xy")
+## high negative correlation between proportions
+plot(I(Bush/votes)~I(Kerry/votes), data=election)
+
+## Variances without replacement
+## Horvitz-Thompson type
+dpps_br&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps="brewer")
+dpps_ov&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps="overton")
+dpps_hr&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps=HR(sum(election$p^2)/40))
+dpps_hr1&lt;- svydesign(id=~1, fpc=~p, data=election_pps, pps=HR())
+dpps_ht&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps=ppsmat(election_jointprob))
+## Yates-Grundy type
+dpps_yg&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps=ppsmat(election_jointprob),variance="YG")
+dpps_hryg&lt;- svydesign(id=~1,  fpc=~p, data=election_pps, pps=HR(sum(election$p^2)/40),variance="YG")
+
+## The with-replacement approximation
+dppswr &lt;-svydesign(id=~1, probs=~p, data=election_pps)
+
+svytotal(~Bush+Kerry+Nader, dpps_ht)
+svytotal(~Bush+Kerry+Nader, dpps_yg)
+svytotal(~Bush+Kerry+Nader, dpps_hr)
+svytotal(~Bush+Kerry+Nader, dpps_hryg)
+svytotal(~Bush+Kerry+Nader, dpps_hr1)
+svytotal(~Bush+Kerry+Nader, dpps_br)
+svytotal(~Bush+Kerry+Nader, dpps_ov)
+svytotal(~Bush+Kerry+Nader, dppswr)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>
