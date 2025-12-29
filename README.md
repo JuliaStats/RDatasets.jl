@@ -74,6 +74,23 @@ mlmRev|guImmun|Immunization in Guatemala|2159|13
 mlmRev|guPrenat|Prenatal care in Guatemala|2449|15
 mlmRev|star|Student Teacher Achievement Ratio (STAR) project data|26796|18
 
+# How to add datasets from a new package
+
+**Step 1: add the data from the package**
+
+ 1. In your clone of this repo `mkdir -p data/$PKG`
+ 2. Go to CRAN
+ 3. Download the *source package*
+ 4. Extract one or more of the datasets in the `data` directory into the new directory
+
+**Step 2: add the metadata**
+
+Run the script:
+
+     $ scripts/update_doc_one.sh $PKG
+
+Now it's ready for you to submit your pull request.
+
 # Licensing and Intellectual Property
 
 Following Vincent's lead, we have assumed that all of the data sets in this repository can be made available under the GPL-3 license. If you know that one of the datasets released here should not be released publicly or if you know that a data set can only be released under a different license, please contact me so that I can remove the data set from this repository.
