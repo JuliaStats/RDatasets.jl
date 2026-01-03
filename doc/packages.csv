@@ -31,5 +31,6 @@
 "rpart","Recursive Partitioning and Regression Trees"
 "sandwich","Robust Covariance Matrix Estimators"
 "sem","Structural Equation Models"
+"survey","Analysis of Complex Survey Samples"
 "survival","Survival Analysis"
 "vcd","Visualizing Categorical Data"

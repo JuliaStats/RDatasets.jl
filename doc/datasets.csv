@@ -714,6 +714,21 @@
 "sem","Klein","Klein's Data on the U. S. Economy",22,10
 "sem","Kmenta","Partly Artificial Data on the U. S. Economy",20,5
 "sem","Tests","Six Mental Tests",32,6
+"survey","apiclus1","Student performance in California schools, Cluster Sample of School Districts",183,39
+"survey","apiclus2","Student performance in California schools, Two-Stage Cluster Sample of Schools",126,40
+"survey","apipop","Student performance in California schools, Entire Population",6194,37
+"survey","apisrs","Student performance in California schools, Simple Random Sample",200,39
+"survey","apistrat","Student performance in California schools, Stratified Sample",200,39
+"survey","crowd","Household crowding",6,5
+"survey","election","US 2004 presidential election data at state or county level",4600,8
+"survey","fpc","Small survey example",8,6
+"survey","hospital","Sample of obstetric hospitals",15,6
+"survey","mu284","Two-stage sample from MU284",15,5
+"survey","myco","Association between leprosy and BCG vaccination",516,6
+"survey","nhanes","Cholesterol data from a US survey",8591,7
+"survey","salamander","Salamander mating data set from McCullagh and Nelder (1989)",360,4
+"survey","scd","Survival in cardiac arrest",6,4
+"survey","yrbs","One variable from the Youth Risk Behaviors Survey, 2015.",15624,4
 "survival","bladder","Bladder Cancer Recurrences",340,7
 "survival","cancer","NCCTG Lung Cancer Data",228,10
 "survival","cgd","Chronic Granulotomous Disease data",203,16

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html><head><title>R: Small survey example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>fpc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Small survey example</h2>
+
+<h3>Description</h3>
+
+<p>The <code>fpc</code> data frame has 8 rows and 6 columns. It is artificial
+data to illustrate survey sampling estimators.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data(fpc)</code></pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>stratid</dt><dd><p>Stratum ids</p>
+</dd>
+<dt>psuid</dt><dd><p>Sampling unit ids</p>
+</dd>
+<dt>weight</dt><dd><p>Sampling weights</p>
+</dd>
+<dt>nh</dt><dd><p>number sampled per stratum</p>
+</dd>
+<dt>Nh</dt><dd><p>population size per stratum</p>
+</dd>
+<dt>x</dt><dd><p>data</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><code style="white-space: pre;">&#8288;https://www.stata-press.com/data/r7/fpc.dta&#8288;</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(fpc)
+fpc
+
+
+withoutfpc&lt;-svydesign(weights=~weight, ids=~psuid, strata=~stratid, variables=~x, 
+   data=fpc, nest=TRUE)
+
+withoutfpc
+svymean(~x, withoutfpc)
+
+withfpc&lt;-svydesign(weights=~weight, ids=~psuid, strata=~stratid,
+fpc=~Nh, variables=~x, data=fpc, nest=TRUE)
+
+withfpc
+svymean(~x, withfpc)
+
+## Other equivalent forms 
+withfpc&lt;-svydesign(prob=~I(1/weight), ids=~psuid, strata=~stratid,
+fpc=~Nh, variables=~x, data=fpc, nest=TRUE)
+
+svymean(~x, withfpc)
+
+withfpc&lt;-svydesign(weights=~weight, ids=~psuid, strata=~stratid,
+fpc=~I(nh/Nh), variables=~x, data=fpc, nest=TRUE)
+
+svymean(~x, withfpc)
+
+withfpc&lt;-svydesign(weights=~weight, ids=~interaction(stratid,psuid),
+strata=~stratid, fpc=~I(nh/Nh), variables=~x, data=fpc)
+
+svymean(~x, withfpc)
+
+withfpc&lt;-svydesign(ids=~psuid, strata=~stratid, fpc=~Nh,
+ variables=~x,data=fpc,nest=TRUE)
+
+svymean(~x, withfpc)
+
+withfpc&lt;-svydesign(ids=~psuid, strata=~stratid,
+fpc=~I(nh/Nh), variables=~x, data=fpc, nest=TRUE)
+
+svymean(~x, withfpc)
+
+
+
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

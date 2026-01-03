@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><title>R: Association between leprosy and BCG vaccination</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>myco</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Association between leprosy and BCG vaccination
+</h2>
+
+<h3>Description</h3>
+
+<p>These data are in a paper by JNK Rao and colleagues, on score tests
+for complex survey data.  External information (not further specified) suggests
+the functional form for the <code>Age</code> variable.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>data("myco")</code></pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 516 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>Age</code></dt><dd><p>Age in years at the midpoint of six age strata</p>
+</dd>
+<dt><code>Scar</code></dt><dd><p>Presence of a BCG vaccination scar</p>
+</dd>
+<dt><code>n</code></dt><dd><p>Sampled number of cases (and thus controls) in the age stratum</p>
+</dd>
+<dt><code>Ncontrol</code></dt><dd><p>Number of non-cases in the population</p>
+</dd>
+<dt><code>wt</code></dt><dd><p>Sampling weight</p>
+</dd>
+<dt><code>leprosy</code></dt><dd><p>case status 0/1</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data are a simulated stratified case-control study drawn from a
+population study conducted in a region of Malawi (Clayton and Hills,
+1993, Table 18.1). The goal was to examine whether BCG vaccination against
+tuberculosis protects against leprosy (the causative agents are both species of
+_Mycobacterium_). Rao et al have a typographical error: the number of
+non-cases in the population in the 25-30 age stratum is given as 4981
+but 5981 matches both the computational output and the data as given by Clayton
+and Hills.
+</p>
+
+
+<h3>Source</h3>
+
+<p>JNK Rao, AJ Scott, and Skinner, C. (1998). QUASI-SCORE TESTS WITH SURVEY
+DATA. Statistica Sinica, 8(4), 1059-1070.
+</p>
+<p>Clayton, D., &amp; Hills, M. (1993). Statistical Models in Epidemiology. OUP
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>data(myco)
+dmyco&lt;-svydesign(id=~1, strata=~interaction(Age,leprosy),weights=~wt,data=myco)
+
+m_full&lt;-svyglm(leprosy~I((Age+7.5)^-2)+Scar, family=quasibinomial, design=dmyco)
+m_age&lt;-svyglm(leprosy~I((Age+7.5)^-2), family=quasibinomial, design=dmyco)
+anova(m_full,m_age)
+
+## unweighted model does not match
+m_full
+glm(leprosy~I((Age+7.5)^-2)+Scar, family=binomial, data=myco)
+
+</code></pre>
+
+</main>
+
+</div>
+</body></html>
