@@ -1,9 +1,13 @@
 #
 # Correctness Tests
 #
-
+using Aqua
 using RDatasets
 using Test
+
+@testset "Aqua" begin
+    Aqua.test_all(RDatasets; ambiguities=false, persistent_tasks=false)
+end
 
 my_tests = ["packages.jl",
             "datasets.jl",
