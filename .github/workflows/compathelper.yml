@@ -7,6 +7,8 @@ jobs:
   CompatHelper:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Up Julia
+        uses: julia-actions/setup-julia@v3
       - name: "Add the General registry via Git"
         run: |
           import Pkg
